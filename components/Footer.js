@@ -48,6 +48,8 @@ const Footer = () => {
                                     direction={'row'}
                                     alignItems={'center'}>
                                         <Icon
+                                            w={3}
+                                            h={3}
                                             position={'relative'}
                                             alignItems={'center'}
                                             color={'blackAlpha.400'}
@@ -59,11 +61,13 @@ const Footer = () => {
                                                 base: 13.5, 
                                                 sm: 14, 
                                                 md: 15, 
-                                                lg: 16 
+                                                lg: 12
                                             }}>
                                                 &nbsp;Designed and developed by Linas&nbsp;
                                         </Text>
                                         <Icon
+                                            w={3}
+                                            h={3}
                                             position={'relative'}
                                             alignItems={'center'}
                                             color={'blackAlpha.400'}
@@ -86,6 +90,8 @@ const Footer = () => {
                                                     direction={'row'}
                                                     alignItems={'center'}>
                                                         <Icon
+                                                            w={3}
+                                                            h={3}
                                                             position={'relative'}
                                                             alignItems={'center'}
                                                             color={'blackAlpha.400'}
@@ -97,11 +103,13 @@ const Footer = () => {
                                                                 base: 13.5, 
                                                                 sm: 14, 
                                                                 md: 15, 
-                                                                lg: 16 
+                                                                lg: 12
                                                             }}>
                                                             &nbsp;Site Repo&nbsp;
                                                         </Text>
                                                         <Icon
+                                                            w={3}
+                                                            h={3}
                                                             position={'relative'}
                                                             alignItems={'center'}
                                                             color={'blackAlpha.400'}

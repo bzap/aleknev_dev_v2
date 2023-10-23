@@ -236,7 +236,7 @@ const gitButton = () => {
 											                    py={1}
 																px={3}
 												color={'blackAlpha.800'}
-												fontSize={{ base: 34, sm: 37, md: 40, lg: 18 }}
+												fontSize={{ base: 34, sm: 37, md: 40, lg: 12 }}
 												fontWeight={'bold'}>
 													GITHUB
 											</Heading> 

@@ -6,6 +6,7 @@ import {
     Heading,
     Center,
     chakra,
+    Button,
     Text,
     shouldForwardProp
 } from '@chakra-ui/react';
@@ -36,21 +37,28 @@ const MobileTabs = () => {
                                 duration={2200}>
                                     <Center
                                         w={'100%'}
+                                        pr={2}
                                         className={item === selectedTab ? 'selected' : ''}
                                         onClick={() => {
                                             setSelectedTab(item)
                                         }}>
-                                        <ChakraBox
+                                        <Button
+                                            variant={'none'}
+                                            size={'sm'}
                                             w={'100%'}
                                             borderRadius={'12px'}
                                             as={motion.div}
                                             py={'2'}
-                                            pr={2}
-                                            pl={'4.5em'}
+                                            
+                                            borderWidth={'1px'}
+                                            borderColor={'transparent'}
                                             cursor={'pointer'}
-                                            _hover={{ 'background-color': '#e4e4e480', 'boxShadow': 'sm'}}
+                                            _hover={{ 
+                                                'background-color': '#e4e4e480',
+                                            }}
                    >
-                                                <Flex>
+                                                <Flex
+                                                justifyContent={'end'}>
                                                     <Heading
                                                         w={'100%'}
                                                         textAlign={'end'}
@@ -59,7 +67,7 @@ const MobileTabs = () => {
                                                         {item.label}
                                                     </Heading>
                                                 </Flex>
-                                        </ChakraBox>
+                                        </Button>
                                     </Center>
                             </Link>
                         ))}

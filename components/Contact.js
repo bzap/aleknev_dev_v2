@@ -50,7 +50,7 @@ const Contact = forwardRef((props, ref) => {
 						base: '2em', 
 						sm: '2em', 
 						md: '3em', 
-						lg: '3em' 
+						lg: '2em' 
 					}}>
 						<Flex
 							position={'relative'}
@@ -140,7 +140,7 @@ const formBox = () => {
 											md: 'column', 
 											lg: 'row' 
 										}}
-										gap={'3em'}>
+										gap={'2em'}>
 											<Flex
 												h={'100%'}
 												w={'100%'}
@@ -185,7 +185,7 @@ const formBox = () => {
 																		_hover={{ border: 'none' }}
 																		focusBorderColor={'null'}
 																		w={'100%'}
-																		size={'lg'}
+																		size={'md'}
 																		id='email'
 																		type='email'
 																		name='email' />
@@ -232,7 +232,7 @@ const formBox = () => {
 																		_hover={{ border: 'none' }}
 																		focusBorderColor={'null'}
 																		name='name'
-																		size={'lg'}
+																		size={'md'}
 																		id='name' />
 															</ChakraBox>
 													</ChakraBox>
