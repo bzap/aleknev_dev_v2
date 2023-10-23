@@ -35,12 +35,6 @@ const Contact = forwardRef((props, ref) => {
 			zIndex={50}
 			viewport={{once: true}}
 			maxW={'100%'}
-			px={{ 
-				base: '6.5%', 
-				sm: '5%', 
-				md: '10%', 
-				lg: '12%' 
-			}}
 			w={'100%'}
 			id='2'
 			pt={{ 
@@ -56,7 +50,7 @@ const Contact = forwardRef((props, ref) => {
 						base: '2em', 
 						sm: '2em', 
 						md: '3em', 
-						lg: '7em' 
+						lg: '3em' 
 					}}>
 						<Flex
 							position={'relative'}
@@ -101,103 +95,60 @@ const formBox = () => {
 		}
 	}, [state.submitting])
 	return ( 
-		<Flex
-			backdropFilter='auto'
-			backdropBlur='5px'
-			p={{ 
-				base: '2em', 
-				sm: '2.5em', 
-				md: '4em', 
-				lg: '3em' 
-			}}
-			w={'100%'}
-			position={'relative'}
-			zIndex={5}
-			bg={'whiteAlpha.700'}
-			boxShadow={'md'}
-			direction={'column'}
-			borderRadius={'22px'}
-			h={'100%'}
-			gap={'5em'}>
-			<form
-				style={{ flex: 1, width: "100%" }}
-				onSubmit={handleSubmit}>
-					<Flex
-						gap={{ 
-							base: '2em', 
-							sm: '2.5em', 
-							md: '4em', 
-							lg: '4em' 
-						}}
-						direction={'column'}>
-							<FormControl isRequired>
-								<Flex
-									h={'100%'}
-									w={'100%'}
-									direction={{ 
-										base: 'column', 
-										sm: 'column', 
-										md: 'column', 
-										lg: 'row' 
-									}}
-									gap={'3em'}>
-										<Flex
-											h={'100%'}
-											w={'100%'}
-											direction={'column'}>
-												<ChakraBox
-													as={motion.div}
-													variants={itemText}>
-														<FormLabel requiredIndicator>
-															<Heading
-																pb={2}
-																color={'blackAlpha.800'}
-																fontSize={{ 
-																	base: 18, 
-																	sm: 20, 
-																	md: 25, 
-																	lg: 25 
-																}}>
-																	EMAIL
-															</Heading>
-														</FormLabel>
-														<ChakraBox
-															as={motion.div}
-															whileHover={{ scale: 1.01 }}>
-																<Input
-																	fontSize={{ 
-																		base: 13, 
-																		sm: 13.5, 
-																		md: 14, 
-																		lg: 14 
-																	}}
-																	borderRadius={'12px'}
-																	color={'blackAlpha.800'}
-																	bg={'whiteAlpha.800'}
-																	borderColor={'blackAlpha.600'}
-																	boxShadow={'md'}
-																	border={'none'}
-																	placeholder={'Your email'}
-																	_placeholder={{ 
-																		opacity: 1, 
-																		color: 'blackAlpha.300' 
-																	}}
-																	borderWidth={'0px'}
-																	_hover={{ border: 'none' }}
-																	focusBorderColor={'null'}
-																	w={'100%'}
-																	size={'lg'}
-																	id='email'
-																	type='email'
-																	name='email' />
-														</ChakraBox>
-												</ChakraBox>
-												<ChakraBox
-													as={motion.div}
-													variants={itemText}>
-														<FormLabel
-															pt={9}
-															requiredIndicator>
+		<ChakraBox
+		as={motion.div}
+		whileHover={{ scale: 1.01 }}>
+			<Flex
+				backdropFilter='auto'
+				backdropBlur='5px'
+				p={{ 
+					base: '2em', 
+					sm: '2.5em', 
+					md: '4em', 
+					lg: '2em' 
+				}}
+				w={'100%'}
+				position={'relative'}
+				zIndex={5}
+				bg={'whiteAlpha.700'}
+				boxShadow={'md'}
+				direction={'column'}
+				borderRadius={'22px'}
+				h={'100%'}
+				gap={'5em'}>
+
+
+				
+				<form
+					style={{ flex: 1, width: "100%" }}
+					onSubmit={handleSubmit}>
+						<Flex
+							gap={{ 
+								base: '2em', 
+								sm: '2.5em', 
+								md: '4em', 
+								lg: '2em' 
+							}}
+							direction={'column'}>
+								<FormControl isRequired>
+									<Flex
+										h={'100%'}
+										w={'100%'}
+										direction={{ 
+											base: 'column', 
+											sm: 'column', 
+											md: 'column', 
+											lg: 'row' 
+										}}
+										gap={'3em'}>
+											<Flex
+												h={'100%'}
+												w={'100%'}
+												direction={'column'}>
+													<ChakraBox
+														as={motion.div}
+														variants={itemText}>
+															<FormLabel requiredIndicator>
 																<Heading
 																	pb={2}
 																	color={'blackAlpha.800'}
@@ -205,131 +156,176 @@ const formBox = () => {
 																		base: 18, 
 																		sm: 20, 
 																		md: 25, 
-																		lg: 25 
+																		lg: 18 
 																	}}>
-																		NAME
+																		EMAIL
 																</Heading>
-														</FormLabel>
-														<ChakraBox
-															as={motion.div}
-															whileHover={{ scale: 1.01 }}>
-																<Input
+															</FormLabel>
+															<ChakraBox
+																as={motion.div}>
+																	<Input
+																		fontSize={{ 
+																			base: 13, 
+																			sm: 13.5, 
+																			md: 12, 
+																			lg: 12 
+																		}}
+																		borderRadius={'12px'}
+																		color={'blackAlpha.800'}
+																		bg={'white'}
+																		borderColor={'blackAlpha.600'}
+																		boxShadow={'sm'}
+																		border={'none'}
+																		placeholder={'Your email'}
+																		_placeholder={{ 
+																			opacity: 1, 
+																			color: 'blackAlpha.500' 
+																		}}
+																		borderWidth={'0px'}
+																		_hover={{ border: 'none' }}
+																		focusBorderColor={'null'}
+																		w={'100%'}
+																		size={'lg'}
+																		id='email'
+																		type='email'
+																		name='email' />
+															</ChakraBox>
+													</ChakraBox>
+													<ChakraBox
+														as={motion.div}
+														variants={itemText}>
+															<FormLabel
+																pt={9}
+																requiredIndicator>
+																	<Heading
+																		pb={2}
+																		color={'blackAlpha.800'}
+																		fontSize={{ 
+																			base: 18, 
+																			sm: 20, 
+																			md: 25, 
+																			lg: 18
+																		}}>
+																			NAME
+																	</Heading>
+															</FormLabel>
+															<ChakraBox
+																as={motion.div}>
+																	<Input
+																		fontSize={{ 
+																			base: 13, 
+																			sm: 13.5, 
+																			md: 12, 
+																			lg: 12 
+																		}}
+																		borderRadius={'12px'}
+																		color={'blackAlpha.800'}
+																		bg={'white'}
+																		boxShadow={'sm'}
+																		border={'none'}
+																		placeholder={'Your name'}
+																		_placeholder={{ 
+																			opacity: 1, 
+																			color: 'blackAlpha.500' 
+																		}}
+																		borderWidth={'0px'}
+																		_hover={{ border: 'none' }}
+																		focusBorderColor={'null'}
+																		name='name'
+																		size={'lg'}
+																		id='name' />
+															</ChakraBox>
+													</ChakraBox>
+											</Flex>
+											<ChakraBox
+												w={'100%'}
+												h={'container'}
+												as={motion.div}
+												variants={itemText}>
+													<Flex
+														direction={'column'}
+														h={'100%'}
+														w={'100%'}>
+															<FormLabel requiredIndicator>
+																<Heading
+																	pb={2}
+																	color={'blackAlpha.800'}
+																	fontSize={{ 
+																		base: 18, 
+																		sm: 20, 
+																		md: 25, 
+																		lg: 18 
+																	}}>
+																		MESSAGE
+																</Heading>
+															</FormLabel>
+															<ChakraBox
+																h={'100%'}
+																as={motion.div}>
+																<Textarea
+																	p={4}
+																	h={'100%'}
 																	fontSize={{ 
 																		base: 13, 
 																		sm: 13.5, 
-																		md: 14, 
-																		lg: 14 
+																		md: 12, 
+																		lg: 12 
 																	}}
-																	borderRadius={'12px'}
+																	borderRadius={'14px'}
 																	color={'blackAlpha.800'}
 																	bg={'whiteAlpha.800'}
-																	boxShadow={'md'}
-																	border={'none'}
-																	placeholder={'Your name'}
+																	placeholder={'Your message'}
 																	_placeholder={{ 
 																		opacity: 1, 
-																		color: 'blackAlpha.300' 
+																		color: 'blackAlpha.500' 
 																	}}
+																	boxShadow={'sm'}
+																	border={'none'}
 																	borderWidth={'0px'}
 																	_hover={{ border: 'none' }}
 																	focusBorderColor={'null'}
-																	name='name'
-																	size={'lg'}
-																	id='name' />
-														</ChakraBox>
-												</ChakraBox>
-										</Flex>
-										<ChakraBox
-											w={'100%'}
-											h={'container'}
-											as={motion.div}
-											variants={itemText}>
-												<Flex
-													direction={'column'}
-													h={'100%'}
-													w={'100%'}>
-														<FormLabel requiredIndicator>
-															<Heading
-																pb={2}
-																color={'blackAlpha.800'}
-																fontSize={{ 
-																	base: 18, 
-																	sm: 20, 
-																	md: 25, 
-																	lg: 25 
-																}}>
-																	MESSAGE
-															</Heading>
-														</FormLabel>
-														<ChakraBox
-															h={'100%'}
-															as={motion.div}
-															whileHover={{ scale: 1.01 }}>
-															<Textarea
-																p={4}
-																h={'100%'}
-																fontSize={{ 
-																	base: 13, 
-																	sm: 13.5, 
-																	md: 14, 
-																	lg: 14 
-																}}
-																borderRadius={'14px'}
-																color={'blackAlpha.800'}
-																bg={'whiteAlpha.800'}
-																placeholder={'Your message'}
-																_placeholder={{ 
-																	opacity: 1, 
-																	color: 'blackAlpha.300' 
-																}}
-																boxShadow={'md'}
-																border={'none'}
-																borderWidth={'0px'}
-																_hover={{ border: 'none' }}
-																focusBorderColor={'null'}
-																name='message'
-																resize={'none'}
-																id='message' />
-														</ChakraBox>
-												</Flex>
-										</ChakraBox>
-								</Flex>
-							</FormControl>
-							<ChakraBox
-								whileHover={{ scale: 1.02 }}
-								whileTap={{ scale: 0.99 }}
-								boxShadow={'md'}
-								bg={'whiteAlpha.800'}
-								variants={itemText}
-								py={1.5}
-								h={'100%'}
-								borderRadius={'14px'}
-								position={'relative'}
-								alignItems={'center'}>
-									<Button
-										position={'relative'}
+																	name='message'
+																	resize={'none'}
+																	id='message' />
+															</ChakraBox>
+													</Flex>
+											</ChakraBox>
+									</Flex>
+								</FormControl>
+								<ChakraBox
+									variants={itemText}
+									borderRadius={'14px'}
+									position={'relative'}>
+										<Flex
 										w={'100%'}
-										maxH={'full'}
-										borderRadius={'12px'}
-										variant={'none'}
-										textColor={'blackAlpha.800'}
-										disabled={state.submitting}
-										type='submit'>
-										<Heading
-											color={'blackAlpha.800'}
-											fontSize={{ 
-												base: 16, 
-												sm: 16, 
-												md: 16, 
-												lg: 18 
-										}}>
-											SUBMIT
-										</Heading>
-									</Button>
-							</ChakraBox>
-					</Flex>
-			</form>
-		</Flex>
+										justifyContent={'flex-end'}>
+											<Button
+												size={'sm'}
+												position={'relative'}
+												_hover={{ 'background-color': '#e4e4e4', borderRadius: 'lg' }}
+												borderRadius={'lg'}
+												variant={'none'}
+												textColor={'blackAlpha.800'}
+												disabled={state.submitting}
+												type='submit'>
+												<Heading
+													color={'blackAlpha.800'}
+													fontSize={{ 
+														base: 16, 
+														sm: 16, 
+														md: 16, 
+														lg: 12
+												}}>
+													Submit&#160;&gt;
+												</Heading>
+											</Button>
+										</Flex>
+
+								</ChakraBox>
+						</Flex>
+				</form>
+			</Flex>
+		</ChakraBox>
 	)
 }
 
