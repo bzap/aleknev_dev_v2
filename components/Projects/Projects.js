@@ -33,12 +33,6 @@ const Projects = forwardRef((props, ref) => {
 			ref={ref}
 			position={'relative'}
 			maxW={'100%'}
-			px={{ 
-				base: '6.5%', 
-				sm: '5%', 
-				md: '10%', 
-				lg: '12%' 
-			}}
 			w={'100%'}
 			id='1'
 			pt={{ 
@@ -76,7 +70,7 @@ const Projects = forwardRef((props, ref) => {
 								base: '0em', 
 								sm: '0em', 
 								md: '5em', 
-								lg: '5em' 
+								lg: '2em' 
 							}}
 							direction='column'
 							justifyContent={'center'}>
@@ -91,7 +85,7 @@ const Projects = forwardRef((props, ref) => {
 													<Box
 														key={idx}
 														display={{ base: 'flex', sm:'flex', md: 'flex' }}
-														w={{ sm:'100%', md: '100%', lg: '26em' }}
+														w={{ sm:'100%', md: '100%', lg: '35%' }}
 														justifyContent={'center'}>
 															{bp == 'base' || bp == 'sm' || bp == 'md' ? (
 																verticalItem('3em', "0" + (idx + 1).toString())
@@ -151,21 +145,21 @@ const verticalItem = (top, index) => {
 									base: 31, 
 									sm: 35, 
 									md: 40, 
-									lg: 45 
+									lg: 20
 								}}>
 									{index}
 								</Heading>
 							<Heading
 								color={'blackAlpha.800'}
 								position={'relative'}
-								top={-7}
-								pl={1}>
+								fontSize={20}
+								top={-5}>
 									&#x5f;
 							</Heading>
 						</Flex>
 						<Flex
 							as={motion.div}
-							whileHover={{ scale: 1.025 }}
+							whileHover={{ scale: 1.01 }}
 							viewport={{ once: true, amount:0.8 }}
 							flex={1}
 							position={'relative'}
@@ -211,17 +205,19 @@ const gitButton = () => {
 							<ChakraBox
 								as={motion.div}>
 									<Icon
+										pt={1}
+										pr={2}
 										w={{ 
 											base: '3.3em', 
 											sm: '3.8em', 
 											md: '5em', 
-											lg: '5em' 
+											lg: '1.7em' 
 										}}
 										h={{ 
 											base: '3.3em', 
 											sm: '3.8em', 
 											md: '5em', 
-											lg: '5em' 
+											lg: '1.7em' 
 										}}
 										color={'blackAlpha.800'}
 										as={IoMdReturnRight}/>
@@ -229,7 +225,7 @@ const gitButton = () => {
 							<ChakraBox
 								cursor={'pointer'}
 								as={motion.div}
-								whileHover={{ scale: 1.05 }}
+								_hover={{ 'background-color': '#e4e4e4', borderRadius: 'lg' }}
 								whileTap={{ scale: 0.95 }}
 								direction={'row'}>
 									<Link
@@ -237,10 +233,12 @@ const gitButton = () => {
 										href={'https://github.com/bzap'}
 										isExternal>
 											<Heading
+											                    py={1}
+																px={3}
 												color={'blackAlpha.800'}
-												fontSize={{ base: 34, sm: 37, md: 40, lg: 45 }}
+												fontSize={{ base: 34, sm: 37, md: 40, lg: 18 }}
 												fontWeight={'bold'}>
-													&nbsp;GITHUB
+													GITHUB
 											</Heading> 
 									</Link>
 							</ChakraBox>
