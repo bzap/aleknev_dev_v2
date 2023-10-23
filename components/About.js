@@ -6,10 +6,10 @@ import {
     chakra,
     Image,
     Icon,
-    Center,
-    List, 
     ListIcon,
-    ListItem,
+	Grid, 
+	Center,
+	GridItem,
     Spacer,
     shouldForwardProp,
 	useBreakpoint
@@ -22,6 +22,7 @@ import aboutText from '../public/data/AboutText';
 import { about, currentSkills, background, itemText, aboutItem } from '../styles/Variants';
 import { CgSmile } from 'react-icons/cg';
 import { forwardRef } from 'react';
+import { BiSubdirectoryRight } from 'react-icons/bi'
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -436,19 +437,6 @@ const skillsInfo = () => {
 					<ChakraBox
 						variants={currentSkills}>
 							<Flex
-								px={{
-									base: '2em', 
-									sm: '0.5em', 
-									md: '1em', 
-									lg: '1em', 
-									xl: '2.5em'
-								}}
-								pt={{
-									base: 0, 
-									sm: 0, 
-									md: '1em', 
-									lg: '0.5em'
-								}}
 								pb={{ 
 									base: 8, 
 									sm: 10, 
@@ -456,13 +444,31 @@ const skillsInfo = () => {
 									lg: 10 
 								}}
 								justify-content={'space-between'}
-								direction='row'
+								gap={5}
+								direction='column'
 								w={'100%'}>
-									{skillList(1)}
-									<Spacer/>
-									{skillList(2)}
-									<Spacer />
-									{skillList(3)}
+									<Flex
+									w={'100%'}
+									flexDir={'column'}>
+										<Heading
+										fontSize={'13'}
+										pb={1.5}
+										color='blackAlpha.800'>
+											Languages
+										</Heading>
+										{skillList(1)}
+									</Flex>
+									<Flex
+									w={'100%'}
+									flexDir={'column'}>
+										<Heading
+										fontSize={'13'}
+										pb={1.5}
+										color='blackAlpha.800'>
+											Frameworks and Databases
+										</Heading>
+										{skillList(2)}
+									</Flex>
 							</Flex>
 					</ChakraBox> 
         	</Flex>
@@ -500,45 +506,52 @@ const skillText = () => {
     )
 }
 
+// add the arrow next to languages
 const skillList = (pos) => { 
     return( 
-		<Flex>
-			<List spacing={{base: 4, sm: 8, md: 8, lg: 2}}>
-				{pos == 1 && [...Array(6)].map((item, idx) => (
-					skillItem(aboutText.skills[idx][0], aboutText.skills[idx][1])))}
-				{pos == 2 && [...Array(6)].map((item, idx) => (
-					skillItem(aboutText.skills[idx + 6][0], aboutText.skills[idx + 6][1])))}
-				{pos == 3 && [...Array(6)].map((item, idx) => (
-					skillItem(aboutText.skills[idx + 12][0], aboutText.skills[idx + 12][1])))}
-			</List>   
-		</Flex>     
+		<Flex
+		gap={3}>
+			<Icon 
+			w={6}
+			h={6}
+			as={BiSubdirectoryRight}/>
+			<Center
+			w={'100%'}
+			justifyContent={'space-between'}>
+					{pos === 1 && [...Array(8)].map((item, idx) => (
+						skillItem(aboutText.languages[idx][0], aboutText.languages[idx][1])))}
+					{pos === 2 && [...Array(8)].map((item, idx) => (
+						skillItem(aboutText.frameworksDatabases[idx][0], aboutText.frameworksDatabases[idx][1])))}
+			</Center>   
+		</Flex>
+  
     )
 }
 
 const skillItem = (name, ic) => { 
 	return(
-        <ListItem
+        <GridItem
 			key={name}>
 				<Flex
 					key={name}
 					w={'100%'}
 					alignItems={'center'}
+					gap={1}
 					direction={'row'}>
-						<ListIcon as={ic} color='black.800'/>
+						<Icon as={ic} color='black.800'/>
 						<Text
 							textAlign={'center'}
 							color={'blackAlpha.800'}
-							fontWeight={900}
 							fontSize={{ 
 								base: 0, 
-								sm: 13.5, 
-								md: 14, 
-								lg: 15 
+								sm: 12, 
+								md: 12, 
+								lg: 12 
 							}}>
 								&thinsp;{name}
 						</Text>
 				</Flex>
-        </ListItem>
+        </GridItem>
     )
 }
 

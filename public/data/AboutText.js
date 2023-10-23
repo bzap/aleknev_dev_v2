@@ -16,7 +16,14 @@ import {
         SiMysql,
         SiAmazonaws,
         SiNpm,
-        SiGit
+        SiExpress,
+        SiNextdotjs,
+        SiDjango,
+        SiPostgresql,
+        SiMongodb,
+        SiGoogle,
+        SiGit,
+        SiDocker
     } from "react-icons/si"
 
 const aboutText = { 
@@ -24,26 +31,26 @@ const aboutText = {
                 \nWhen I\'m not developing something I might be bouldering or furthering my quest for the endgame mechanical keyboard. The latter of which I\'ve come to think of as a paradox by now.
                 \nCurrently I\'m looking for new opportunities as a developer! Hire me?`,
     skillBackground: 'I always love to tinker around and explore new things. The following are a few of the ones I’ve recently worked with the most: ',
-    skills: [
-                ['Python', SiPython], 
-                ['JS', SiJavascript], 
-                ['C++', SiCplusplus], 
-                ['C', SiC], 
-                ['Ruby', SiRuby], 
-                ['PHP', SiPhp], 
-                ['Java', SiJava], 
-                ['WebAssembly', SiWebassembly], 
-                ['React', SiReact], 
-                ['Bootstrap', SiBootstrap], 
-                ['jQuery', SiJquery], 
-                ['VueJS', SiVuedotjs], 
-                ['Ruby on Rails', SiRubyonrails], 
-                ['HTML / CSS', SiCss3], 
-                ['MySQL', SiMysql], 
-                ['GIT', SiGit], 
-                ['AWS', SiAmazonaws], 
-                ['NodeJS / NPM', SiNpm]
-            ]
+    languages: [
+        ['JavaScript', SiJavascript],        
+        ['Python', SiPython],        
+        ['C++', SiCplusplus], 
+        ['C', SiC], 
+        ['Ruby', SiRuby], 
+        ['PHP', SiPhp], 
+        ['Java', SiJava], 
+        ['WebAssembly', SiWebassembly],           
+    ],
+    frameworksDatabases: [
+        ['React', SiReact],
+        ['Express.Js', SiExpress],
+        ['Next.Js', SiNextdotjs],
+        ['Bootstrap', SiBootstrap], 
+        ['Ruby on Rails', SiRubyonrails], 
+        ['MySQL', SiMysql], 
+        ['PostgresSQL', SiPostgresql],
+        ['MongoDB', SiMongodb]
+    ]
 }
 
 export default aboutText
