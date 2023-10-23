@@ -6,6 +6,7 @@ import {
     Heading,
     Center,
     chakra,
+    Text,
     shouldForwardProp
 } from '@chakra-ui/react';
 import { isValidMotionProp, motion } from "framer-motion";
@@ -19,12 +20,11 @@ const MobileTabs = () => {
     const [selectedTab, setSelectedTab] = useState(tabs[3])
     return (
         <Flex
-            pt={'1.5em'}
-            pb={'1.5em'}
+            pb={'0.5em'}
             justify={'flex-end'}>
                 <Flex
-                    direction={'column'}
-                    gap={'2em'}>
+                    pt={1}
+                    direction={'column'}>
                         {tabs.map((item, idx) => (
                             <Link
                                 key={idx}
@@ -35,22 +35,30 @@ const MobileTabs = () => {
                                 offset={0}
                                 duration={2200}>
                                     <Center
+                                        w={'100%'}
                                         className={item === selectedTab ? 'selected' : ''}
                                         onClick={() => {
                                             setSelectedTab(item)
                                         }}>
                                         <ChakraBox
+                                            w={'100%'}
+                                            borderRadius={'12px'}
                                             as={motion.div}
+                                            py={'2'}
+                                            pr={2}
+                                            pl={'4.5em'}
                                             cursor={'pointer'}
-                                            whileHover={{ scale: 1.05 }}
-                                            whileTap={{ scale: 0.90 }}>
-                                                <Center>
+                                            _hover={{ 'background-color': '#e4e4e480', 'boxShadow': 'sm'}}
+                   >
+                                                <Flex>
                                                     <Heading
-                                                        fontSize={16.5}
+                                                        w={'100%'}
+                                                        textAlign={'end'}
+                                                        fontSize={12}
                                                         color='blackAlpha.800'>
                                                         {item.label}
                                                     </Heading>
-                                                </Center>
+                                                </Flex>
                                         </ChakraBox>
                                     </Center>
                             </Link>

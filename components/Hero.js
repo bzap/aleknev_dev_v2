@@ -22,8 +22,8 @@ const ChakraBox = chakra(motion.div, {
 const Hero = forwardRef((props, ref) => {
 	return (
 		<Flex
-		position={'relative'}
-		zIndex={10}
+			position={'relative'}
+			zIndex={10}
 			ref={ref}
 			id={'home'}
 			minW={'100%'}
@@ -71,7 +71,7 @@ const Hero = forwardRef((props, ref) => {
 											position={'relative'}
 											zIndex={10}
 									variants={keyboardContainer}
-									minW={'100%'}
+									minW={'70%'}
 									h={'100%'}
 											bg={'whiteAlpha.700'}
 											backdropFilter='auto'

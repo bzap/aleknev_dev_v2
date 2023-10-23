@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { 
 	Center, 
 	Collapse, 
+	Icon,
 	IconButton, 
 	useDisclosure, 
 	chakra, 
@@ -9,6 +10,7 @@ import {
 	Heading, 
 	Flex, 
 	Container, 
+	Text,
 	Box, 
 	Spacer,
 	useBreakpoint 
@@ -16,7 +18,11 @@ import {
 import { Link } from "react-scroll/modules";
 import AnimatedTabs from './Tabs/Tabs';
 import { motion, isValidMotionProp } from "framer-motion";
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { CloseIcon } from '@chakra-ui/icons';
+import { FaLessThan, FaGreaterThan } from 'react-icons/fa'
+import { SiInstagram, SiGithub, SiLinkedin } from 'react-icons/si'
+import { HiMenu } from 'react-icons/hi'
+import { PiInstagramLogoFill, PiLinkedinLogoFill, PiGithubLogoFill, PiLink } from 'react-icons/pi'
 import MobileTabs from './Tabs/MobileTabs';
 import { navContainer } from '../styles/Variants';
 
@@ -39,20 +45,12 @@ const Header = ({ pos }) => {
 					<ChakraBox
 						as={motion.div}
 						initial={'hidden'}
-						variants={navContainer}
+						//={navContainer}
 						whileInView={'visible'}
 						viewport={{ once: true }}
 						backdropFilter='auto'
 						backdropBlur='8px'
-						w={{ 
-							base: '88%', 
-							sm: '90%', 
-							md: '80%', 
-							lg: '70%',
-							xl: '80%',
-							'2xl': '80%'
-	
-						}}
+						w={'100%'}
 						maxW={'60em'}
 						position='fixed'
 						zIndex={200}
@@ -60,7 +58,7 @@ const Header = ({ pos }) => {
 						borderRadius={'12px'}
 						bg='whiteAlpha.700'
 						justifyContent={'center'}>
-							<Box
+							{/* <Box
 								display={{ 
 									base: 'none', 
 									sm: 'none', 
@@ -68,13 +66,13 @@ const Header = ({ pos }) => {
 									lg: 'inline' 
 								}}>
 									{desktopContent(pos)}
-							</Box>
+							</Box> */}
 							<Box
 								display={{ 
 									base: 'inline', 
 									sm: 'inline', 
-									md: 'none', 
-									lg: 'none' 
+									md: 'inline', 
+									lg: 'inline' 
 								}}>
 									{mobileContent(isOpen, onToggle)}
 							</Box>
@@ -116,24 +114,46 @@ const mobileContent = (isOpen, onToggle) => {
 	return (
 		<Box
 			px={4}
-			py={'6px'}>
+			py={'4px'}>
 				<Flex
 					align={'center'}
 					justifyContent={'space-between'}
 					direction={'row'}>
 						{logoHeader()}
 						<Spacer />
+						<Center
+						pr={5}
+						gap={3}>
+							<Icon 
+							w={4}
+							h={4}
+							as={SiGithub}/>
+							<Icon 
+							w={4}
+							h={4}
+							as={SiInstagram}/>
+							<Icon 
+							w={4}
+							h={4}
+							as={SiLinkedin}/>
+						</Center>
 						<Flex>
 							<IconButton
+								borderRadius={'lg'}
+								_hover={{'background-color': '#e4e4e4'}}
+								_active={{'background-color': '#e4e4e4'}}
 								onClick={onToggle}
+								size={'md'}
 								icon={
 									isOpen ?
 									<CloseIcon
 										w={3}
 										h={3} /> 
-										:	<HamburgerIcon
-												w={5}
-												h={5} />
+										:	<Icon
+											as={HiMenu}
+											w={5}
+											h={5}
+											fontWeight={'bold'}/>
 										}
 										variant={'ghost'}
 										aria-label={'Toggle Navigation'}/>
@@ -155,23 +175,20 @@ const logoHeader = () => {
 			as={motion.div}
 			whileHover={{ scale: 1.02 }}
 			whileTap={{ scale: 0.98 }}>
-				{bp == 'base' 
-				|| bp == 'sm' 
-				|| bp == 'md' 
-				|| bp == 'lg' ? (
-					<Heading
-						pl={1}
-						fontSize={17}
-						color={'blackAlpha.800'}>
-							&lt;&thinsp;aleknev.dev&thinsp;&gt;
-					</Heading>
-				) : (
-					<Heading
-						fontSize={16}
-						color={'blackAlpha.800'}>
-							&lt;&thinsp;aleknev.dev&thinsp;&gt;
-					</Heading>
-				)}
+					<Center>
+						<Icon 
+						w={3}
+						h={3}
+						as={FaLessThan}/>
+						<Text
+						fontSize={14.5}>
+								&thinsp;aleknev&thinsp;
+						</Text>
+						<Icon 
+						w={3}
+						h={3}
+						as={FaGreaterThan}/>
+					</Center>
 		</ChakraBox>
 	) 
 }
