@@ -118,37 +118,7 @@ const About = forwardRef((props, ref) => {
 											sm: 'center', 
 											md: 'center', 
 											lg: 'flex-end' 
-										}}>	
-											<ChakraBox
-												variants={aboutItem}>			
-													<Flex
-														justifyContent={'flex-start'}
-														position={'relative'}
-														direction={'column'}
-														textAlign={{ 
-															base: 'start', 
-															sm: 'start', 
-															md: 'start', 
-															lg:'end'
-														}}>
-														<Icon
-															position={'relative'}
-															as={MdOutlineSubdirectoryArrowRight}
-															w={{ 
-																base: 0, 
-																sm: '0em', 
-																md: '0em', 
-																lg: '5.7em' 
-															}}
-															h={{ 
-																base: 0, 
-																sm: '0em', 
-																md: '0em', 
-																lg: '5.7em' 
-															}}
-															color={'blackAlpha.800'}/>
-													</Flex>
-											</ChakraBox>		
+										}}>		
 											<ChakraBox
 												zIndex={10}
 												position={'relative'}
@@ -247,36 +217,6 @@ const About = forwardRef((props, ref) => {
 											md: 'center', 
 											lg: 'flex-end' 
 										}}>
-											<ChakraBox
-												variants={aboutItem}>	
-													<Flex
-														justifyContent={'center'}
-														zIndex={10}
-														position={'relative'}
-														direction={'column'}
-														textAlign={{ 
-															base: 'start', 
-															sm: 'start', 
-															md: 'start', 
-															lg: 'end' 
-														}}>
-														<Icon
-															as={MdOutlineSubdirectoryArrowRight}
-															w={{
-																base: '0em', 
-																sm: '0em', 
-																md: '0em', 
-																lg: '5.7em'
-															}}
-															h={{
-																base: '0em',
-																sm: '0em', 
-																md: '0em', 
-																lg: '5.7em' 
-															}}
-															color={'blackAlpha.800'}/>
-													</Flex>
-											</ChakraBox>
 											<ChakraBox
 												whileHover={{ scale: 1.025 }}
 												variants={aboutItem}>

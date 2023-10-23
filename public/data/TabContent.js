@@ -1,7 +1,7 @@
 export const tabLabels = [
-    { label: "ABOUT"},
-    { label: "PROJECTS"},
-    { label: "CONTACT"}, 
+    { label: "About"},
+    { label: "Projects"},
+    { label: "Contact"}, 
     { label: 'Home' }
 ]
 
