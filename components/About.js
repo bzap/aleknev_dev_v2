@@ -7,6 +7,8 @@ import {
     Image,
     Icon,
     ListIcon,
+	List, 
+	ListItem,
 	Grid, 
 	Center,
 	GridItem,
@@ -67,7 +69,7 @@ const Background = ({bp}) => {
 					<ChakraBox
 						zIndex={10}
 						position={'relative'}
-						whileHover={{ scale: 1.025 }}
+						whileHover={{ scale: 1.01 }}
 						variants={aboutItem}>			
 							<Flex
 								flexDirection={{
@@ -120,7 +122,7 @@ const Background = ({bp}) => {
 					{/* <ChakraBox
 						zIndex={10}
 						position={'relative'}
-						whileHover={{ scale: 1.025 }}
+						whileHover={{ scale: 1.01 }}
 						variants={aboutItem}>			
 							<Flex
 								backdropFilter='auto'
@@ -146,6 +148,7 @@ const Background = ({bp}) => {
 const Experience = ({bp}) => {
 	return ( 
 		<ChakraBox
+		w={'100%'}
 		as={motion.div}
 		variants={background}
 		initial={'hidden'}
@@ -157,7 +160,8 @@ const Experience = ({bp}) => {
 					: bp == 'base' ? ({ once: true})
 					: ({ once: true })
 		}>
-			<Flex		
+			<Flex	
+				minW={'100%'}	
 				direction={{
 					base: 'column', 
 					sm: 'column', 
@@ -174,9 +178,10 @@ const Experience = ({bp}) => {
 					lg: 'flex-end' 
 				}}>		
 					<ChakraBox
+						w={'100%'}
 						zIndex={10}
 						position={'relative'}
-						whileHover={{ scale: 1.025 }}
+						whileHover={{ scale: 1.01 }}
 						variants={aboutItem}>			
 							<Flex
 								flexDirection={{
@@ -223,7 +228,7 @@ const Experience = ({bp}) => {
 																Experience
 													</Heading>
 											</ChakraBox>
-											{backgroundText()}
+											{experienceText()}
 									</ChakraBox>
 							</Flex>
 					</ChakraBox>			
@@ -266,7 +271,7 @@ const Skills = ({bp}) => {
 					lg: 'flex-end' 
 				}}>
 					<ChakraBox
-						whileHover={{ scale: 1.025 }}
+						whileHover={{ scale: 1.01 }}
 						//</Flex>variants={aboutItem}
 						>
 							<Flex
@@ -396,6 +401,58 @@ const backgroundText = () => {
 	)
 }
 
+const experienceText = () => { 
+	return (
+		<ChakraBox
+			w={'100%'}
+			variants={itemText}>
+				<Flex
+				pt={3}
+				w={'100%'}
+				flexDir={'column'}>
+					<Flex
+					flexDir={'row'}>
+						<Heading
+						fontSize={15}>
+							Software Developer
+						</Heading>
+						<Spacer/>
+						<Heading
+						fontSize={15}>
+							March 2023 - Present
+						</Heading>
+					</Flex>
+					<Text
+					as={'i'}
+					fontSize={12}>
+						AviaPro Consulting Inc.
+					</Text>
+					<Flex>
+					<List 
+					pt={2}
+					spacing={1}>
+						{aboutText.avpExperience.map((value, index) => {
+							return (
+								<ListItem>
+									<Flex
+									flexDir={'row'}>
+										<ListIcon as={BiSubdirectoryRight}/>
+										<Text
+										fontSize={12}>
+											{value}
+										</Text>
+									</Flex>
+								</ListItem>
+							)
+						})}
+
+					</List>
+					</Flex>
+				</Flex>
+		</ChakraBox>
+	)
+}
+
 const skillsInfo = () => { 
     return (
 			<Flex
@@ -451,7 +508,7 @@ const skillsInfo = () => {
 									w={'100%'}
 									flexDir={'column'}>
 										<Heading
-										fontSize={'13'}
+										fontSize={'15'}
 										pb={1.5}
 										color='blackAlpha.800'>
 											Languages
@@ -462,7 +519,7 @@ const skillsInfo = () => {
 									w={'100%'}
 									flexDir={'column'}>
 										<Heading
-										fontSize={'13'}
+										fontSize={'15'}
 										pb={1.5}
 										color='blackAlpha.800'>
 											Frameworks and Databases
@@ -495,9 +552,9 @@ const skillText = () => {
 								color={'gray.700'}
 								fontSize={{ 
 									base: 12, 
-									sm: 13, 
-									md: 13, 
-									lg: 13 
+									sm: 12, 
+									md: 12, 
+									lg: 12 
 								}}>
 									{aboutText.skillBackground}
 							</Text>
@@ -513,8 +570,6 @@ const skillList = (pos) => {
 		ml={-1}
 		gap={3}>
 			<Icon 
-			w={6}
-			h={6}
 			as={BiSubdirectoryRight}/>
 			<Center
 			w={'100%'}
@@ -539,7 +594,11 @@ const skillItem = (name, ic) => {
 					alignItems={'center'}
 					gap={1}
 					direction={'row'}>
-						<Icon as={ic} color='black.800'/>
+						<Icon 
+						as={ic}
+						w={2.5}
+						h={2.5}
+						 color='black.800'/>
 						<Text
 							textAlign={'center'}
 							color={'blackAlpha.800'}

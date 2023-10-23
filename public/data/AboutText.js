@@ -50,6 +50,12 @@ const aboutText = {
         ['MySQL', SiMysql], 
         ['PostgresSQL', SiPostgresql],
         ['MongoDB', SiMongodb]
+    ], 
+    avpExperience: [
+        ['Implemented and helped design an enterprise analysis application, driving a 24% increase in company revenue in the second and third quarter'],
+        ['Deployed production software to Amazon EC2 instances and provided regular maintenance and upgrades to server instances.'],
+        ['Provided a 35% improvement to internal tool load times by creating a REST API and updating the fetching procedures in each relevant tool.'],
+        ['Led the development of a React application that greatly reduced the workload of all company Analysts by providing a direct means of interfacing with the internal MySQL database.']
     ]
 }
 
