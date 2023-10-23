@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
 	Center, 
 	Collapse, 
@@ -25,12 +25,17 @@ const ChakraBox = chakra(motion.div, {
 });
 
 const Header = ({ pos }) => {
+
+	const bp = useBreakpoint({ ssr: false });
+	useEffect(() => {
+		console.log(bp)
+	})
 	const { isOpen, onToggle } = useDisclosure();
 	return (
 		<Container>
 			<Flex
 				justifyContent={'center'}
-				pt={'2'}>
+				pt={'4'}>
 					<ChakraBox
 						as={motion.div}
 						initial={'hidden'}
@@ -39,14 +44,17 @@ const Header = ({ pos }) => {
 						viewport={{ once: true }}
 						backdropFilter='auto'
 						backdropBlur='8px'
-						maxW={{ 
+						w={{ 
 							base: '88%', 
 							sm: '90%', 
 							md: '80%', 
-							lg: '76%' 
+							lg: '70%',
+							xl: '80%',
+							'2xl': '80%'
+	
 						}}
+						maxW={'80em'}
 						position='fixed'
-						w={'100%'}
 						zIndex={200}
 						boxShadow={'md'}
 						borderRadius={'12px'}
@@ -152,15 +160,16 @@ const logoHeader = () => {
 				|| bp == 'md' 
 				|| bp == 'lg' ? (
 					<Heading
-						fontSize={19}
+						pl={1}
+						fontSize={17}
 						color={'blackAlpha.800'}>
-							&lt;LINAS&gt;
+							&lt;&thinsp;aleknev.dev&thinsp;&gt;
 					</Heading>
 				) : (
 					<Heading
 						fontSize={19}
 						color={'blackAlpha.800'}>
-							&lt;&thinsp;LINAS&thinsp;ALEKNEVICIUS&thinsp;&gt;
+							&lt;&thinsp;aleknev.dev&thinsp;&gt;
 					</Heading>
 				)}
 		</ChakraBox>
