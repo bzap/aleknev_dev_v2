@@ -180,10 +180,10 @@ const logoHeader = () => {
 						w={3}
 						h={3}
 						as={FaLessThan}/>
-						<Text
+						<Heading
 						fontSize={14.5}>
 								&thinsp;aleknev&thinsp;
-						</Text>
+						</Heading>
 						<Icon 
 						w={3}
 						h={3}

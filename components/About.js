@@ -110,7 +110,7 @@ const Background = ({bp}) => {
 																base: 25, 
 																sm: 30, 
 																md: 38, 
-																lg: 22
+																lg: 18
 															}}>
 																Background
 													</Heading>
@@ -223,7 +223,7 @@ const Experience = ({bp}) => {
 																base: 25, 
 																sm: 30, 
 																md: 38, 
-																lg: 22
+																lg: 18
 															}}>
 																Experience
 													</Heading>
@@ -413,12 +413,12 @@ const experienceText = () => {
 					<Flex
 					flexDir={'row'}>
 						<Heading
-						fontSize={15}>
+						fontSize={14}>
 							Software Developer
 						</Heading>
 						<Spacer/>
 						<Heading
-						fontSize={15}>
+						fontSize={14}>
 							March 2023 - Present
 						</Heading>
 					</Flex>
@@ -482,7 +482,7 @@ const skillsInfo = () => {
 										base: 25, 
 										sm: 30, 
 										md: 38, 
-										lg: 22
+										lg: 18
 									}}>
 									Technical Skills
 							</Heading>
@@ -508,7 +508,7 @@ const skillsInfo = () => {
 									w={'100%'}
 									flexDir={'column'}>
 										<Heading
-										fontSize={'15'}
+										fontSize={14}
 										pb={1.5}
 										color='blackAlpha.800'>
 											Languages
@@ -519,7 +519,7 @@ const skillsInfo = () => {
 									w={'100%'}
 									flexDir={'column'}>
 										<Heading
-										fontSize={'15'}
+										fontSize={14}
 										pb={1.5}
 										color='blackAlpha.800'>
 											Frameworks and Databases

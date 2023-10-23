@@ -20,7 +20,7 @@ const Title = ({title}) => {
     return ( 
         <Flex
             position={'relative'}
-            zIndex={0}>s
+            zIndex={0}>
                 <Heading
                     color={'blackAlpha.800'}
                     position={'relative'}
@@ -28,7 +28,7 @@ const Title = ({title}) => {
                         base: '2.3em', 
                         sm: '3em', 
                         md: '5em', 
-                        lg: '2.4em' }}>
+                        lg: '1.7em' }}>
                             <Wave text={title}/>
                 </Heading>
         </Flex>
