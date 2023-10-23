@@ -11,7 +11,6 @@ const Layout = ({ children }) => {
                     width='100%' 
                     margin='auto' 
                     minH='120vh' 
-                    overflow={'hidden'}
                     userSelect={'none'}
                     left={0}
                     pl={0}

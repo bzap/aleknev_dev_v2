@@ -68,7 +68,7 @@ const Contact = forwardRef((props, ref) => {
 									whileInView={'visible'}
 									viewport={{ once: true, amount: 0.8 }}>
 									<Title
-										title={'Contact Me!'}/>
+										title={'Contact me!'}/>
 								</ChakraBox>
 						</Flex>
 						<ChakraBox

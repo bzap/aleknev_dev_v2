@@ -66,7 +66,7 @@ const Projects = forwardRef((props, ref) => {
 									whileInView={'visible'}
 									viewport={{ once: true, amount: 0.85 }}>
 										<Title
-											title={'Projects.'}/>
+											title={'Some projects.'}/>
 								</ChakraBox>
 						</Flex>
 						<Flex

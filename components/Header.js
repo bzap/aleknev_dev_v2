@@ -87,7 +87,7 @@ const Header = ({ pos }) => {
 const desktopContent = (pos) => { 
 	return ( 
 		<Flex	
-			px={8}
+			px={5}
 			py={'13px'}
 			align={'center'}
 			justifyContent={'space-between'}

@@ -27,6 +27,275 @@ const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 });
 
+const Background = ({bp}) => {
+	return ( 
+		<ChakraBox
+		as={motion.div}
+		variants={background}
+		initial={'hidden'}
+		whileInView={'visible'}
+		viewport={
+				bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.65 }) 
+					: bp == 'md' ? ({ once: true, amount: 0.65 }) 
+					: bp == 'sm' ? ({ once: true, amount: 0.5 }) 
+					: bp == 'base' ? ({ once: true})
+					: ({ once: true })
+		}>
+			<Flex		
+				direction={{
+					base: 'column', 
+					sm: 'column', 
+					md:'column',
+					lg:'row'
+				}}
+				w={'100%'}
+				zIndex={10}
+				gap={{ 
+					base: '0.5em', 
+					sm: '0.5em', 
+					md: '1em', 
+					lg:'6.5%'
+				}}
+				position={'relative'}
+				justifyContent={{ 
+					base: 'center', 
+					sm: 'center', 
+					md: 'center', 
+					lg: 'flex-end' 
+				}}>		
+					<ChakraBox
+						zIndex={10}
+						position={'relative'}
+						whileHover={{ scale: 1.025 }}
+						variants={aboutItem}>			
+							<Flex
+								flexDirection={{
+									base: 'center', 
+									sm: 'center', 
+									md:'center', 
+									lg:'flex-end'
+								}}
+								gap={'1em'}
+								bg={'whiteAlpha.700'}
+								backdropFilter='auto'
+								backdropBlur='1px'
+								boxShadow={'md'}
+								borderRadius={'20px'}>         
+									<ChakraBox
+										w={'100%'}
+										py={{ 
+											base: 6, 
+											sm: 8, 
+											md: 6, 
+											lg: 8 
+										}}
+										px={{ 
+											base: 6, 
+											sm: 8, 
+											md: 10, 
+											lg: 8
+										}}>
+											<ChakraBox
+												variants={aboutItem}>
+													<Heading
+															pb={3}
+															borderBottomWidth={'2px'}
+															borderBottomColor={'blackAlpha.100'}
+															color='blackAlpha.800'
+															fontWeight={900}
+															fontSize={{ 
+																base: 25, 
+																sm: 30, 
+																md: 38, 
+																lg: 22
+															}}>
+																Background
+													</Heading>
+											</ChakraBox>
+											{backgroundText()}
+									</ChakraBox>
+							</Flex>
+					</ChakraBox>
+					{/* <ChakraBox
+						zIndex={10}
+						position={'relative'}
+						whileHover={{ scale: 1.025 }}
+						variants={aboutItem}>			
+							<Flex
+								backdropFilter='auto'
+								backdropBlur='1px'
+								boxShadow={'md'}
+								borderRadius={'20px'}>         
+								<Image
+									justifyContent={'center'}
+									position={'relative'}
+									boxShadow={'xl'}
+									mt={'2px'}
+
+									borderRadius={'22px'}
+									opacity={0.9}
+									src={'/portrait.png'} />							
+						</Flex>
+					</ChakraBox> */}
+			</Flex>
+	</ChakraBox>
+	)
+}
+
+const Experience = ({bp}) => {
+	return ( 
+		<ChakraBox
+		as={motion.div}
+		variants={background}
+		initial={'hidden'}
+		whileInView={'visible'}
+		viewport={
+				bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.65 }) 
+					: bp == 'md' ? ({ once: true, amount: 0.65 }) 
+					: bp == 'sm' ? ({ once: true, amount: 0.5 }) 
+					: bp == 'base' ? ({ once: true})
+					: ({ once: true })
+		}>
+			<Flex		
+				direction={{
+					base: 'column', 
+					sm: 'column', 
+					md:'column',
+					lg:'row'
+				}}
+				w={'100%'}
+				zIndex={10}
+				position={'relative'}
+				justifyContent={{ 
+					base: 'center', 
+					sm: 'center', 
+					md: 'center', 
+					lg: 'flex-end' 
+				}}>		
+					<ChakraBox
+						zIndex={10}
+						position={'relative'}
+						whileHover={{ scale: 1.025 }}
+						variants={aboutItem}>			
+							<Flex
+								flexDirection={{
+									base: 'center', 
+									sm: 'center', 
+									md:'center', 
+									lg:'flex-end'
+								}}
+								minW={'50%'}
+								gap={'1em'}
+								bg={'whiteAlpha.700'}
+								backdropFilter='auto'
+								backdropBlur='1px'
+								boxShadow={'md'}
+								borderRadius={'20px'}>         
+									<ChakraBox
+										w={'100%'}
+										py={{ 
+											base: 6, 
+											sm: 8, 
+											md: 10, 
+											lg: 8 
+										}}
+										px={{ 
+											base: 6, 
+											sm: 8, 
+											md: 10, 
+											lg: 8
+										}}>
+											<ChakraBox
+												variants={aboutItem}>
+													<Heading
+															pb={3}
+															borderBottomWidth={'2px'}
+															borderBottomColor={'blackAlpha.100'}
+															color='blackAlpha.800'
+															fontWeight={900}
+															fontSize={{ 
+																base: 25, 
+																sm: 30, 
+																md: 38, 
+																lg: 22
+															}}>
+																Experience
+													</Heading>
+											</ChakraBox>
+											{backgroundText()}
+									</ChakraBox>
+							</Flex>
+					</ChakraBox>			
+			</Flex>
+
+	</ChakraBox>
+	)
+}
+
+const Skills = ({bp}) => { 
+	return ( 
+
+		<ChakraBox
+		as={motion.div}
+		//variants={background}
+		initial={'hidden'}
+		whileInView={'visible'}
+		viewport={
+				bp == 'lg' 
+				|| bp == 'xl' 
+				|| bp == '2xl' ? ({ once: true, amount: 0.80 })
+					: bp == 'md' ? ({ once: true, amount: 0.75 })
+					: bp == 'sm' ? ({ once: true, amount: 0.5 })
+					: bp == 'base' ? ({ once: true, amount: 0.5 })
+					: ({ once: true })
+		}>
+			<Flex
+				direction={{ 
+					base: 'column', 
+					sm: 'column', 
+					md: 'column', 
+					lg: 'row' 
+				}}
+				w={'100%'}
+				position={'relative'}
+				justifyContent={{ 
+					base: 'center', 
+					sm: 'center', 
+					md: 'center', 
+					lg: 'flex-end' 
+				}}>
+					<ChakraBox
+						whileHover={{ scale: 1.025 }}
+						//</Flex>variants={aboutItem}
+						>
+							<Flex
+								position={'relative'}
+								flexDirection={{ 
+									base: 'center', 
+									sm: 'center', 
+									md: 'center', 
+									lg: 'flex-end' 
+								}}
+								gap={'1em'}
+								zIndex={10}
+								bg={'whiteAlpha.700'}
+								backdropFilter='auto'
+								backdropBlur='2px'
+								boxShadow={'md'}
+								borderRadius={'20px'}>
+									<Box
+										position={'relative'}
+										zIndex={10}			
+										w={'100%'}>
+											{skillsInfo()}
+									</Box>
+							</Flex>
+					</ChakraBox>	
+			</Flex>
+	</ChakraBox>
+	)
+}
+
 const About = forwardRef((props, ref) => {
 	const bp = useBreakpoint()
     return(
@@ -34,26 +303,27 @@ const About = forwardRef((props, ref) => {
 			ref={ref}
 			position={'relative'}
 			maxW={'100%'} 
-			px={{
-				base: '6.5%', 
-				sm: '5%', 
-				md: '10%',
-				lg: 0
-			}}
-			w={'100%'} 
-			id='0' 
-			pt={{ 
-				base: '4em', 
-				sm:'6em', 
-				md: '6em', 
-				lg: '6em'
-			}}
-			pb={{ 
-				base: '7em', 
-				sm: '10em', 
-				md: '16em', 
-				lg: '15em' 
-			}}>
+			// px={{
+			// 	base: '6.5%', 
+			// 	sm: '5%', 
+			// 	md: '10%',
+			// 	lg: 0
+			// }}
+			// w={'100%'} 
+			// id='0' 
+			// pt={{ 
+			// 	base: '4em', 
+			// 	sm:'6em', 
+			// 	md: '6em', 
+			// 	lg: '6em'
+			// }}
+			// pb={{ 
+			// 	base: '7em', 
+			// 	sm: '10em', 
+			// 	md: '16em', 
+			// 	lg: '15em' 
+			// }}>
+			>
 			<Flex
 				justifyContent={'center'}
 				direction={'column'}>
@@ -65,194 +335,23 @@ const About = forwardRef((props, ref) => {
 								position={'relative'}
 								pb={0}
 								as={motion.div}
-								variants={about}
+								//variants={about}
 								initial={'hidden'}
 								whileInView={'visible'}
 								viewport={{ once: true, amount: 0.5 }}>
 									<Title
-										title={'About Me.'}/>
+										title={'About myself.'}/>
 							</ChakraBox>
 					</Flex>
 					<Flex
-						position={'relative'}
-						zIndex={10}
-						w={'100%'}
-						justifyContent={'center'}
-						direction={'column'}
-						gap={{
-							base: '1em', 
-							sm: '2em', 
-							md: '4em', 
-							lg:'5em'
-						}}>
-							<ChakraBox
-								as={motion.div}
-								variants={background}
-								initial={'hidden'}
-								whileInView={'visible'}
-								viewport={
-										bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.65 }) 
-											: bp == 'md' ? ({ once: true, amount: 0.65 }) 
-											: bp == 'sm' ? ({ once: true, amount: 0.5 }) 
-											: bp == 'base' ? ({ once: true})
-											: ({ once: true })
-								}>
-									<Flex		
-										direction={{
-											base: 'column', 
-											sm: 'column', 
-											md:'column',
-											lg:'row'
-										}}
-										w={'100%'}
-										zIndex={10}
-										gap={{ 
-											base: '0.5em', 
-											sm: '0.5em', 
-											md: '1em', 
-											lg:'6.5%'
-										}}
-										position={'relative'}
-										justifyContent={{ 
-											base: 'center', 
-											sm: 'center', 
-											md: 'center', 
-											lg: 'flex-end' 
-										}}>		
-											<ChakraBox
-												zIndex={10}
-												position={'relative'}
-												whileHover={{ scale: 1.025 }}
-												variants={aboutItem}>			
-													<Flex
-														flexDirection={{
-															base: 'center', 
-															sm: 'center', 
-															md:'center', 
-															lg:'flex-end'
-														}}
-														w={{
-															base: '100%', 
-															sm: '100%', 
-															md:'100%', 
-															lg:'45em'
-														}}
-														minW={'50%'}
-														gap={'1em'}
-														bg={'whiteAlpha.700'}
-														backdropFilter='auto'
-														backdropBlur='1px'
-														boxShadow={'md'}
-														borderRadius={'20px'}>         
-															<ChakraBox
-																w={'100%'}
-																py={{ 
-																	base: 6, 
-																	sm: 8, 
-																	md: 10, 
-																	lg: 10 
-																}}
-																px={{ 
-																	base: 6, 
-																	sm: 8, 
-																	md: 10, 
-																	lg: 10
-																}}>
-																	<ChakraBox
-																		variants={aboutItem}>
-																			<Heading
-																					pb={4}
-																					borderBottomWidth={'2px'}
-																					borderBottomColor={'blackAlpha.100'}
-																					color='blackAlpha.800'
-																					fontWeight={900}
-																					fontSize={{ 
-																						base: 25, 
-																						sm: 30, 
-																						md: 38, 
-																						lg: 40 
-																					}}>
-																						BACKGROUND 
-																			</Heading>
-																	</ChakraBox>
-																	{backgroundText()}
-															</ChakraBox>
-													</Flex>
-											</ChakraBox>			
-									</Flex>
-
-							</ChakraBox>
-							<ChakraBox
-								as={motion.div}
-								variants={background}
-								initial={'hidden'}
-								whileInView={'visible'}
-								viewport={
-										bp == 'lg' 
-										|| bp == 'xl' 
-										|| bp == '2xl' ? ({ once: true, amount: 0.80 })
-											: bp == 'md' ? ({ once: true, amount: 0.75 })
-											: bp == 'sm' ? ({ once: true, amount: 0.5 })
-											: bp == 'base' ? ({ once: true, amount: 0.5 })
-											: ({ once: true })
-								}>
-									<Flex
-										direction={{ 
-											base: 'column', 
-											sm: 'column', 
-											md: 'column', 
-											lg: 'row' 
-										}}
-										w={'100%'}
-										gap={{ 
-											base: '0.5em', 
-											sm: '0.5em', 
-											md: '1em', 
-											lg: '6.5%' 
-										}}
-										position={'relative'}
-										justifyContent={{ 
-											base: 'center', 
-											sm: 'center', 
-											md: 'center', 
-											lg: 'flex-end' 
-										}}>
-											<ChakraBox
-												whileHover={{ scale: 1.025 }}
-												variants={aboutItem}>
-													<Flex
-														position={'relative'}
-														flexDirection={{ 
-															base: 'center', 
-															sm: 'center', 
-															md: 'center', 
-															lg: 'flex-end' 
-														}}
-														w={{ 
-															base: '100%', 
-															sm: '100%', 
-															md: '100%', 
-															lg: '45em' 
-														}}
-														minW={'50%'}
-														gap={'1em'}
-														zIndex={10}
-														bg={'whiteAlpha.700'}
-														backdropFilter='auto'
-														backdropBlur='2px'
-														boxShadow={'md'}
-														borderRadius={'20px'}>
-															<Box
-																position={'relative'}
-																zIndex={10}			
-																w={'100%'}>
-																	{skillsInfo()}
-															</Box>
-													</Flex>
-											</ChakraBox>	
-									</Flex>
-							</ChakraBox>
-					</Flex>				
+					pt={'2em'}
+					w={'100%'}
+					gap={'2em'}
+					direction={'column'}>
+						<Background bp={bp}/>
+						<Experience bp={bp}/>
+						<Skills bp={bp}/>
+					</Flex>
 			</Flex>
 		</Box>
 )})
@@ -262,7 +361,7 @@ const backgroundText = () => {
 		<ChakraBox
 			variants={itemText}>
 				<Text
-					lineHeight={'1.3em'}
+					lineHeight={'1.2em'}
 					display={'inline-block'}
 					wordBreak={{ 
 						base: 'break-all', 
@@ -272,40 +371,16 @@ const backgroundText = () => {
 					}}
 					textAlign={'justify'}
 					sx={{ hypens: 'auto' }}
-					pt={8}
+					pt={4}
 					pb={2}
 					whiteSpace={'pre-line'}
 					color={'gray.700'}
 					fontSize={{ 
 						base: 12, 
-						sm: 13.5, 
-						md: 14, 
-						lg: 14 
+						sm: 12, 
+						md: 12, 
+						lg: 12
 					}}>
-						<Image
-							justifyContent={'center'}
-							position={'relative'}
-							boxShadow={'xl'}
-							ml={8}
-							mb={6}
-							mt={'2px'}
-							float={'right'}
-							fit='cover'
-							borderRadius={'22px'}
-							opacity={0.9}
-							h={{ 
-								base: '16em', 
-								sm: '18em', 
-								md: '20em', 
-								lg: '24em' 
-							}}
-							w={{ 
-								base: '11em', 
-								sm: '13em', 
-								md: '15em', 
-								lg: '16em' 
-							}}
-							src={'/portrait.png'} />
 						{aboutText.background}
 						<Icon
 							boxShadow={'xl'}
@@ -330,18 +405,18 @@ const skillsInfo = () => {
 					base: 6, 
 					sm: 8, 
 					md: 12, 
-					lg: 10
+					lg: 8
 				}}
 				pt={{ 
 					base: 6, 
 					sm: 8, 
 					md: 12, 
-					lg: 10 
+					lg: 8 
 				}}>
 					<ChakraBox
 						variants={aboutItem}>	
 							<Heading
-									pb={4}
+									pb={3}
 									borderBottomWidth={'2px'}
 									borderBottomColor={'blackAlpha.100'}
 									color='blackAlpha.800'
@@ -349,9 +424,9 @@ const skillsInfo = () => {
 										base: 25, 
 										sm: 30, 
 										md: 38, 
-										lg: 40 
+										lg: 22
 									}}>
-									SKILLS
+									Technical Skills
 							</Heading>
 					</ChakraBox>
 					<ChakraBox
@@ -372,13 +447,13 @@ const skillsInfo = () => {
 									base: 0, 
 									sm: 0, 
 									md: '1em', 
-									lg: '1em'
+									lg: '0.5em'
 								}}
 								pb={{ 
 									base: 8, 
 									sm: 10, 
 									md: 14, 
-									lg: 14 
+									lg: 10 
 								}}
 								justify-content={'space-between'}
 								direction='row'
@@ -397,8 +472,7 @@ const skillsInfo = () => {
 const skillText = () => { 
     return ( 
             <Flex
-				pt={8}
-				pb={8}
+				py={4}
 				direction={'column'}>
 					<ChakraBox
 						variants={item}>
@@ -415,9 +489,9 @@ const skillText = () => {
 								color={'gray.700'}
 								fontSize={{ 
 									base: 12, 
-									sm: 13.5, 
-									md: 14, 
-									lg: 14 
+									sm: 13, 
+									md: 13, 
+									lg: 13 
 								}}>
 									{aboutText.skillBackground}
 							</Text>
@@ -429,7 +503,7 @@ const skillText = () => {
 const skillList = (pos) => { 
     return( 
 		<Flex>
-			<List spacing={{base: 4, sm: 8, md: 8, lg: 8}}>
+			<List spacing={{base: 4, sm: 8, md: 8, lg: 2}}>
 				{pos == 1 && [...Array(6)].map((item, idx) => (
 					skillItem(aboutText.skills[idx][0], aboutText.skills[idx][1])))}
 				{pos == 2 && [...Array(6)].map((item, idx) => (
