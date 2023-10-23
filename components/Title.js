@@ -16,7 +16,7 @@ const Title = ({title}) => {
                         base: '2.3em', 
                         sm: '3em', 
                         md: '5em', 
-                        lg: '7em' }}>
+                        lg: '2.4em' }}>
                             <Wave text={title}/>
                 </Heading>
         </Flex>

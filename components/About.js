@@ -37,8 +37,8 @@ const About = forwardRef((props, ref) => {
 			px={{
 				base: '6.5%', 
 				sm: '5%', 
-				md: '10%', 
-				lg:'12%'
+				md: '10%',
+				lg: 0
 			}}
 			w={'100%'} 
 			id='0' 
