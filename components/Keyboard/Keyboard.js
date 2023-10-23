@@ -22,44 +22,61 @@ const Keyboard = ({ props }) => {
 	const bp = useBreakpoint()
 	return (
 		<Flex
+			position={'relative'}
+			zIndex={10}
 			h={'100%'}
-			pb={'1em'}
 			w={'100%'}
 			justifyContent={'center'}
 			alignItems={'center'}>
 				<ChakraBox
+							position={'relative'}
+							zIndex={10}
 					w={'100%'}
 					h={'100%'}
 					as={motion.div}
-					variants={keyboardContainer}>
+					//</Flex>variants={keyboardContainer}>
+					>
 						<ChakraBox
+									position={'relative'}
+									zIndex={10}
 							w={'100%'}
 							h={'100%'}
 							as={motion.div}
-							variants={heroKeyboard}>
+							//variants={heroKeyboard}>
+							>
 								<Flex
-									position={'relative'}
 									justifyContent={'center'}
 									alignItems={'center'}
-									zIndex={10}
-									h={'100%'}
+									zIndex={50}
+									position={'absolute'}
+									h={'150%'}
+									top={'-30%'}
 									w={'100%'}>
-										<Canvas dpr={[1, 2]}>
-										<pointLight position={[0, 0, 0]} intensity={2} color="#fff" />
+										<Canvas 
+										zIndex={50}
+										camera={{ position: [0, 5, 50], fov: 50 }}
+										dpr={[1, 2]}>
+										<ambientLight />
+										<pointLight  
+											color={'fff'} 
+											distance={5}
+											angle={0.15}
+											attenuation={5}
+											anglePower={5} />
 												<Suspense fallback={null}>
 													{props !== undefined && (
 														<Environment path="/" files="rooitou_park_1k.hdr" />,
 															props !== undefined && (
 																<Bounds
 																	fit
-																	clip
+																	
 																	observe
 																	margin={
-																		bp == 'xl' ? 0.40
-																		: bp == '2xl' ? 0.55
+																		bp == 'xl' ? 1
+																		: bp == '2xl' ? 1
 																		: bp == 'md' || bp == 'lg' ? 1.1
 																		: bp == 'sm' ? 1
-																		: 0.7 }>
+																		: 1.2 }>
 																			<Model innerLoading={props} />
 																</Bounds>
 															)
@@ -82,7 +99,7 @@ const Keyboard = ({ props }) => {
 
 const Model = (innerLoading) => {
 	const loadingStates = innerLoading.innerLoading.outerLoading.states
-	const gltf = useLoader(GLTFLoader, "/model/keyboard15.glb");
+	const gltf = useLoader(GLTFLoader, "/model/keyboard.glb");
 	loadingStates.setLoading(false)
 	return (
 		<mesh>
