@@ -1,0 +1,52 @@
+import {
+    Center,
+    Flex,
+} from '@chakra-ui/react';
+import projects from '../public/data/ProjectText';
+import { useState } from "react";
+import { motion, isValidMotionProp } from "framer-motion";
+
+## Background
+This was a collaborative effort by my groupmates (Kenneth Mak, Kalindu Sembakutti, Claire Elchuk) and I for our Capstone project. We initially recognized that there was an absence in post-op support in breast cancer patients, especially when it came to treating and keeping track of range-of-motion issues. In turn, we sought to create a mobile application that can take different measurements, track results and help inform the patient of their situation.
+<br/>
+<br/>
+## Breakdown
+In terms of measurement, the application has a component dedicated to the assessment of the primary categories of movement that would typically be restricted after an operation. Each measurement is taken by an automatic process that guides the user to positioning the phone correctly, while still taking accessibility into account. When the phone is in the correct position and the user initiates movement, it records and processes measurements from the accelerometer, and subsequently submits the results to the server when the process is complete. We talked with real breast cancer survivors as well as a few physiotherapists on their thoughts and for any feedback on this process.  
+<br/>
+<Center
+    py={'1em'}
+    gap={{base: '2em', sm: '2em', md:'4em', lg: '7em'}}>
+        <Flex> 
+            ![The home screen.](/screenshots/go1.png_600_1068)
+        </Flex> 
+        <Flex>
+            ![The assessment screen.](/screenshots/go2.png_600_1068)
+        </Flex>
+</Center>
+<br/>
+<br/>
+For other times, when the user just wanted to track their progress, we created a component that can fetch their personal results from a server. It provides tabs to filter out different movements, the option for a more detailed view, and the option to display their progress of a specified movement in a graph. We used an Amazon S3 bucket to store user accounts and their own personal data.  
+<br/>
+<br/>
+<Center
+    py={'1em'}
+    position={'relative'}
+    gap={{base: '2em', sm: '2em', md:'4em', lg: '7em'}}
+    direction={'row'}>
+            <Center>
+                ![The previous results screen.](/screenshots/go3.png_600_1078)
+            </Center>
+            <Center>
+                ![The graph screen.](/screenshots/go4.png_600_840)
+            </Center>
+</Center>
+<br/>
+<br/>
+Albeit not quite finished due to time constraints, we also included a component which provided the user with exercise suggestions based on the range their measurements fall under, as well as pointers to informational resources.  
+<br/>   
+<br/>
+## Other Notes    
+The development of this application presented us with two significant barriers. Of course, one of them was ensuring the accuracy of the measurements taken, as well as ensuring consistency across both platforms. By the end, we felt that we were somewhat limited by the accelerometer, and we were interested in utilizing more sensors such as the gyroscope. The second barrier was user privacy. We were concerned with the effect of storing potentially sensitive data relevant to their treatments, and so we explored alternative routes that would involve storing the data locally on the phone. In the end we decided we would disclose what is happening with the data and ensure that we take a secure approach to using it.  
+<br/>
+As a final note, while I did contribute to the development of the measurements, more of my time went into the design of the UI, tracking and filtering the results, the graphs, and the suggestions. I’m also proud to say we won the People’s Choice Award for the Computer Science department!
+<br/>

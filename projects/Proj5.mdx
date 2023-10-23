@@ -1,0 +1,36 @@
+import { Center } from '@chakra-ui/react';
+import projects from '../public/data/ProjectText';
+
+## Background
+This was another collaborative effort between a classmate (Kenneth Mak) and I. Jupyter Notebook allows editing and running notebook documents within a browser. By default, it provides a kernel to run Python code, with more languages provided by the community. For our use case, we wanted to run P0. The goal of this project was to apply our knowledge of parsing, syntax-directed translation, and code generation.
+<br/>
+One approach to creating a custom kernel for Jupyter was by creating a wrapper. This meant that the wrapper kernel would run Python as its language by default, however it would be capturing the standard output of a program run within it. Using that approach, our implementation involved taking the inputted P0 code from a Jupyter cell, scanning and parsing it, and using a custom code generator to translate the P0 code into Python. 
+<br/>
+<br/>
+## Breakdown
+The first half was split into two key components - the scanner and the parser. The scanner would take the input, scan each character one by one, and then talk to the parser. The parser would analyse what was scanned and break it down (into blocks, unary operators, procedure, variables, etc.) to be translated into the equivalent Python code. 
+<br/>
+<Center
+    py={'1em'}
+    gap={'3em'}
+    direction={'row'}>
+        <Center>
+            ![The scanner and parser in action.](/screenshots/p01.png_910_504)
+        </Center>
+        <Center>
+            ![The scanner and parser in action.](/screenshots/p02.png_1090_946)
+        </Center>
+</Center>
+<br/>
+<br/>
+We could then take that Python code, compile it, run it, and signal its output to the kernel. This half was split into two more key components – the container and the kernel itself. The container would run the Python code and capture the output. It would then send the output as a string to the base kernel. The base kernel is simply there to listen to the cell and the container and respond appropriately.
+<br/>
+<br/>
+## A Limitation
+The single biggest limitation to this approach was with user input due to the nature of capturing standard output. The input feed was immediately cut off when calling input() within the environment in which the code was run, and so it would always produce an EOF error.
+<Center
+    py={'1em'}>
+        ![The limitation.](/screenshots/p03.png_2736_1292)
+</Center>
+<br/>
+<br/>

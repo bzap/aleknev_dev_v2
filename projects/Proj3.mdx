@@ -1,0 +1,36 @@
+import { Center } from '@chakra-ui/react';
+import projects from '../public/data/ProjectText';
+
+## Background
+This was a project that aimed to try and implement various topics learned throughout my degree such as searching and sorting algorithms, compression, lexical analysis, and GUI development. I wanted something that does not rely on a cloud orientated service and instead focuses on solving the problem of a large dataset locally. As a result, performance was a concern because any massive delay can ruin user experience. In addition to that, having to run it locally means the performance will vary based on the machine used.
+<br/>
+<br/>
+## Breakdown
+The toolkit is split into four different components. The first component is a script to import and compress downloaded data. Unsurprisingly, review data sourced from Amazon can produce very large JSON files, with some of them exceeding 40GB. Processing data like that can become very time consuming and very impractical to store. This script tries to tackle that by initially sorting and searching the data for the necessary forms using Merge Sort and Binary Search. These algorithms aren’t the wildest out there but are still very performant with respect to the type of data used. The script then creates a new object structure from the data and utilizes the Python Pickle module to serialize and compress it into far more reasonably sized files. 
+<br/>
+The second component creates an undirected graph from the new data, where the nodes are data points (e.g., each book, from the sample data provided), and the neighbouring edges are the common review words. The graph is then used to find the data points with the most similarities in order to provide recommendations. 
+<br/>
+<br/>
+<Center
+    py={'1em'}>
+        ![The second component.](/screenshots/ard2.png_1512_726)
+</Center>
+<br/>
+<br/>
+The third component outputs a word cloud of adjectives within a data point. It works by the going through the reviews, categorizing and then tagging the words that are adjectives. 
+<br/>
+<br/>
+<Center
+    py={'1em'}>
+        ![The third component.](/screenshots/ard3.png_1512_1196)
+</Center>
+<br/>
+<br/>
+The fourth component helps to retrieve the title of the data point from the Amazon website. For the scope of this project, I didn’t want to use their API and instead I created a web scraper. It’s very simple, in that it uses the Python library Mechanize to open the URL of the item and then retrieve the title from the XML data of the page. Mechanize also happened to be perfect in that there is no denial of service from Amazon when trying to access the page. 
+<br/>
+<Center
+    py={'1em'}>
+        ![The fourth component.](/screenshots/ard1.png_1512_332)
+</Center>
+<br/>
+<br/>

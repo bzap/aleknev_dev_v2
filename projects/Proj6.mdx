@@ -1,0 +1,52 @@
+import {
+    Center, 
+    Flex,
+    Grid
+} from '@chakra-ui/react';
+import projects from '../public/data/ProjectText';
+
+## Background
+This was a project that focused on creating a 3D geometric terrain and applying shading and lighting to it. The goal was to differentiate the visual fidelity of shading and lighting between two mesh generation techniques and assess the impact of performance on the initial render.
+<br/>
+<br/>
+## Breakdown
+To simplify, the terrain is initially generated into vectors using either a fault or circle algorithm (both algorithms are based upon descriptions given by LightHouse3D: http://www.lighthouse3d.com/). In order to provide lighting and shading to the terrain, a camera is initialized using GLUT, and the mesh normals are generated and stored in another vector. The terrain is then rendered by OpenGL by accessing the correct vertices and normals within each vector and displaying them as either quadrilaterals or triangles. By far the most trouble I had was in the generation of mesh normals, as it was very easy to get lost in the various matrices and to incorrectly map a number to an array. A single incorrect number meant that the shading and lighting will not fit to each of the thousands of generated vertices at all. 
+<br/>
+<br/>
+<Center
+    py={'1em'}
+    position={'relative'}
+    direction={'row'}>
+        <Flex>
+            ![Triangle generation.](/screenshots/gen1.png_508_308)
+        </Flex>
+        <Flex>
+            ![Square generation.](/screenshots/gen2.png_508_308)
+        </Flex>
+</Center>
+<br/>
+<br/>
+It features three different key operations. The first, as I described above, is calculating and generating the terrain based on the options that the user selects. This even provides the option to view the terrain as a wireframe. 
+The second operation is the ability to pan and rotate the camera around the generated terrain. Lastly, the third is a bird’s eye view of the terrain in the form of a mini map.
+<br/>
+<Grid
+    alignItems={'center'}
+    templateColumns='repeat(3, 1fr)'
+    py={'1em'}
+    position={'relative'}
+    direction={'column'}>
+        <Flex>
+            ![The circles algorithm.](/screenshots/gen3.png_1578_1180)
+        </Flex>
+        <Flex
+        w={'100%'}
+        h={'100%'}>
+            ![The minimap.](/screenshots/gen5.png_740_602)
+        </Flex>
+        <Flex>
+            ![The fault algorithm.](/screenshots/gen4.png_1578_1180)
+        </Flex>
+</Grid>
+<br/>
+
+
