@@ -510,6 +510,7 @@ const skillText = () => {
 const skillList = (pos) => { 
     return( 
 		<Flex
+		ml={-1}
 		gap={3}>
 			<Icon 
 			w={6}

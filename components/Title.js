@@ -4,11 +4,23 @@ import {
 } from '@chakra-ui/react';
 import Wave from './Variants/Wave';
 
+const underLined = {
+    About: 'About',
+    Some: 'Projects.',
+    Contact: 'Contact'
+}
+
 const Title = ({title}) => { 
+    // console.log(titxe.split(' '))
+    let splitTitle = title.split(' ')
+    console.log(splitTitle, underLined[splitTitle[0]])
+    if (splitTitle[0] === underLined[splitTitle[0]]){
+        console.log('future')
+    }
     return ( 
         <Flex
             position={'relative'}
-            zIndex={0}>
+            zIndex={0}>s
                 <Heading
                     color={'blackAlpha.800'}
                     position={'relative'}

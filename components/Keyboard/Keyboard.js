@@ -24,14 +24,7 @@ const Keyboard = ({ props }) => {
 		<Flex
 			h={'100%'}
 			pb={'1em'}
-			w={{ 
-				base: '100%', 
-				sm: '100%', 
-				md: '100%', 
-				lg: '100%', 
-				xl: '65%', 
-				'2xl': '65%' 
-			}}
+			w={'100%'}
 			justifyContent={'center'}
 			alignItems={'center'}>
 				<ChakraBox
