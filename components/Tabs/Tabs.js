@@ -80,7 +80,7 @@ const AnimatedTabs = ({pos}) => {
 												zIndex={16}>
 													<Center>
 														<Heading
-														fontSize={{base: 14, sm: 15, md: 15, lg: 15.5}}
+														fontSize={{base: 14, sm: 14, md: 14, lg: 14}}
 														color='blackAlpha.800'>
 															{item.label}
 														</Heading>	
@@ -102,7 +102,7 @@ const AnimatedTabs = ({pos}) => {
 													exit={{opacity:0}}	
 													bg={'whiteAlpha.900'}
 													px={4}
-													py={'7px'}
+													py={'4.5px'}
 													borderRadius={'12px'}
 													boxShadow={'md'}>
 													<ChakraBox 

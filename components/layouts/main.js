@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
             w={'100%'}
             bg='#F2F2F2'>
                 <Container
-                    maxW='80em' 
+                    maxW='60em' 
                     width='100%' 
                     margin='auto' 
                     minH='120vh' 

@@ -53,7 +53,7 @@ const Header = ({ pos }) => {
 							'2xl': '80%'
 	
 						}}
-						maxW={'80em'}
+						maxW={'60em'}
 						position='fixed'
 						zIndex={200}
 						boxShadow={'md'}
@@ -88,7 +88,7 @@ const desktopContent = (pos) => {
 	return ( 
 		<Flex	
 			px={8}
-			py={'15px'}
+			py={'13px'}
 			align={'center'}
 			justifyContent={'space-between'}
 			direction={'row'}>
@@ -167,7 +167,7 @@ const logoHeader = () => {
 					</Heading>
 				) : (
 					<Heading
-						fontSize={19}
+						fontSize={16}
 						color={'blackAlpha.800'}>
 							&lt;&thinsp;aleknev.dev&thinsp;&gt;
 					</Heading>
