@@ -25,11 +25,6 @@ const ChakraBox = chakra(motion.div, {
 });
 
 const Header = ({ pos }) => {
-
-	const bp = useBreakpoint({ ssr: false });
-	useEffect(() => {
-		console.log(bp)
-	})
 	const { isOpen, onToggle } = useDisclosure();
 	return (
 		<Container>

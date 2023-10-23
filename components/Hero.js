@@ -24,13 +24,7 @@ const Hero = forwardRef((props, ref) => {
 		<Container
 			ref={ref}
 			id={'home'}
-			maxW={'100%'}
-			px={{ 
-				base: '6.5%', 
-				sm: '5%', 
-				md: '10%', 
-				lg: '12%' 
-			}}
+			maxW={'80em'}
 			direction={'column'}
 			flex={1}
 			pb={{ 
@@ -138,19 +132,12 @@ const keyboard = (loading) => {
 const introText = () => { 
 	return ( 
 		<Flex
-			pl={{
-				base: 0, 
-				sm: 0, 
-				md: 0, 
-				lg: 0, 
-				xl: '1em', 
-				'2xl': '1em'
-			}}
 			position={'relative'}
 			zIndex={1}
 			direction={'column'}
 			justifyContent={'center'}
-			w={'100%'}>
+			w={'100%'}
+			h={'100%'}>
 			<Flex
 				position={'relative'}
 				justifyContent={{
@@ -172,8 +159,8 @@ const introText = () => {
 									sm: '9vw', 
 									md: '8vw', 
 									lg: '7vw', 
-									xl: '6.3vw', 
-									'2xl': '6.5vw' 
+									xl: '3.9vw', 
+									'2xl': '3.5vw' 
 								}}>
 									<Wave text={'Hey! I\'m Linas.'} />
 							</Heading>
@@ -195,6 +182,7 @@ const introText = () => {
 					lg: 'start'
 				}}>
 					<ChakraBox
+						pt={'3'}
 						px={{
 							base: 0, 
 							sm: 0, 
@@ -214,9 +202,9 @@ const introText = () => {
 									md: '1.3em', 
 									lg: '1.3em', 
 									xl: '1.5em', 
-									'2xl': '1.5vw' 
+									'2xl': '0.9vw' 
 								}}>
-									I'm a developer based in Toronto that's on a pursuit for growth.
+									I'm a full-stack software developer based in Toronto.
 							</Text>
 					</ChakraBox>
 			</Flex>
