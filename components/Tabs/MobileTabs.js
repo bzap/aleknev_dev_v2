@@ -37,6 +37,14 @@ const MobileTabs = () => {
                         mt={-1}
                         variant={'unstyled'}>
                         {tabs.map((item, idx) => (
+                        <Link 
+                        key={idx}
+                        activeClass="active"
+                        to={idx.toString()}
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={900}>
                             <Tab
                             mt={1.5}
                             w={'full'}
@@ -44,22 +52,13 @@ const MobileTabs = () => {
                             _hover={{'bg': '#efefef'}}
                             _active={{'bg': '#e0e0e0'}}
                             >
-                                <Link 
-                                key={idx}
-                                activeClass="active"
-                                to={idx.toString()}
-                                spy={true}
-                                smooth={true}
-                                offset={0}
-                                duration={2200}>
                                     <Heading
                                     fontSize={12}>
                                         {item.label}
                                     </Heading>
-                                </Link>
-
+                
                             </Tab>
-
+                            </Link>
                         ))}
                         </Tabs>
 
