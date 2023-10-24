@@ -24,10 +24,13 @@ const MobileTabs = () => {
             pb={'0.5em'}
             justify={'flex-end'}>
                 <Flex
+                    w={'7.5em'}
+                    mr={3}
                     pt={1}
                     direction={'column'}>
                         {tabs.map((item, idx) => (
                             <Link
+                        
                                 key={idx}
                                 activeClass="active"
                                 to={idx.toString()}
@@ -37,7 +40,6 @@ const MobileTabs = () => {
                                 duration={2200}>
                                     <Center
                                         w={'100%'}
-                                        pr={2}
                                         className={item === selectedTab ? 'selected' : ''}
                                         onClick={() => {
                                             setSelectedTab(item)
@@ -55,18 +57,19 @@ const MobileTabs = () => {
                                             cursor={'pointer'}
                                             _hover={{ 
                                                 'background-color': '#e4e4e480',
-                                            }}
-                   >
-                                                <Flex
-                                                justifyContent={'end'}>
+                                            }}>
+                                                <Flex>
                                                     <Heading
-                                                        w={'100%'}
-                                                        textAlign={'end'}
-                                                        fontSize={12}
-                                                        color='blackAlpha.800'>
-                                                        {item.label}
-                                                    </Heading>
+                                                            w={'100%'}
+                                                            textAlign={'center'}
+                                                            fontSize={12}
+                                                            color='blackAlpha.800'>
+                                                            {item.label}
+                                                        </Heading>
                                                 </Flex>
+                                   
+
+                                          
                                         </Button>
                                     </Center>
                             </Link>

@@ -407,46 +407,65 @@ const experienceText = () => {
 			w={'100%'}
 			variants={itemText}>
 				<Flex
-				pt={3}
+				pt={6}
 				w={'100%'}
-				flexDir={'column'}>
+				gap={2}
+				flexDir={'row'}>
 					<Flex
-					flexDir={'row'}>
-						<Heading
-						fontSize={14}>
-							Software Developer
-						</Heading>
-						<Spacer/>
+					w={'22%'}
+					borderRightWidth={'2px'}
+					borderRightColor={'blackAlpha.200'}
+					flexDir={'column'}>
 						<Heading
 						fontSize={14}>
 							March 2023 - Present
 						</Heading>
+						<Text
+						pr={2}
+						as={'i'}
+						color={'blackAlpha.700'}
+						fontSize={12}>
+							Toronto, ON	
+						</Text>
 					</Flex>
-					<Text
-					as={'i'}
-					fontSize={12}>
-						AviaPro Consulting Inc.
-					</Text>
+					<Flex
+					pl={4}
+					w={'70%'}
+					flexDir={'column'}>
+						<Heading
+						fontSize={14}>
+							Software Developer
+						</Heading>
+						<Text
+						as={'i'}
+						color={'blackAlpha.700'}
+						fontSize={12}>
+							AviaPro Consulting Inc.
+						</Text>
+						<Text
+						pt={2}
+						color={'blackAlpha.700'}
+						fontSize={12}>
+							{aboutText.avpExperience[0]}
+						</Text>
+					</Flex>
 					<Flex>
-					<List 
+					{/* <List 
 					pt={2}
 					spacing={1}>
-						{aboutText.avpExperience.map((value, index) => {
-							return (
 								<ListItem>
 									<Flex
 									flexDir={'row'}>
 										<ListIcon as={BiSubdirectoryRight}/>
 										<Text
 										fontSize={12}>
-											{value}
+											Resume
 										</Text>
 									</Flex>
 								</ListItem>
-							)
-						})}
+								
 
-					</List>
+					</List> */}
 					</Flex>
 				</Flex>
 		</ChakraBox>
@@ -590,6 +609,10 @@ const skillItem = (name, ic) => {
 			key={name}>
 				<Flex
 					key={name}
+					bg={'#e4e4e480'}
+					py={1}
+					px={2}
+					borderRadius={'lg'}
 					w={'100%'}
 					alignItems={'center'}
 					gap={1}
@@ -598,7 +621,7 @@ const skillItem = (name, ic) => {
 						as={ic}
 						w={2.5}
 						h={2.5}
-						 color='black.800'/>
+						color='blackAlpha.800'/>
 						<Text
 							textAlign={'center'}
 							color={'blackAlpha.800'}

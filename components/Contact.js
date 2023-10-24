@@ -116,9 +116,6 @@ const formBox = () => {
 				borderRadius={'22px'}
 				h={'100%'}
 				gap={'5em'}>
-
-
-				
 				<form
 					style={{ flex: 1, width: "100%" }}
 					onSubmit={handleSubmit}>
@@ -172,14 +169,13 @@ const formBox = () => {
 																		}}
 																		borderRadius={'12px'}
 																		color={'blackAlpha.800'}
-																		bg={'white'}
+																		bg={'#e4e4e480'}
 																		borderColor={'blackAlpha.600'}
-																		boxShadow={'sm'}
 																		border={'none'}
 																		placeholder={'Your email'}
 																		_placeholder={{ 
 																			opacity: 1, 
-																			color: 'blackAlpha.500' 
+																			color: 'blackAlpha.600' 
 																		}}
 																		borderWidth={'0px'}
 																		_hover={{ border: 'none' }}
@@ -220,13 +216,12 @@ const formBox = () => {
 																		}}
 																		borderRadius={'12px'}
 																		color={'blackAlpha.800'}
-																		bg={'white'}
-																		boxShadow={'sm'}
+																		bg={'#e4e4e480'}
 																		border={'none'}
 																		placeholder={'Your name'}
 																		_placeholder={{ 
 																			opacity: 1, 
-																			color: 'blackAlpha.500' 
+																			color: 'blackAlpha.600' 
 																		}}
 																		borderWidth={'0px'}
 																		_hover={{ border: 'none' }}
@@ -272,14 +267,12 @@ const formBox = () => {
 																		lg: 12 
 																	}}
 																	borderRadius={'14px'}
-																	color={'blackAlpha.800'}
-																	bg={'whiteAlpha.800'}
+																	bg={'#e4e4e480'}
 																	placeholder={'Your message'}
 																	_placeholder={{ 
 																		opacity: 1, 
-																		color: 'blackAlpha.500' 
+																		color: 'blackAlpha.600' 
 																	}}
-																	boxShadow={'sm'}
 																	border={'none'}
 																	borderWidth={'0px'}
 																	_hover={{ border: 'none' }}

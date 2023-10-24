@@ -27,8 +27,8 @@ const ScrollIndicator = () => {
                                 as={motion.div}
                                 variants={gitGT}>
                                     <Icon
-                                        w={'2em'}
-                                        h={'2em'}
+                                        w={'1.5em'}
+                                        h={'1.5em'}
                                         as={HiChevronDown}
                                     />
                             </ChakraBox>
@@ -37,8 +37,8 @@ const ScrollIndicator = () => {
                                 as={motion.div}
                                 variants={gitGT}>
                                     <Icon
-                                        w={'2em'}
-                                        h={'2em'}
+                                        w={'1.5em'}
+                                        h={'1.5em'}
                                         as={HiChevronDown}
                                     />
                             </ChakraBox>
@@ -47,8 +47,8 @@ const ScrollIndicator = () => {
                                 as={motion.div}
                                 variants={gitGT}>
                                     <Icon
-                                        w={'2em'}
-                                        h={'2em'}
+                                        w={'1.5em'}
+                                        h={'1.5em'}
                                         as={HiChevronDown}
                                     />
                             </ChakraBox>

@@ -44,13 +44,13 @@ const Hero = forwardRef((props, ref) => {
 						base: '5em', 
 						sm: '5em', 
 						md: '5em', 
-						lg: '7em'
+						lg: '0em'
 					}}
 					direction={'column'}>
 						<ChakraBox	
-									position={'relative'}
-									zIndex={10}
-							h={'70%'}
+							position={'relative'}
+							zIndex={10}
+							h={'100%'}
 							w={'100%'}
 							as={motion.div}
 							variants={heroContainer}
@@ -68,16 +68,11 @@ const Hero = forwardRef((props, ref) => {
 							viewport={{ once: true }}>
 								{introText()}
 								<ChakraBox
-											position={'relative'}
-											zIndex={10}
+									position={'relative'}
+									zIndex={10}
 									variants={keyboardContainer}
 									minW={'70%'}
-									h={'100%'}
-											bg={'whiteAlpha.700'}
-											backdropFilter='auto'
-											backdropBlur='1px'
-											boxShadow={'md'}
-											borderRadius={'20px'}>
+									h={'100%'}>
 										{keyboard(props.loading)}		
 								</ChakraBox>		
 						</ChakraBox>							

@@ -34,23 +34,21 @@ const Keyboard = ({ props }) => {
 					w={'100%'}
 					h={'100%'}
 					as={motion.div}
-					//</Flex>variants={keyboardContainer}>
-					>
+					variants={keyboardContainer}>
 						<ChakraBox
-									position={'relative'}
-									zIndex={10}
+							position={'relative'}
+							zIndex={10}
 							w={'100%'}
 							h={'100%'}
 							as={motion.div}
-							//variants={heroKeyboard}>
-							>
+							variants={heroKeyboard}>
 								<Flex
 									justifyContent={'center'}
 									alignItems={'center'}
 									zIndex={50}
 									position={'absolute'}
 									h={'150%'}
-									top={'-30%'}
+									top={'-70%'}
 									w={'100%'}>
 										<Canvas 
 										zIndex={50}

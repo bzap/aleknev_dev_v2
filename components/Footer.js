@@ -47,13 +47,6 @@ const Footer = () => {
                                     justifyContent={'center'}
                                     direction={'row'}
                                     alignItems={'center'}>
-                                        <Icon
-                                            w={3}
-                                            h={3}
-                                            position={'relative'}
-                                            alignItems={'center'}
-                                            color={'blackAlpha.400'}
-                                            as={BsFillLightningChargeFill} />
                                         <Text
                                             position={'relative'}
                                             color={'blackAlpha.400'}
@@ -65,13 +58,6 @@ const Footer = () => {
                                             }}>
                                                 &nbsp;Designed and developed by Linas&nbsp;
                                         </Text>
-                                        <Icon
-                                            w={3}
-                                            h={3}
-                                            position={'relative'}
-                                            alignItems={'center'}
-                                            color={'blackAlpha.400'}
-                                            as={BsFillLightningChargeFill} />
                                 </Flex>
                                 <Link 
                                     style={{ 'textDecoration': 'none' }}
@@ -89,13 +75,6 @@ const Footer = () => {
                                                     justifyContent={'center'}
                                                     direction={'row'}
                                                     alignItems={'center'}>
-                                                        <Icon
-                                                            w={3}
-                                                            h={3}
-                                                            position={'relative'}
-                                                            alignItems={'center'}
-                                                            color={'blackAlpha.400'}
-                                                            as={FaGithubAlt} />
                                                         <Text
                                                             position={'relative'}
                                                             color={'blackAlpha.400'}
@@ -105,15 +84,8 @@ const Footer = () => {
                                                                 md: 15, 
                                                                 lg: 12
                                                             }}>
-                                                            &nbsp;Site Repo&nbsp;
+                                                            Site Repo &gt;
                                                         </Text>
-                                                        <Icon
-                                                            w={3}
-                                                            h={3}
-                                                            position={'relative'}
-                                                            alignItems={'center'}
-                                                            color={'blackAlpha.400'}
-                                                            as={FaGithubAlt} />
                                                 </Flex>
                                         </ChakraBox>
                                 </Link>

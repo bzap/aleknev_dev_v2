@@ -85,7 +85,7 @@ const Projects = forwardRef((props, ref) => {
 													<Box
 														key={idx}
 														display={{ base: 'flex', sm:'flex', md: 'flex' }}
-														w={{ sm:'100%', md: '100%', lg: '35%' }}
+														w={{ sm:'100%', md: '100%', lg: '45%' }}
 														justifyContent={'center'}>
 															{bp == 'base' || bp == 'sm' || bp == 'md' ? (
 																verticalItem('3em', "0" + (idx + 1).toString())

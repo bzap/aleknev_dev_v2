@@ -140,10 +140,15 @@ const projectTitle = (props) => {
 const projectSkill = (props, icon) => {
     return (
         <ChakraBox
+            pt={'1'}
             key={props}
             //variants={pskillsItem}
             >
                 <Center
+                    bg={'#e4e4e480'}
+                    py={1}
+                    px={2.5}
+                    borderRadius={'lg'}
                     direction={'row'}>
                         <Icon 
                             w={2.5}
@@ -151,7 +156,7 @@ const projectSkill = (props, icon) => {
                             as={icon} 
                             color='black.500'/>
                         <Text
-                            color={'gray.700'}
+                            color={'blackAlpha.800'}
                             fontSize={{ 
                                 base: 10, 
                                 sm: 12, 
