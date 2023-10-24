@@ -23,6 +23,7 @@ import { SiInstagram, SiGithub, SiLinkedin } from 'react-icons/si'
 import { HiMenu } from 'react-icons/hi'
 import MobileTabs from './Tabs/MobileTabs';
 import { Link as ScrollLink } from "react-scroll/modules"
+import { navContainer } from '../styles/Variants';
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -37,7 +38,7 @@ const Header = ({ ref }) => {
 						py={1.5}
 						as={motion.div}
 						initial={'hidden'}
-						//={navContainer}
+						variants={navContainer}
 						whileInView={'visible'}
 						viewport={{ once: true }}
 						backdropFilter='auto'

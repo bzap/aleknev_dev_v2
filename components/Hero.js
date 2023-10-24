@@ -72,7 +72,6 @@ const Hero = forwardRef((props, ref) => {
 								viewport={{ once: true }}>
 									{introText()}
 									<ChakraBox
-										//bg={'red.100'}
 										variants={keyboardContainer}
 										w={'100%'}
 										h={'70%'}>
@@ -118,6 +117,8 @@ const introText = () => {
 			direction={'column'}
 			justifyContent={'center'}
 			w={'100%'}
+			position={'absolute'}
+			top={'10%'}
 			h={'30%'}>
 			<Flex
 				position={'relative'}

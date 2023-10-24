@@ -37,22 +37,18 @@ const Keyboard = ({ props }) => {
 					w={'100%'}
 					h={'100%'}
 					as={motion.div}
-					//variants={keyboardContainer}
-					>
+					variants={keyboardContainer}>
 						<ChakraBox
 							w={'100%'}
 							h={'100%'}
 							as={motion.div}
-							//variants={heroKeyboard}>
-							>
+							variants={heroKeyboard}>
 								<Flex
 									justifyContent={'center'}
 									alignItems={'center'}
 									zIndex={50}
 									h={'100%'}
-									// position={'absolute'}
-									// h={'150%'}
-									// top={'-70%'}
+									position={'absolute'}
 									w={'100%'}>
 										<Canvas 
 										shadows
@@ -89,8 +85,6 @@ const Keyboard = ({ props }) => {
 																			</mesh>
 																</Bounds>
 															)
-														
-										
 													)}
 					
 												</Suspense>
@@ -107,17 +101,17 @@ const Keyboard = ({ props }) => {
 	)
 }
 
-
 const Light = () => {
-	const directionalLightRef = useRef(null);
-	useHelper(directionalLightRef, DirectionalLightHelper, 1, 'red')
+	// const directionalLightRef = useRef(null);
+	// useHelper(directionalLightRef, DirectionalLightHelper, 1, 'red')
   
 	return (
 		<directionalLight
         castShadow
 		intensity={5}
 		position={[2, 10, 5]}
-		ref={directionalLightRef} />
+		// ref={directionalLightRef} />
+		/>
 	);
   };
 
