@@ -316,20 +316,19 @@ const About = forwardRef((props, ref) => {
 			// 	lg: 0
 			// }}
 			// w={'100%'} 
-			// id='0' 
-			// pt={{ 
-			// 	base: '4em', 
-			// 	sm:'6em', 
-			// 	md: '6em', 
-			// 	lg: '6em'
-			// }}
-			// pb={{ 
-			// 	base: '7em', 
-			// 	sm: '10em', 
-			// 	md: '16em', 
-			// 	lg: '15em' 
-			// }}>
-			>
+			id='0' 
+			pt={{ 
+				base: '4em', 
+				sm:'6em', 
+				md: '6em', 
+				lg: '6em'
+			}}
+			pb={{ 
+				base: '7em', 
+				sm: '10em', 
+				md: '16em', 
+				lg: '8em' 
+			}}>
 			<Flex
 				justifyContent={'center'}
 				direction={'column'}>

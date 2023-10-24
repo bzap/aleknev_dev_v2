@@ -46,7 +46,7 @@ const Projects = forwardRef((props, ref) => {
 				base: '7em', 
 				sm: '10em', 
 				md: '16em', 
-				lg: '15em' 
+				lg: '8em' 
 			}}>
 				<Flex
 					justifyContent={'center'}

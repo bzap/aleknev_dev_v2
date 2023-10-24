@@ -15,16 +15,12 @@ import {
 	Spacer,
 	useBreakpoint 
 } from '@chakra-ui/react';
-import { Link } from "react-scroll/modules";
-import AnimatedTabs from './Tabs/Tabs';
 import { motion, isValidMotionProp } from "framer-motion";
 import { CloseIcon } from '@chakra-ui/icons';
 import { FaLessThan, FaGreaterThan } from 'react-icons/fa'
 import { SiInstagram, SiGithub, SiLinkedin } from 'react-icons/si'
 import { HiMenu } from 'react-icons/hi'
-import { PiInstagramLogoFill, PiLinkedinLogoFill, PiGithubLogoFill, PiLink } from 'react-icons/pi'
 import MobileTabs from './Tabs/MobileTabs';
-import { navContainer } from '../styles/Variants';
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),

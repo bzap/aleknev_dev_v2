@@ -28,6 +28,12 @@ const ChakraBox = chakra(motion.div, {
 
 const Home = () => {
 	const [isLoading, setLoading] = useState(true)
+
+	const aboutRef = useRef(null)
+	const contactRef = useRef(null)
+	const projRef = useRef(null)
+	const heroRef = useRef(null)
+
 	return ( 
 		<Layout>
 			<AnimatePresence 
@@ -45,9 +51,9 @@ const Home = () => {
 			<Header/>
 			<Hero 
 				loading={{states: {isLoading, setLoading}}} />
-			<About />
-			<Projects/>
-			<Contact />
+			<About ref={aboutRef}/>
+			<Projects ref={projRef}/>
+			<Contact ref={contactRef}/>
 			<Footer/>
 		</Layout>
   )
