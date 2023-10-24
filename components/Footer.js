@@ -72,8 +72,8 @@ const Footer = () => {
                                                     alignItems={'center'}>
                                                     <Button
                                                         variant={'unstyled'}
-                                                        _hover={{'bg': '#e1e1e1'}}
-                                                        _active={{'bg': '#cfcfcf'}}
+                                                        _hover={{'bg': '#cfcfcf'}}
+                                                        _active={{'bg': '#bfbfbf'}}
                                                         borderRadius={'lg'}
                                                         size={'sm'}
                                                         >

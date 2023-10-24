@@ -29,7 +29,6 @@ const ChakraBox = chakra(motion.div, {
 const Header = ({ pos }) => {
 	const { isOpen, onToggle } = useDisclosure();
 	return (
-		<Container>
 			<Flex
 				justifyContent={'center'}
 				pt={'4'}>
@@ -65,7 +64,6 @@ const Header = ({ pos }) => {
 							</Box>
 					</ChakraBox>
 			</Flex>
-		</Container>
 	)
 }
 

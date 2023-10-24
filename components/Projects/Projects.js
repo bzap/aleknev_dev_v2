@@ -30,84 +30,87 @@ const ChakraBox = chakra(motion.div, {
 const Projects = forwardRef((props, ref) => {
 	const bp = useBreakpoint()
 	return (
-		<Box
-			ref={ref}
-			position={'relative'}
-			maxW={'100%'}
-			w={'100%'}
-			id='1'
-			pt={{ 
-				base: '4em', 
-				sm:'6em', 
-				md: '6em', 
-				lg: '6em'
-			}}
-			pb={{ 
-				base: '7em', 
-				sm: '10em', 
-				md: '16em', 
-				lg: '8em' 
-			}}>
-				<Flex
-					justifyContent={'center'}
-					direction={'column'}>
-						<Flex
-							position={'relative'}
-							justifyContent={'start'}>
-								<ChakraBox
-									as={motion.div}
-									variants={about}
-									initial={'hidden'}
-									whileInView={'visible'}
-									viewport={{ once: true, amount: 0.85 }}>
-										<Title
-											title={'Some projects.'}/>
-								</ChakraBox>
-						</Flex>
-						<Flex
-							position={'relative'}
-							zIndex={10}
-							pt={{ 
-								base: '0em', 
-								sm: '0em', 
-								md: '5em', 
-								lg: '2em' 
-							}}
-							direction='column'
-							justifyContent={'center'}>
-								<ChakraBox 
-									variants={projectContainer}>	
-										<Flex
-											direction={'row'}
-											justifyContent={'space-between'}
-											flexDirection='flex-start'
-											sx={{ 'flexWrap': 'wrap' }}>
-												{[...Array(6).keys()].map((item, idx) => (
-													<Box
-														key={idx}
-														display={{ base: 'flex', sm:'flex', md: 'flex' }}
-														w={{ sm:'100%', md: '100%', lg: '45%' }}
-														justifyContent={'center'}>
-															{bp == 'base' || bp == 'sm' || bp == 'md' ? (
-																verticalItem('3em', "0" + (idx + 1).toString())
-															) : (
-																verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())
-															)}
-													</Box> 
-												))}
-										</Flex>
-								</ChakraBox>
-						</Flex>
-				</Flex>
-				<ChakraBox
-					as={motion.div}
-					initial={'hidden'}
-					whileInView={'visible'}
-					viewport={{ once: true, amount: 0.9 }}
-					variants={gitText}>
-					{gitButton()}
-				</ChakraBox>
-		</Box> 
+		<Flex
+		justifyContent={'center'}>
+			<Box
+				ref={ref}
+				position={'relative'}
+				maxW={'60em'}
+				w={'100%'}
+				id='1'
+				pt={{ 
+					base: '4em', 
+					sm:'6em', 
+					md: '6em', 
+					lg: '6em'
+				}}
+				pb={{ 
+					base: '7em', 
+					sm: '10em', 
+					md: '16em', 
+					lg: '8em' 
+				}}>
+					<Flex
+						justifyContent={'center'}
+						direction={'column'}>
+							<Flex
+								position={'relative'}
+								justifyContent={'start'}>
+									<ChakraBox
+										as={motion.div}
+										variants={about}
+										initial={'hidden'}
+										whileInView={'visible'}
+										viewport={{ once: true, amount: 0.85 }}>
+											<Title
+												title={'Some projects.'}/>
+									</ChakraBox>
+							</Flex>
+							<Flex
+								position={'relative'}
+								zIndex={10}
+								pt={{ 
+									base: '0em', 
+									sm: '0em', 
+									md: '5em', 
+									lg: '2em' 
+								}}
+								direction='column'
+								justifyContent={'center'}>
+									<ChakraBox 
+										variants={projectContainer}>	
+											<Flex
+												direction={'row'}
+												justifyContent={'space-between'}
+												flexDirection='flex-start'
+												sx={{ 'flexWrap': 'wrap' }}>
+													{[...Array(6).keys()].map((item, idx) => (
+														<Box
+															key={idx}
+															display={{ base: 'flex', sm:'flex', md: 'flex' }}
+															w={{ sm:'100%', md: '100%', lg: '45%' }}
+															justifyContent={'center'}>
+																{bp == 'base' || bp == 'sm' || bp == 'md' ? (
+																	verticalItem('3em', "0" + (idx + 1).toString())
+																) : (
+																	verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())
+																)}
+														</Box> 
+													))}
+											</Flex>
+									</ChakraBox>
+							</Flex>
+					</Flex>
+					<ChakraBox
+						as={motion.div}
+						initial={'hidden'}
+						whileInView={'visible'}
+						viewport={{ once: true, amount: 0.9 }}
+						variants={gitText}>
+						{gitButton()}
+					</ChakraBox>
+			</Box> 
+		</Flex>
 	)
 })
 
@@ -188,6 +191,7 @@ const gitButton = () => {
 	return ( 
 		<Flex
 			position={'relative'}
+			zIndex={50}
 			pt={{
 				base: '6em', 
 				sm: '6em', 
@@ -209,8 +213,8 @@ const gitButton = () => {
 						isExternal>							
 								<Button
 								variant={'unstyled'}
-								_hover={{'bg': '#e1e1e1'}}
-								_active={{'bg': '#cfcfcf'}}
+								_hover={{'bg': '#cfcfcf'}}
+								_active={{'bg': '#bfbfbf'}}
 								borderRadius={'lg'}
 								size={'sm'}
 								>

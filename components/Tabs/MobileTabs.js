@@ -47,7 +47,7 @@ const MobileTabs = () => {
                             mt={1.5}
                             w={'full'}
                             borderRadius={'lg'}
-                            _hover={{'bg': '#efefef'}}
+                            _hover={{'bg': '#e4e4e480'}}
                             _active={{'bg': '#e0e0e0'}}
                             >
                                     <Heading

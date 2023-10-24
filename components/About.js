@@ -240,10 +240,9 @@ const Experience = ({bp}) => {
 
 const Skills = ({bp}) => { 
 	return ( 
-
 		<ChakraBox
 		as={motion.div}
-		//variants={background}
+		variants={background}
 		initial={'hidden'}
 		whileInView={'visible'}
 		viewport={
@@ -305,60 +304,63 @@ const Skills = ({bp}) => {
 const About = forwardRef((props, ref) => {
 	const bp = useBreakpoint()
     return(
-		<Box
-			ref={ref}
-			position={'relative'}
-			maxW={'100%'} 
-			// px={{
-			// 	base: '6.5%', 
-			// 	sm: '5%', 
-			// 	md: '10%',
-			// 	lg: 0
-			// }}
-			// w={'100%'} 
-			id='0' 
-			pt={{ 
-				base: '4em', 
-				sm:'6em', 
-				md: '6em', 
-				lg: '6em'
-			}}
-			pb={{ 
-				base: '7em', 
-				sm: '10em', 
-				md: '16em', 
-				lg: '8em' 
-			}}>
+		<Flex
+		justifyContent={'center'}>
 			<Flex
-				justifyContent={'center'}
-				direction={'column'}>
-					<Flex
-						position={'relative'}
-						direction={'column'}
-						alignItems={'start'}>
-							<ChakraBox
-								position={'relative'}
-								pb={0}
-								as={motion.div}
-								//variants={about}
-								initial={'hidden'}
-								whileInView={'visible'}
-								viewport={{ once: true, amount: 0.5 }}>
-									<Title
-										title={'About myself.'}/>
-							</ChakraBox>
-					</Flex>
-					<Flex
-					pt={'2em'}
-					w={'100%'}
-					gap={'2em'}
+				ref={ref}
+				position={'relative'}
+				maxW={'60em'} 
+				// px={{
+				// 	base: '6.5%', 
+				// 	sm: '5%', 
+				// 	md: '10%',
+				// 	lg: 0
+				// }}
+				// w={'100%'} 
+				id='0' 
+				pt={{ 
+					base: '4em', 
+					sm:'6em', 
+					md: '6em', 
+					lg: '6em'
+				}}
+				pb={{ 
+					base: '7em', 
+					sm: '10em', 
+					md: '16em', 
+					lg: '8em' 
+				}}>
+				<Flex
+					justifyContent={'center'}
 					direction={'column'}>
-						<Background bp={bp}/>
-						<Experience bp={bp}/>
-						<Skills bp={bp}/>
-					</Flex>
+						<Flex
+							position={'relative'}
+							direction={'column'}
+							alignItems={'start'}>
+								<ChakraBox
+									position={'relative'}
+									pb={0}
+									as={motion.div}
+									//variants={about}
+									initial={'hidden'}
+									whileInView={'visible'}
+									viewport={{ once: true, amount: 0.5 }}>
+										<Title
+											title={'About myself.'}/>
+								</ChakraBox>
+						</Flex>
+						<Flex
+						pt={'2em'}
+						w={'100%'}
+						gap={'2em'}
+						direction={'column'}>
+							<Background bp={bp}/>
+							<Experience bp={bp}/>
+							<Skills bp={bp}/>
+						</Flex>
+				</Flex>
 			</Flex>
-		</Box>
+		</Flex>
 )})
 
 const backgroundText = () => { 

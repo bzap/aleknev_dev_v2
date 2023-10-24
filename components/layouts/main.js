@@ -2,16 +2,33 @@ import React from 'react';
 import { Container, Flex, Box } from '@chakra-ui/react';
 
 const Layout = ({ children }) => { 
+    const containerRef = React.useRef(null)
+    function mouseMoveEvent(e) {
+        const { x, y } = containerRef.current.getBoundingClientRect();
+        containerRef.current.style.setProperty('--x', e.clientX - x);
+        containerRef.current.style.setProperty('--y', e.clientY - y);
+      }
+    
+    React.useEffect(() => {
+            if (containerRef) {
+            containerRef.current.addEventListener('mousemove', mouseMoveEvent)
+            }
+        return () => containerRef.current.removeEventListener('mousemove', mouseMoveEvent)
+    }, [containerRef])
     return (    
         <Box
-            height={'120vh'}
+            className={'grad'}
+            ref={containerRef}
+            maxH={'max-content'}
+            overflow={'hidden'}
             bg='#F2F2F2'>
                 <Container
-                    maxW='60em' 
+                    overflow={'scroll'}
+                    maxW='65em' 
                     width='100%' 
                     margin='auto' 
                     minH='120%' 
-                    bg='#F2F2F2'
+                    maxH={'100%'}
                     userSelect={'none'}
                     left={0}
                     pl={0}

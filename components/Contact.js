@@ -25,56 +25,60 @@ const ChakraBox = chakra(motion.div, {
 
 const Contact = forwardRef((props, ref) => {
 	return (
-		<ChakraBox
-			ref={ref}
-			as={motion.div}
-			variants={aboutItem}
-			initial={'hidden'} 
-			whileInView={'visible'}
-			position={'relative'}
-			zIndex={50}
-			viewport={{once: true}}
-			maxW={'100%'}
-			w={'100%'}
-			id='2'
-			pt={{ 
-				base: '4em', 
-				sm: '6em', 
-				md: '6em', 
-				lg: '6%' 
-			}}
-			pb={'4em'}>
-				<Flex
-					direction={'column'}
-					gap={{ 
-						base: '2em', 
-						sm: '2em', 
-						md: '3em', 
-						lg: '2em' 
-					}}>
-						<Flex
-							position={'relative'}
-							alignItems={'start'}>
-								<ChakraBox
-									as={motion.div}
-									variants={about}
-									initial={'hidden'}
-									whileInView={'visible'}
-									viewport={{ once: true, amount: 0.8 }}>
-									<Title
-										title={'Contact me!'}/>
-								</ChakraBox>
-						</Flex>
-						<ChakraBox
-							as={motion.div}
-							variants={aboutItem}
-							initial={'hidden'}
-							whileInView={'visible'}
-							viewport={{ once: true, amount: 0.8 }}>
-								{formBox()}
-						</ChakraBox>
-				</Flex>
-		</ChakraBox>
+		<Flex
+		justifyContent={'center'}>
+			<ChakraBox
+				ref={ref}
+				as={motion.div}
+				variants={aboutItem}
+				initial={'hidden'} 
+				whileInView={'visible'}
+				position={'relative'}
+				zIndex={50}
+				viewport={{once: true}}
+				maxW={'60em'}
+				w={'100%'}
+				id='2'
+				pt={{ 
+					base: '4em', 
+					sm: '6em', 
+					md: '6em', 
+					lg: '6%' 
+				}}
+				pb={'4em'}>
+					<Flex
+						direction={'column'}
+						gap={{ 
+							base: '2em', 
+							sm: '2em', 
+							md: '3em', 
+							lg: '2em' 
+						}}>
+							<Flex
+								position={'relative'}
+								alignItems={'start'}>
+									<ChakraBox
+										as={motion.div}
+										variants={about}
+										initial={'hidden'}
+										whileInView={'visible'}
+										viewport={{ once: true, amount: 0.8 }}>
+										<Title
+											title={'Contact me!'}/>
+									</ChakraBox>
+							</Flex>
+							<ChakraBox
+								as={motion.div}
+								variants={aboutItem}
+								initial={'hidden'}
+								whileInView={'visible'}
+								viewport={{ once: true, amount: 0.8 }}>
+									{formBox()}
+							</ChakraBox>
+					</Flex>
+			</ChakraBox>
+		</Flex>
+
 	)
 })
 
