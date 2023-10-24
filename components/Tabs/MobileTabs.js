@@ -1,29 +1,14 @@
 
-import { useState } from "react";
 import { tabs } from '../../public/data/TabContent';
 import {
     Flex,
     Heading,
-    Center,
-    chakra,
-    Button,
-    Text,
     Tabs, 
-    TabList, 
-    TabPanels, 
     Tab, 
-    TabPanel,
-    shouldForwardProp
 } from '@chakra-ui/react';
-import { isValidMotionProp, motion } from "framer-motion";
 import { Link } from "react-scroll/modules";
 
-const ChakraBox = chakra(motion.div, {
-    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
-});
-
 const MobileTabs = () => {
-    const [selectedTab, setSelectedTab] = useState(tabs[3])
     return (
         <Flex
             justify={'flex-end'}>
@@ -34,7 +19,7 @@ const MobileTabs = () => {
                         <Tabs
                         mt={-1}
                         variant={'unstyled'}>
-                        {tabs.map((item, idx) => (
+                        {tabs.slice(0,-1).map((item, idx) => (
                         <Link 
                         key={idx}
                         activeClass="active"

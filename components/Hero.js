@@ -21,14 +21,15 @@ const ChakraBox = chakra(motion.div, {
 
 const Hero = forwardRef((props, ref) => {
 	return (
-		<Flex
+		<Container
+		id={'3'}
+		ref={ref}
 		justifyContent={'center'}>
 			<Flex
 				maxW={'60em'}
 				position={'relative'}
 				zIndex={10}
-				ref={ref}
-				id={'home'}
+				
 				minW={'100%'}
 				direction={'column'}
 				flex={1}
@@ -93,7 +94,7 @@ const Hero = forwardRef((props, ref) => {
 								</Flex>
 						</ChakraBox>
 			</Flex>
-		</Flex>
+		</Container>
 
 	)
 })

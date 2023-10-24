@@ -46,6 +46,7 @@ const Home = () => {
 			</AnimatePresence>
 			<Header/>
 			<Hero 
+				ref={heroRef}
 				loading={{states: {isLoading, setLoading}}} />
 			<About ref={aboutRef}/>
 			<Projects ref={projRef}/>

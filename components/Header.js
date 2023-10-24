@@ -4,11 +4,11 @@ import {
 	Collapse, 
 	Icon,
 	IconButton, 
-	Link,
 	useDisclosure, 
 	chakra, 
 	shouldForwardProp,
-	Heading, 
+	Heading,
+	Link, 
 	Flex, 
 	Container, 
 	Text,
@@ -22,13 +22,13 @@ import { FaLessThan, FaGreaterThan } from 'react-icons/fa'
 import { SiInstagram, SiGithub, SiLinkedin } from 'react-icons/si'
 import { HiMenu } from 'react-icons/hi'
 import MobileTabs from './Tabs/MobileTabs';
+import { Link as ScrollLink } from "react-scroll/modules"
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 });
 
-const Header = ({ pos }) => {
-	const { isOpen, onToggle } = useDisclosure();
+const Header = ({ ref }) => {
 	return (
 			<Flex
 				justifyContent={'center'}
@@ -61,7 +61,7 @@ const Header = ({ pos }) => {
 							</Box> */}
 							<Box
 								display={'inline'}>
-									{content(isOpen, onToggle)}
+									{content()}
 							</Box>
 					</ChakraBox>
 			</Flex>
@@ -237,12 +237,23 @@ const logoHeader = () => {
 						w={3}
 						h={3}
 						as={FaLessThan}/>
-						<Heading
-						_active={{'transform': 'scale(0.9)'}}
+						<Flex
 						className='logo-hover'
-						fontSize={14.5}>
-								&thinsp;aleknev&thinsp;
-						</Heading>
+						_active={{'transform': 'scale(0.93)'}}>
+							<ScrollLink 						
+							key={3}
+							to={'3'}
+							style={{ 'textDecoration': 'none' }}
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={900}>
+								<Heading
+								fontSize={14.5}>
+										&thinsp;aleknev&thinsp;
+								</Heading>
+							</ScrollLink>
+						</Flex>
 						<Icon 
 						w={3}
 						h={3}
