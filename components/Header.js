@@ -31,11 +31,6 @@ const ChakraBox = chakra(motion.div, {
 });
 
 const Header = ({ pos }) => {
-
-	const bp = useBreakpoint({ ssr: false });
-	useEffect(() => {
-		console.log(bp)
-	})
 	const { isOpen, onToggle } = useDisclosure();
 	return (
 		<Container>
@@ -68,13 +63,8 @@ const Header = ({ pos }) => {
 									{desktopContent(pos)}
 							</Box> */}
 							<Box
-								display={{ 
-									base: 'inline', 
-									sm: 'inline', 
-									md: 'inline', 
-									lg: 'inline' 
-								}}>
-									{mobileContent(isOpen, onToggle)}
+								display={'inline'}>
+									{content(isOpen, onToggle)}
 							</Box>
 					</ChakraBox>
 			</Flex>
@@ -82,35 +72,35 @@ const Header = ({ pos }) => {
 	)
 }
 
-const desktopContent = (pos) => { 
-	return ( 
-		<Flex	
-			px={5}
-			py={'13px'}
-			align={'center'}
-			justifyContent={'space-between'}
-			direction={'row'}>
-				<Link
-					to={'home'}
-					spy={true}
-					smooth={true}
-					offset={0}
-					duration={2500}>
-						<Center
-							cursor={'pointer'}
-							as={motion.div}
-							variants={'container'}
-							initial="hidden">
-								{logoHeader(30)}
-						</Center>
-				</Link>
-				<Spacer />
-				<AnimatedTabs pos={pos} />
-		</Flex>
-	)
-}
+// const desktopContent = (pos) => { 
+// 	return ( 
+// 		<Flex	
+// 			px={5}
+// 			py={'13px'}
+// 			align={'center'}
+// 			justifyContent={'space-between'}
+// 			direction={'row'}>
+// 				<Link
+// 					to={'home'}
+// 					spy={true}
+// 					smooth={true}
+// 					offset={0}
+// 					duration={2500}>
+// 						<Center
+// 							cursor={'pointer'}
+// 							as={motion.div}
+// 							variants={'container'}
+// 							initial="hidden">
+// 								{logoHeader(30)}
+// 						</Center>
+// 				</Link>
+// 				<Spacer />
+// 				<AnimatedTabs pos={pos} />
+// 		</Flex>
+// 	)
+// }
 
-const mobileContent = (isOpen, onToggle) => {
+const content = (isOpen, onToggle) => {
 	return (
 		<Box
 			px={4}
@@ -172,6 +162,7 @@ const logoHeader = () => {
 	const bp = useBreakpoint()
 	return (
 		<ChakraBox
+			pl={2}
 			as={motion.div}
 			whileHover={{ scale: 1.02 }}
 			whileTap={{ scale: 0.98 }}>

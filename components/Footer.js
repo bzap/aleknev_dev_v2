@@ -5,6 +5,7 @@ import {
     chakra, 
     shouldForwardProp, 
     Flex, 
+    Button,
     Container, 
     Text 
 } from '@chakra-ui/react';
@@ -56,26 +57,28 @@ const Footer = () => {
                                                 md: 15, 
                                                 lg: 12
                                             }}>
-                                                &nbsp;Designed and developed by Linas&nbsp;
+                                                Designed and developed by Linas.
                                         </Text>
                                 </Flex>
                                 <Link 
                                     style={{ 'textDecoration': 'none' }}
                                     href={'https://github.com/bzap/aleknev-dev'}
                                     isExternal>
-                                        <ChakraBox
-                                            position={'relative'}
-                                            as={motion.div}
-                                            h={'container'}
-                                            whileHover={{ scale: 1.02 }}
-                                            whileTap={{ scale: 0.99 }}>
                                                 <Flex
                                                     position={'relative'}
                                                     w={'auto'}
                                                     justifyContent={'center'}
                                                     direction={'row'}
                                                     alignItems={'center'}>
+                                                    <Button
+                                                        variant={'unstyled'}
+                                                        _hover={{'bg': '#e1e1e1'}}
+                                                        _active={{'bg': '#cfcfcf'}}
+                                                        borderRadius={'lg'}
+                                                        size={'sm'}
+                                                        >
                                                         <Text
+                                                            px={3}
                                                             position={'relative'}
                                                             color={'blackAlpha.400'}
                                                             fontSize={{ 
@@ -86,8 +89,8 @@ const Footer = () => {
                                                             }}>
                                                             Site Repo &gt;
                                                         </Text>
+                                                    </Button>
                                                 </Flex>
-                                        </ChakraBox>
                                 </Link>
                         </ChakraBox>
                 </Flex>

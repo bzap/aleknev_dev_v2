@@ -214,9 +214,7 @@ const gitButton = () => {
 								borderRadius={'lg'}
 								size={'sm'}
 								>
-
 									<Heading
-								
 										px={3}
 										color={'blackAlpha.800'}
 										fontSize={{ base: 34, sm: 37, md: 40, lg: 12 }}

@@ -25,6 +25,7 @@ import {
         SiGit,
         SiDocker
     } from "react-icons/si"
+import { DiJava } from 'react-icons/di'
 
 const aboutText = { 
     background: `Hi! My full name is Linas Aleknevicius. I\'m a  Computer Science graduate from McMaster University with a particular interest in full-stack development and passion for all things code. There\'s just something satisfying about bridging the gap between what the developer sees and what the user experiences. A well thought out, lively interface coupled with a seamless backend is the epitome of this.
@@ -38,7 +39,7 @@ const aboutText = {
         ['C', SiC], 
         ['Ruby', SiRuby], 
         ['PHP', SiPhp], 
-        ['Java', SiJava], 
+        ['Java', DiJava], 
         ['WebAssembly', SiWebassembly],           
     ],
     frameworksDatabases: [

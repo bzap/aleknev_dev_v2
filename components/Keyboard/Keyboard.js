@@ -56,7 +56,6 @@ const Keyboard = ({ props }) => {
 										dpr={[1, 2]}>
 										<ambientLight />
 										<pointLight  
-											color={'fff'} 
 											distance={5}
 											angle={0.15}
 											attenuation={5}
