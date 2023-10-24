@@ -4,6 +4,7 @@ import {
     Stack,
     Flex,
     Heading,
+    Button,
     Text,
     useDisclosure,
     Image,
@@ -197,28 +198,15 @@ const modalButton = (name, link) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef([])
     return (
-        <ChakraBox
-            pt={{
-                base: 1, 
-                sm: 1, 
-                md: 3, 
-                lg: 1
-            }}
-            pb={{ 
-                base: 1, 
-                sm: 1, 
-                md: 2, 
-                lg: 1 
-            }}
-            as={motion.div}
-            cursor={'pointer'}
-            justifyContent={'flex-end'}
-            flex={1}
-            textColor={'Black'}
-            ref={btnRef}
-            whiteSpace={'nowrap'}
-            onClick={onOpen}
-            _hover={{ 'background-color': '#e4e4e4', borderRadius: 'lg' }}>
+        <Button
+        variant={'unstyled'}
+        _hover={{'bg': '#e1e1e1'}}
+        _active={{'bg': '#cfcfcf'}}
+        borderRadius={'lg'}
+        size={'sm'}
+        ref={btnRef}
+        onClick={onOpen}
+        >
                 <Heading
                     py={1}
                     px={3}
@@ -232,7 +220,7 @@ const modalButton = (name, link) => {
                         {name}&#160;&gt;
                 </Heading>
                 {contentModal(btnRef, isOpen, onOpen, onClose, link )}
-        </ChakraBox>
+        </Button>
     )
 }
 
@@ -242,40 +230,26 @@ const projectButton = (name, link) => {
             isExternal
             style={{ 'textDecoration': 'none' }}
             href={link}>
-                <ChakraBox
-                    flex={1}
-                    alignItems={'center'}
-                    justifyContent={'flex-end'}
-                    as={motion.div}
-                    _hover={{ 'background-color': '#e4e4e4', borderRadius: 'lg' }}
-                    pt={{ 
-                        base: 1, 
-                        sm: 1, 
-                        md: 3, 
-                        lg: 1 
-                    }}
-                    pb={{ 
-                        base: 1, 
-                        sm: 1, 
-                        md: 2, 
-                        lg: 1 
-                    }}        
-                    cursor={'pointer'}   
-                    textColor={'Black'} 
-                    whiteSpace={'nowrap'}>
-                        <Heading
-                            color={'blackAlpha.800'}
-                            py={1}
-                            px={3}
-                            fontSize={{ 
-                                base: 14, 
-                                sm: 16, 
-                                md: 16, 
-                                lg: 12
-                            }}>
-                                {name}&#160;&gt;
+            <Button
+            variant={'unstyled'}
+            _hover={{'bg': '#e1e1e1'}}
+            _active={{'bg': '#cfcfcf'}}
+            borderRadius={'lg'}
+            size={'sm'}
+            >
+                <Heading
+                    color={'blackAlpha.800'}
+                    py={1}
+                    px={3}
+                    fontSize={{ 
+                        base: 14, 
+                        sm: 16, 
+                        md: 16, 
+                        lg: 12
+                    }}>
+                        {name}&#160;&gt;
                         </Heading>
-                </ChakraBox>
+                </Button>
         </Link>
     )
 }

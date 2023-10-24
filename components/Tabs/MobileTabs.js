@@ -8,6 +8,11 @@ import {
     chakra,
     Button,
     Text,
+    Tabs, 
+    TabList, 
+    TabPanels, 
+    Tab, 
+    TabPanel,
     shouldForwardProp
 } from '@chakra-ui/react';
 import { isValidMotionProp, motion } from "framer-motion";
@@ -28,9 +33,18 @@ const MobileTabs = () => {
                     mr={3}
                     pt={1}
                     direction={'column'}>
+                        <Tabs
+                        mt={-1}
+                        variant={'unstyled'}>
                         {tabs.map((item, idx) => (
-                            <Link
-                        
+                            <Tab
+                            mt={1.5}
+                            w={'full'}
+                            borderRadius={'lg'}
+                            _hover={{'bg': '#efefef'}}
+                            _active={{'bg': '#e0e0e0'}}
+                            >
+                                <Link 
                                 key={idx}
                                 activeClass="active"
                                 to={idx.toString()}
@@ -38,42 +52,17 @@ const MobileTabs = () => {
                                 smooth={true}
                                 offset={0}
                                 duration={2200}>
-                                    <Center
-                                        w={'100%'}
-                                        className={item === selectedTab ? 'selected' : ''}
-                                        onClick={() => {
-                                            setSelectedTab(item)
-                                        }}>
-                                        <Button
-                                            variant={'none'}
-                                            size={'sm'}
-                                            w={'100%'}
-                                            borderRadius={'12px'}
-                                            as={motion.div}
-                                            py={'2'}
-                                            
-                                            borderWidth={'1px'}
-                                            borderColor={'transparent'}
-                                            cursor={'pointer'}
-                                            _hover={{ 
-                                                'background-color': '#e4e4e480',
-                                            }}>
-                                                <Flex>
-                                                    <Heading
-                                                            w={'100%'}
-                                                            textAlign={'center'}
-                                                            fontSize={12}
-                                                            color='blackAlpha.800'>
-                                                            {item.label}
-                                                        </Heading>
-                                                </Flex>
-                                   
+                                    <Heading
+                                    fontSize={12}>
+                                        {item.label}
+                                    </Heading>
+                                </Link>
 
-                                          
-                                        </Button>
-                                    </Center>
-                            </Link>
+                            </Tab>
+
                         ))}
+                        </Tabs>
+
                 </Flex>
         </Flex>
     )

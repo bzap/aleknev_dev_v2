@@ -50,7 +50,7 @@ const projects = {
         icons: [SiPython, CgUiKit, GrLanguage, VscFileCode],
         desc: 'A toolkit that samples Amazon review data and provides recommendations based on keyword frequency.',
         image: ['/screenshots/ard0.png'],
-        buttons: ['Explanation', 'Git Repo'],
+        buttons: ['Explanation', 'GitHub Repo'],
         link: 'https://github.com/bzap/ARD_Util'
     },
     4: {
@@ -59,7 +59,7 @@ const projects = {
         icons: [SiJavascript, SiPhp, SiMysql, SiBootstrap],
         desc: 'A website that provides users with the opportunity to search and submit reviews on local restaurants.',
         image: ['/screenshots/rest0.png'],
-        buttons: ['Explanation', 'Git Repo'],
+        buttons: ['Explanation', 'GitHub Repo'],
         link: 'https://github.com/bzap/resto_reviews'
     },
     5: {
@@ -77,7 +77,7 @@ const projects = {
         icons: [SiCplusplus, SiOpengl, SiBookstack ,SiAsana],
         desc: 'A three dimensional terrain generator, complete with panning and rendering options.',
         image: ['/screenshots/gen0.png'],
-        buttons: ['Explanation', 'Git Repo'],
+        buttons: ['Explanation', 'GitHub Repo'],
         link: 'https://github.com/bzap/terrain_gen'
     }
 }

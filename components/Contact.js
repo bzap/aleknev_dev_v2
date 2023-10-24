@@ -155,7 +155,7 @@ const formBox = () => {
 																		md: 25, 
 																		lg: 18 
 																	}}>
-																		EMAIL
+																		Email
 																</Heading>
 															</FormLabel>
 															<ChakraBox
@@ -202,7 +202,7 @@ const formBox = () => {
 																			md: 25, 
 																			lg: 18
 																		}}>
-																			NAME
+																			Name
 																	</Heading>
 															</FormLabel>
 															<ChakraBox
@@ -251,7 +251,7 @@ const formBox = () => {
 																		md: 25, 
 																		lg: 18 
 																	}}>
-																		MESSAGE
+																		Message
 																</Heading>
 															</FormLabel>
 															<ChakraBox
@@ -294,14 +294,14 @@ const formBox = () => {
 										justifyContent={'flex-end'}>
 											<Button
 												size={'sm'}
-												position={'relative'}
-												_hover={{ 'background-color': '#e4e4e4', borderRadius: 'lg' }}
+												variant={'unstyled'}
+												_hover={{'bg': '#e1e1e1'}}
+												_active={{'bg': '#cfcfcf'}}
 												borderRadius={'lg'}
-												variant={'none'}
-												textColor={'blackAlpha.800'}
 												disabled={state.submitting}
 												type='submit'>
 												<Heading
+													px={3}
 													color={'blackAlpha.800'}
 													fontSize={{ 
 														base: 16, 

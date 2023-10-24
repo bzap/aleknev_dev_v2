@@ -6,6 +6,7 @@ import {
 		Link,
 		Icon,
 		Center,
+		Button,
 		useBreakpoint,
 		chakra, 
 		shouldForwardProp
@@ -191,7 +192,7 @@ const gitButton = () => {
 				base: '6em', 
 				sm: '6em', 
 				md: '7em', 
-				lg: '10em'
+				lg: '5em'
 			}}
 			justifyContent={{
 				base: 'center', 
@@ -201,47 +202,30 @@ const gitButton = () => {
 			}}>
 				<ChakraBox
 					as={motion.div}>
-						<Center>
-							<ChakraBox
-								as={motion.div}>
-									<Icon
-										pt={1}
-										pr={2}
-										w={{ 
-											base: '3.3em', 
-											sm: '3.8em', 
-											md: '5em', 
-											lg: '1.7em' 
-										}}
-										h={{ 
-											base: '3.3em', 
-											sm: '3.8em', 
-											md: '5em', 
-											lg: '1.7em' 
-										}}
+						<Center> 	
+						<Link
+						style={{ 'textDecoration': 'none' }}
+						href={'https://github.com/bzap'}
+						isExternal>							
+								<Button
+								variant={'unstyled'}
+								_hover={{'bg': '#e1e1e1'}}
+								_active={{'bg': '#cfcfcf'}}
+								borderRadius={'lg'}
+								size={'sm'}
+								>
+
+									<Heading
+								
+										px={3}
 										color={'blackAlpha.800'}
-										as={IoMdReturnRight}/>
-							</ChakraBox>   								
-							<ChakraBox
-								cursor={'pointer'}
-								as={motion.div}
-								_hover={{ 'background-color': '#e4e4e4', borderRadius: 'lg' }}
-								whileTap={{ scale: 0.95 }}
-								direction={'row'}>
-									<Link
-										style={{ 'textDecoration': 'none' }}
-										href={'https://github.com/bzap'}
-										isExternal>
-											<Heading
-											                    py={1}
-																px={3}
-												color={'blackAlpha.800'}
-												fontSize={{ base: 34, sm: 37, md: 40, lg: 12 }}
-												fontWeight={'bold'}>
-													GITHUB
-											</Heading> 
-									</Link>
-							</ChakraBox>
+										fontSize={{ base: 34, sm: 37, md: 40, lg: 12 }}
+										fontWeight={'bold'}>
+											... And more &gt;
+									</Heading> 
+								
+								</Button>
+							</Link>
 						</Center> 
 				</ChakraBox>
 		</Flex>
