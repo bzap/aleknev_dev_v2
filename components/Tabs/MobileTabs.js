@@ -26,12 +26,10 @@ const MobileTabs = () => {
     const [selectedTab, setSelectedTab] = useState(tabs[3])
     return (
         <Flex
-            pb={'0.5em'}
             justify={'flex-end'}>
                 <Flex
                     w={'7.5em'}
-                    mr={3}
-                    pt={1}
+                    pt={2}
                     direction={'column'}>
                         <Tabs
                         mt={-1}

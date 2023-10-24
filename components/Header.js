@@ -15,7 +15,7 @@ import {
 	Spacer,
 	useBreakpoint 
 } from '@chakra-ui/react';
-import { motion, isValidMotionProp } from "framer-motion";
+import { motion, isValidMotionProp, useCycle } from "framer-motion";
 import { CloseIcon } from '@chakra-ui/icons';
 import { FaLessThan, FaGreaterThan } from 'react-icons/fa'
 import { SiInstagram, SiGithub, SiLinkedin } from 'react-icons/si'
@@ -34,6 +34,7 @@ const Header = ({ pos }) => {
 				justifyContent={'center'}
 				pt={'4'}>
 					<ChakraBox
+						py={1.5}
 						as={motion.div}
 						initial={'hidden'}
 						//={navContainer}
@@ -96,7 +97,50 @@ const Header = ({ pos }) => {
 // 	)
 // }
 
-const content = (isOpen, onToggle) => {
+	const Path = (props) => (
+		<motion.path
+			fill="transparent"
+			strokeWidth="3"
+			stroke="hsl(0, 0%, 18%)"
+			strokeLinecap="round"
+			{...props}
+		/>
+  	);
+  
+  	const HamburgerIcon = ({ toggle }) => (
+		<Flex
+		pt={1}
+		pl={2}
+		alignContent={'center'}>
+			<button onClick={toggle}>
+				<svg width="18" height="18" viewBox="0 0 23 23">
+					<Path
+					variants={{
+						closed: { d: "M 2 2.5 L 20 2.5" },
+						open: { d: "M 3 16.5 L 17 2.5" }
+					}}/>
+					<Path
+					d="M 2 9.423 L 20 9.423"
+					variants={{
+						closed: { opacity: 1 },
+						open: { opacity: 0 }
+					}}
+					transition={{ 
+						duration: 0.1,
+						ease: "linear"}}/>
+					<Path
+					variants={{
+						closed: { d: "M 2 16.346 L 20 16.346" },
+						open: { d: "M 3 2.5 L 17 16.346" }
+					}}/>
+				</svg>
+			</button>
+		</Flex>
+  	);
+
+
+const content = () => {
+	const [isOpen, toggleOpen] = useCycle(false, true);
 	return (
 		<Box
 			px={4}
@@ -124,25 +168,12 @@ const content = (isOpen, onToggle) => {
 							as={SiLinkedin}/>
 						</Center>
 						<Flex>
-							<IconButton
-								borderRadius={'lg'}
-								_hover={{'background-color': '#e4e4e4'}}
-								_active={{'background-color': '#e4e4e4'}}
-								onClick={onToggle}
-								size={'md'}
-								icon={
-									isOpen ?
-									<CloseIcon
-										w={3}
-										h={3} /> 
-										:	<Icon
-											as={HiMenu}
-											w={5}
-											h={5}
-											fontWeight={'bold'}/>
-										}
-										variant={'ghost'}
-										aria-label={'Toggle Navigation'}/>
+							<motion.nav
+									initial={false}
+									animate={isOpen ? "open" : "closed"}
+									custom="100%">
+							<HamburgerIcon toggle={() => toggleOpen()} />
+						</motion.nav>
 						</Flex>
 				</Flex>
 				<Collapse
