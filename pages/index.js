@@ -13,10 +13,6 @@ import {
 	useInView 
 } from 'framer-motion';
 import LoadingWrapper from '../components/LoadingWrapper';
-import { 
-	disableBodyScroll, 
-	clearAllBodyScrollLocks 
-} from 'body-scroll-lock';
 import {
   chakra,
   shouldForwardProp
