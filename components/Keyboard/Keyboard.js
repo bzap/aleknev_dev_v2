@@ -9,17 +9,22 @@ import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Bounds, Stage, OrbitControls, Environment, SpotLight } from "@react-three/drei";
+import { Bounds, Stage, OrbitControls, Environment, SpotLight, RoundedBox, Plane, useHelper, Cylinder } from "@react-three/drei";
 import { motion, isValidMotionProp } from 'framer-motion';
 import { heroKeyboard, keyboardContainer } from '../../styles/Variants';
+import { DirectionalLight, DirectionalLightHelper } from 'three';
+import { useRef } from 'react';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 });
 
 
+
+
 const Keyboard = ({ props }) => {
 	const bp = useBreakpoint()
+
 	return (
 		<Flex
 			position={'relative'}
@@ -29,37 +34,35 @@ const Keyboard = ({ props }) => {
 			justifyContent={'center'}
 			alignItems={'center'}>
 				<ChakraBox
-							position={'relative'}
-							zIndex={10}
 					w={'100%'}
 					h={'100%'}
 					as={motion.div}
-					variants={keyboardContainer}>
+					//variants={keyboardContainer}
+					>
 						<ChakraBox
-							position={'relative'}
-							zIndex={10}
 							w={'100%'}
 							h={'100%'}
 							as={motion.div}
-							variants={heroKeyboard}>
+							//variants={heroKeyboard}>
+							>
 								<Flex
 									justifyContent={'center'}
 									alignItems={'center'}
 									zIndex={50}
-									position={'absolute'}
-									h={'150%'}
-									top={'-70%'}
+									h={'100%'}
+									// position={'absolute'}
+									// h={'150%'}
+									// top={'-70%'}
 									w={'100%'}>
 										<Canvas 
+										shadows
 										zIndex={50}
-										camera={{ position: [0, 5, 50], fov: 50 }}
+										camera={{ position: [9, 4, 5], fov: 50 }}
 										dpr={[1, 2]}>
-										<ambientLight />
-										<pointLight  
-											distance={5}
-											angle={0.15}
-											attenuation={5}
-											anglePower={5} />
+										<ambientLight 
+										intensity={1}
+										castShadow/>
+										<Light/>
 												<Suspense fallback={null}>
 													{props !== undefined && (
 														<Environment path="/" files="rooitou_park_1k.hdr" />,
@@ -69,17 +72,27 @@ const Keyboard = ({ props }) => {
 																	
 																	observe
 																	margin={
-																		bp == 'xl' ? 1
-																		: bp == '2xl' ? 1
-																		: bp == 'md' || bp == 'lg' ? 1.1
-																		: bp == 'sm' ? 1
+																		bp == 'xl' ? 0.5
+																		: bp == '2xl' ? 1.2
+																		: bp == 'md' || bp == 'lg' ? 0.6
+																		: bp == 'sm' ? 0.6
 																		: 1.2 }>
 																			<Model innerLoading={props} />
+																			<mesh 
+																			receiveShadow
+																			position={[0, -0.08, 0]}>
+																			<cylinderBufferGeometry 
+																			receiveShadow
+																			attach="geometry" args={[0.11, 0.11, 0.005, 64]} 
+																			/>
+																				<meshStandardMaterial attach="material" color="#373737" />
+																			</mesh>
 																</Bounds>
 															)
 														
 										
 													)}
+					
 												</Suspense>
 												<OrbitControls
 													target={[0, 0, 0]}
@@ -94,12 +107,34 @@ const Keyboard = ({ props }) => {
 	)
 }
 
+
+const Light = () => {
+	const directionalLightRef = useRef(null);
+	useHelper(directionalLightRef, DirectionalLightHelper, 1, 'red')
+  
+	return (
+		<directionalLight
+        castShadow
+		intensity={5}
+		position={[2, 10, 5]}
+		ref={directionalLightRef} />
+	);
+  };
+
 const Model = (innerLoading) => {
 	const loadingStates = innerLoading.innerLoading.outerLoading.states
-	const gltf = useLoader(GLTFLoader, "/model/keyboard.glb");
+	const gltf = useLoader(GLTFLoader, "/model/keyboard30.glb");
+
+	gltf.scene.traverse(function(node) {
+		if (node.isMesh){
+			node.castShadow = true;
+			node.receiveShadow = true;
+		}
+	})
+
 	loadingStates.setLoading(false)
 	return (
-		<mesh>
+		<mesh castShadow>
 			<primitive object={gltf.scene} scale={1} />
 		</mesh>
 	)
