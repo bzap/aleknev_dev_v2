@@ -4,6 +4,7 @@ import {
 	Collapse, 
 	Icon,
 	IconButton, 
+	Link,
 	useDisclosure, 
 	chakra, 
 	shouldForwardProp,
@@ -107,10 +108,14 @@ const Header = ({ pos }) => {
   
   	const HamburgerIcon = ({ toggle }) => (
 		<Flex
+		
 		pt={1}
 		pl={2}
 		alignContent={'center'}>
-			<button onClick={toggle}>
+			<button 
+			tabIndex="-1"
+			className='simple-hover'
+			onClick={toggle}>
 				<svg width="18" height="18" viewBox="0 0 23 23">
 					<Path
 					variants={{
@@ -146,25 +151,59 @@ const content = () => {
 				<Flex
 					align={'center'}
 					justifyContent={'space-between'}
-					direction={'row'}>
+					direction={'row'}
+					gap={2.5}>
 						{logoHeader()}
 						<Spacer />
-						<Center
-						pr={5}
-						gap={3}>
-							<Icon 
-							w={4}
-							h={4}
-							as={SiGithub}/>
-							<Icon 
-							w={4}
-							h={4}
-							as={SiInstagram}/>
-							<Icon 
-							w={4}
-							h={4}
-							as={SiLinkedin}/>
-						</Center>
+						<Link 
+						style={{ 'textDecoration': 'none' }}
+						href={'https://instagram.com/l.aleknev'}
+						isExternal>
+							<Center>
+								<Flex
+								id={'siinstagram'}
+								key={''}
+								className='translate-hover'>
+									<Icon 
+									cursor={'pointer'}
+									_active={{'color': '#787779'}}
+									w={4}
+									h={4}
+									as={SiInstagram}/>
+								</Flex>
+							</Center>
+						</Link>
+						<Link 
+						style={{ 'textDecoration': 'none' }}
+						href={'https://github.com/bzap/'}
+						isExternal>
+							<Center>
+								<Icon 
+                                _active={{'color': '#787779'}}
+								className='translate-hover'
+								id={'silinkedin'}
+								cursor={'pointer'}
+								w={4}
+								h={4}
+								as={SiGithub}/>
+							</Center>
+						</Link>
+						<Link 
+						style={{ 'textDecoration': 'none' }}
+						href={'https://github.com/bzap/'}
+						isExternal>
+							<Center
+							pr={3}>
+								<Icon 
+								_active={{'color': '#787779'}}
+								className='translate-hover'
+								id={'silinkedin'}
+								cursor={'pointer'}
+								w={4}
+								h={4}
+								as={SiLinkedin}/>
+							</Center>
+						</Link>
 						<Flex>
 							<motion.nav
 									initial={false}
@@ -184,19 +223,23 @@ const content = () => {
 }
 
 const logoHeader = () => {
-	const bp = useBreakpoint()
 	return (
-		<ChakraBox
-			pl={2}
-			as={motion.div}
-			whileHover={{ scale: 1.02 }}
-			whileTap={{ scale: 0.98 }}>
-					<Center>
+					<Center
+						color={'blackAlpha.800'}
+						cursor={'pointer'}
+						_hover={{ 
+							// transform: 'translateY(-1px)',
+							// transitionTimingFunction: "ease-in-out",
+							transitionDuration: '0.1s',
+							color: '#5c5c5c' }}
+						>
 						<Icon 
 						w={3}
 						h={3}
 						as={FaLessThan}/>
 						<Heading
+						_active={{'transform': 'scale(0.9)'}}
+						className='logo-hover'
 						fontSize={14.5}>
 								&thinsp;aleknev&thinsp;
 						</Heading>
@@ -205,7 +248,6 @@ const logoHeader = () => {
 						h={3}
 						as={FaGreaterThan}/>
 					</Center>
-		</ChakraBox>
 	) 
 }
 

@@ -241,6 +241,7 @@ const Experience = ({bp}) => {
 const Skills = ({bp}) => { 
 	return ( 
 		<ChakraBox
+		w={'100%'}
 		as={motion.div}
 		variants={background}
 		initial={'hidden'}
@@ -262,6 +263,7 @@ const Skills = ({bp}) => {
 					lg: 'row' 
 				}}
 				w={'100%'}
+				zIndex={10}
 				position={'relative'}
 				justifyContent={{ 
 					base: 'center', 

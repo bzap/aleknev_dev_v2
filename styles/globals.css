@@ -31,7 +31,7 @@ a {
 }
 
 .grad:hover::after {
-  opacity: 0.08;
+  opacity: 0.09;
 }
 
 .grad::after {
@@ -46,4 +46,43 @@ a {
   height: 30%;
   left: calc(var(--x, 0) * 1px - 32.5%);
   top: calc(var(--y, 0) * 1px - 15%);
+}
+
+.translate-hover {
+  opacity: 1;
+  transition: opacity .15s ease-in-out;
+   -moz-transition: opacity .15s ease-in-out;
+   -webkit-transition: opacity .15s ease-in-out;
+   transition: 0.25s ease-in-out;
+   transform: translateY(1px);
+}
+
+div:hover > .translate-hover {
+  transition: 0.15s ease-in-out;
+  transform: translateY(-1px);
+  opacity: 0.7;
+}
+
+.simple-hover {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+div:hover > .simple-hover {
+  transition: 0.25s ease-in-out;
+  opacity: 0.7;
+}
+
+.logo-hover {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+div:hover > .logo-hover {
+  transition: 0.25s ease-in-out;
+  opacity: 0.8;
 }
