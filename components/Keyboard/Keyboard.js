@@ -9,11 +9,9 @@ import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Bounds, Stage, OrbitControls, Environment, SpotLight, RoundedBox, Plane, useHelper, Cylinder } from "@react-three/drei";
+import { Bounds, Stage, OrbitControls } from "@react-three/drei";
 import { motion, isValidMotionProp } from 'framer-motion';
 import { heroKeyboard, keyboardContainer } from '../../styles/Variants';
-import { DirectionalLight, DirectionalLightHelper } from 'three';
-import { useRef } from 'react';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -63,7 +61,6 @@ const Keyboard = ({ props }) => {
 										<Light/>
 												<Suspense fallback={null}>
 													{props !== undefined && (
-														<Environment path="/" files="rooitou_park_1k.hdr" />,
 															props !== undefined && (
 																<Bounds
 																	fit
