@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps, router }) {
 					<meta name="google" content="nositelinkssearchbox" />
 					<meta name="google" content="notranslate" />
 					<meta name="robots" content="noindex" />
-					<title>Aleknev</title>
+					<title>Welcome!</title>
 				</Head>
 				<Component {...pageProps} key={router.route} />
 				<Analytics />

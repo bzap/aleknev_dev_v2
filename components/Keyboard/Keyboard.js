@@ -9,7 +9,7 @@ import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Bounds, Stage, OrbitControls, Environment, SpotLight } from "@react-three/drei";
+import { Bounds, Stage, OrbitControls } from "@react-three/drei";
 import { motion, isValidMotionProp } from 'framer-motion';
 import { heroKeyboard, keyboardContainer } from '../../styles/Variants';
 
@@ -18,20 +18,17 @@ const ChakraBox = chakra(motion.div, {
 });
 
 
+
+
 const Keyboard = ({ props }) => {
 	const bp = useBreakpoint()
+
 	return (
 		<Flex
+			position={'relative'}
+			zIndex={10}
 			h={'100%'}
-			pb={'1em'}
-			w={{ 
-				base: '100%', 
-				sm: '100%', 
-				md: '100%', 
-				lg: '100%', 
-				xl: '65%', 
-				'2xl': '65%' 
-			}}
+			w={'100%'}
 			justifyContent={'center'}
 			alignItems={'center'}>
 				<ChakraBox
@@ -39,40 +36,54 @@ const Keyboard = ({ props }) => {
 					h={'100%'}
 					as={motion.div}
 					variants={keyboardContainer}>
+					
 						<ChakraBox
 							w={'100%'}
 							h={'100%'}
 							as={motion.div}
 							variants={heroKeyboard}>
+							
 								<Flex
-									position={'relative'}
 									justifyContent={'center'}
 									alignItems={'center'}
-									zIndex={10}
+									zIndex={50}
 									h={'100%'}
+									position={'absolute'}
 									w={'100%'}>
-										<Canvas dpr={[1, 2]}>
-										<pointLight position={[0, 0, 0]} intensity={2} color="#fff" />
+										<Canvas 
+										shadows
+										camera={{ position: [9, 4, 5], fov: 50 }}
+										dpr={[1, 2]}>
+										<ambientLight 
+										intensity={1}/>
+										<Light/>
 												<Suspense fallback={null}>
 													{props !== undefined && (
-														<Environment path="/" files="rooitou_park_1k.hdr" />,
 															props !== undefined && (
 																<Bounds
 																	fit
-																	clip
+																	
 																	observe
 																	margin={
-																		bp == 'xl' ? 0.40
-																		: bp == '2xl' ? 0.55
-																		: bp == 'md' || bp == 'lg' ? 1.1
-																		: bp == 'sm' ? 1
-																		: 0.7 }>
+																		bp == 'xl' ? 1.3
+																		: bp == '2xl' ? 1.4
+																		: bp == 'md' || bp == 'lg' ? 1.2
+																		: bp == 'sm' ? 1.2
+																		: 1.2 }>
 																			<Model innerLoading={props} />
+																			<mesh 
+																			receiveShadow
+																			position={[0, -0.08, 0]}>
+																			<cylinderGeometry 
+																			receiveShadow
+																			attach="geometry" args={[0.11, 0.11, 0.005, 64]} 
+																			/>
+																				<meshStandardMaterial attach="material" color="#373737" />
+																			</mesh>
 																</Bounds>
 															)
-														
-										
 													)}
+					
 												</Suspense>
 												<OrbitControls
 													target={[0, 0, 0]}
@@ -87,12 +98,34 @@ const Keyboard = ({ props }) => {
 	)
 }
 
+const Light = () => {
+	// const directionalLightRef = useRef(null);
+	// useHelper(directionalLightRef, DirectionalLightHelper, 1, 'red')
+  
+	return (
+		<directionalLight
+        castShadow
+		intensity={5}
+		position={[2, 10, 5]}
+		// ref={directionalLightRef} />
+		/>
+	);
+  };
+
 const Model = (innerLoading) => {
 	const loadingStates = innerLoading.innerLoading.outerLoading.states
-	const gltf = useLoader(GLTFLoader, "/model/keyboard15.glb");
+	const gltf = useLoader(GLTFLoader, "/model/keyboard30.glb");
+
+	gltf.scene.traverse(function(node) {
+		if (node.isMesh){
+			node.castShadow = true;
+			node.receiveShadow = true;
+		}
+	})
+
 	loadingStates.setLoading(false)
 	return (
-		<mesh>
+		<mesh castShadow>
 			<primitive object={gltf.scene} scale={1} />
 		</mesh>
 	)

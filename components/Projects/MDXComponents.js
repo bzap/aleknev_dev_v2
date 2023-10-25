@@ -6,7 +6,7 @@ import {
 import LazyImageAnimator from './LazyImageAnimator';
 
 const MDXComponents = {
-    h1: (props) => <Heading fontSize={30} {...props} />,
+    h1: (props) => <Heading fontSize={18} {...props} />,
     h2: (props) =>
         <Flex
             py={2}
@@ -21,7 +21,7 @@ const MDXComponents = {
                         base: 23, 
                         sm: 26, 
                         md: 28, 
-                        lg: 30 
+                        lg: 18 
                     }}
                         {...props} />
         </Flex>,
@@ -38,7 +38,7 @@ const MDXComponents = {
                         base: 12, 
                         sm: 14, 
                         md: 14, 
-                        lg: 14 
+                        lg: 12 
                     }}
                     as={'span'}
                     lineHeight={'1.3em'}

@@ -10,7 +10,7 @@ import {
   } from '@chakra-ui/react';
 import Keyboard from './Keyboard/Keyboard';
 import { motion, isValidMotionProp } from 'framer-motion';
-import { heroContainer, heroDesc, scrollArrows } from '../styles/Variants';
+import { heroContainer, heroDesc, scrollArrows, keyboardContainer } from '../styles/Variants';
 import ScrollIndicator from './ScrollIndicator';
 import Wave from './Variants/Wave';
 import { forwardRef } from 'react';
@@ -21,105 +21,87 @@ const ChakraBox = chakra(motion.div, {
 
 const Hero = forwardRef((props, ref) => {
 	return (
-		<Container
-			ref={ref}
-			id={'home'}
-			maxW={'80em'}
-			direction={'column'}
-			flex={1}
-			pb={{ 
-				base: '7em', 
-				sm: '10em', 
-				md: '16em', 
-				lg: '15em' 
-			}}>
-				<Flex
-					h={'90vh'}
-					pt={{
-						base: '5em', 
-						sm: '5em', 
-						md: '5em', 
-						lg: '7em'
-					}}
-					direction={'column'}>
-						<ChakraBox	
-							h={'40em'}
-							as={motion.div}
-							variants={heroContainer}
-							display={'flex'}
-							alignItems={{
-								base: null, 
-								sm: null, 
-								md: 'center', 
-								lg: 'center' 
-							}}
-							justifyContent={'center'}
-							initial={'hidden'}
-							whileInView={'visible'}
-							viewport={{ once: true }}>
-								<Flex
-									h={'100%'}
-									w={'100%'}
-									position={'relative'}
-									justifyContent={'space-between'}
-									alignItems={'center'}
-									direction={{ 
-										base: 'column', 
-										sm: 'column', 
-										md: 'column', 
-										lg: 'column', 
-										xl: 'row', 
-										'2xl': 'row' 
-									}}>
-										<Flex
-											justifyContent={'center'}
-											w={{ 
-												base: '100%', 
-												sm: '100%', 
-												md: '100%', 
-												lg: '100%', 
-												'xl': '65%', 
-												'2xl': '65%' 
-											}}
-											position={'relative'}
-											alignItems={'center'}>
-												{introText()}
-										</Flex>
-										<Spacer />
-										{keyboard(props.loading)}
-								</Flex>
-						</ChakraBox>							
-					</Flex>
-					<ChakraBox
+		<Flex
+		id={'3'}
+		ref={ref}
+		w={'full'}
+		justifyContent={'center'}>
+			<Flex
+				maxW={'60em'}
+				position={'relative'}
+				zIndex={10}
+				w={'full'}
+				direction={'column'}
+				flex={1}
+				pb={{ 
+					base: '7em', 
+					sm: '10em', 
+					md: '16em', 
+					lg: '8em' 
+				}}>
+					<Flex
 						position={'relative'}
-						as={motion.div}
-						variants={scrollArrows}
-						initial={'hidden'}
-						whileInView={'visible'}>
-							<Flex
-								pt={'2em'}
-								justifyContent={'center'}>
-									<ScrollIndicator />
-							</Flex>
-					</ChakraBox>
-		</Container>
+						zIndex={10}
+						h={'90vh'}
+						w={'100%'}
+						pt={{
+							base: '5em', 
+							sm: '5em', 
+							md: '5em', 
+							lg: '0em'
+						}}
+						direction={'column'}>
+							<ChakraBox	
+								position={'relative'}
+								zIndex={10}
+								h={'100%'}
+								w={'100%'}
+								as={motion.div}
+								variants={heroContainer}
+								display={'flex'}
+								alignItems={{
+									base: null, 
+									sm: null, 
+									md: 'center', 
+									lg: 'center' 
+								}}
+								justifyContent={'center'}
+								initial={'hidden'}
+								whileInView={'visible'}
+								flexDir={'column'}
+								viewport={{ once: true }}>
+									{introText()}
+									<ChakraBox
+										variants={keyboardContainer}
+										w={'100%'}
+										h={'70%'}>
+											{keyboard(props.loading)}		
+									</ChakraBox>		
+							</ChakraBox>							
+						</Flex>
+						<ChakraBox
+							position={'relative'}
+							as={motion.div}
+							variants={scrollArrows}
+							initial={'hidden'}
+							whileInView={'visible'}>
+								<Flex
+									pt={'2em'}
+									justifyContent={'center'}>
+										<ScrollIndicator />
+								</Flex>
+						</ChakraBox>
+			</Flex>
+		</Flex>
+
 	)
 })
 	
 const keyboard = (loading) => { 
 	return (
 		<Flex
-			w={{
-				base: '100%', 
-				sm: '100%', 
-				md: '100%', 
-				lg: '100%', 
-				xl: '35%', 
-				'2xl': '35%'
-			}}
 			h={'100%'}
-			zIndex={0}
-			justifyContent={'flex-end'}>	
+			zIndex={0}>	
 				<Keyboard 
 					props={{ 
 						newFov: 30, 
@@ -132,12 +114,12 @@ const keyboard = (loading) => {
 const introText = () => { 
 	return ( 
 		<Flex
-			position={'relative'}
-			zIndex={1}
 			direction={'column'}
 			justifyContent={'center'}
 			w={'100%'}
-			h={'100%'}>
+			position={'absolute'}
+			top={'10%'}
+			h={'30%'}>
 			<Flex
 				position={'relative'}
 				justifyContent={{
@@ -145,7 +127,7 @@ const introText = () => {
 					sm: 'center', 
 					md: 'center', 
 					lg: 'center', 
-					xl: 'flex-start'
+					xl: 'center'
 				}}>	
 					<ChakraBox
 						as={motion.div}
@@ -173,7 +155,7 @@ const introText = () => {
 					sm: 'center', 
 					md: 'center', 
 					lg: 'center', 
-					xl: 'flex-start'
+					xl: 'center'
 				}}	
 				textAlign={{
 					base: 'center', 

@@ -5,6 +5,7 @@ import {
     chakra, 
     shouldForwardProp, 
     Flex, 
+    Button,
     Container, 
     Text 
 } from '@chakra-ui/react';
@@ -47,11 +48,6 @@ const Footer = () => {
                                     justifyContent={'center'}
                                     direction={'row'}
                                     alignItems={'center'}>
-                                        <Icon
-                                            position={'relative'}
-                                            alignItems={'center'}
-                                            color={'blackAlpha.400'}
-                                            as={BsFillLightningChargeFill} />
                                         <Text
                                             position={'relative'}
                                             color={'blackAlpha.400'}
@@ -59,55 +55,42 @@ const Footer = () => {
                                                 base: 13.5, 
                                                 sm: 14, 
                                                 md: 15, 
-                                                lg: 16 
+                                                lg: 12
                                             }}>
-                                                &nbsp;Designed and developed by Linas&nbsp;
+                                                Designed and developed by Linas.
                                         </Text>
-                                        <Icon
-                                            position={'relative'}
-                                            alignItems={'center'}
-                                            color={'blackAlpha.400'}
-                                            as={BsFillLightningChargeFill} />
                                 </Flex>
                                 <Link 
                                     style={{ 'textDecoration': 'none' }}
                                     href={'https://github.com/bzap/aleknev-dev'}
                                     isExternal>
-                                        <ChakraBox
-                                            position={'relative'}
-                                            as={motion.div}
-                                            h={'container'}
-                                            whileHover={{ scale: 1.02 }}
-                                            whileTap={{ scale: 0.99 }}>
                                                 <Flex
                                                     position={'relative'}
                                                     w={'auto'}
                                                     justifyContent={'center'}
                                                     direction={'row'}
                                                     alignItems={'center'}>
-                                                        <Icon
-                                                            position={'relative'}
-                                                            alignItems={'center'}
-                                                            color={'blackAlpha.400'}
-                                                            as={FaGithubAlt} />
+                                                    <Button
+                                                        variant={'unstyled'}
+                                                        _hover={{'bg': '#cfcfcf'}}
+                                                        _active={{'bg': '#bfbfbf'}}
+                                                        borderRadius={'lg'}
+                                                        size={'sm'}
+                                                        >
                                                         <Text
+                                                            px={3}
                                                             position={'relative'}
                                                             color={'blackAlpha.400'}
                                                             fontSize={{ 
                                                                 base: 13.5, 
                                                                 sm: 14, 
                                                                 md: 15, 
-                                                                lg: 16 
+                                                                lg: 12
                                                             }}>
-                                                            &nbsp;Site Repo&nbsp;
+                                                            Site Repo &gt;
                                                         </Text>
-                                                        <Icon
-                                                            position={'relative'}
-                                                            alignItems={'center'}
-                                                            color={'blackAlpha.400'}
-                                                            as={FaGithubAlt} />
+                                                    </Button>
                                                 </Flex>
-                                        </ChakraBox>
                                 </Link>
                         </ChakraBox>
                 </Flex>

@@ -13,10 +13,6 @@ import {
 	useInView 
 } from 'framer-motion';
 import LoadingWrapper from '../components/LoadingWrapper';
-import { 
-	disableBodyScroll, 
-	clearAllBodyScrollLocks 
-} from 'body-scroll-lock';
 import {
   chakra,
   shouldForwardProp
@@ -27,48 +23,12 @@ const ChakraBox = chakra(motion.div, {
 });
 
 const Home = () => {
-	const [aboutView, setAboutView] = useState(false)
-	const [projView, setProjView] = useState(false)
-	const [heroView, setHeroView] = useState(true)
-	const [contactView, setContactView] = useState(false)
 	const [isLoading, setLoading] = useState(true)
 
 	const aboutRef = useRef(null)
-	const isShowAbout = useInView(aboutRef)
 	const contactRef = useRef(null)
-	const isShowContact = useInView(contactRef)
 	const projRef = useRef(null)
-	const isShowProj = useInView(projRef)
 	const heroRef = useRef(null)
-	const isShowHero = useInView(heroRef)
-
-	useEffect(() => {
-		if (!isShowAbout && !isShowProj && !isShowContact && !isShowHero ) {
-			disableBodyScroll(heroRef)
-		}
-		if (isShowHero){ 
-			setHeroView(true)
-			setAboutView(false)
-			clearAllBodyScrollLocks()
-		}
-		if (isShowAbout) {
-			setAboutView(isShowAbout)
-			setProjView(false)
-			setHeroView(false)
-			clearAllBodyScrollLocks()
-		}
-		if (isShowProj) {
-			setAboutView(false)
-			setProjView(isShowProj)
-			setContactView(false)
-			clearAllBodyScrollLocks()
-		}
-		if (isShowContact) {
-			setProjView(false)
-			setContactView(isShowContact)
-			clearAllBodyScrollLocks()
-		}
-	}, [isShowAbout, isShowProj, isShowContact, isShowHero])
 
 	return ( 
 		<Layout>
@@ -84,11 +44,10 @@ const Home = () => {
 						</ChakraBox>
 					)}
 			</AnimatePresence>
-			<Header pos={{views: {aboutView, setAboutView, projView, 
-							setProjView, setContactView, heroView, contactView}}}/>
+			<Header/>
 			<Hero 
-				loading={{states: {isLoading, setLoading}}} 
-				ref={heroRef}/>
+				ref={heroRef}
+				loading={{states: {isLoading, setLoading}}} />
 			<About ref={aboutRef}/>
 			<Projects ref={projRef}/>
 			<Contact ref={contactRef}/>

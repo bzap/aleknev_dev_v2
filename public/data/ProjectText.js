@@ -26,7 +26,7 @@ import { VscFileCode } from 'react-icons/vsc'
 
 const projects = { 
     1: {
-        name: 'GONI-GO',
+        name: 'Goni-Go',
         tech: ['JS', 'React Native', 'NodeJS', 'AWS'],
         icons: [SiJavascript, SiReact, SiNpm, SiAmazonaws],
         desc: 'A mobile goniometry application made for cancer survivors with limited post-treatment help.',
@@ -36,7 +36,7 @@ const projects = {
     },
 
     2: {
-        name: 'WPM DOG',
+        name: 'WPM Dog',
         tech: ['JS', 'HTML', 'CSS', 'JQuery'],
         icons: [SiJavascript, SiHtml5, SiCss3, SiJquery],
         desc: 'A typing test website with multiple modes, and a focus on distraction-free operation. ',
@@ -45,25 +45,25 @@ const projects = {
         link: 'https://wpm-dog.vercel.app/'
     }, 
     3: {
-        name: 'ARD UTIL',
+        name: 'Ard Util',
         tech: ['Python', 'PYQT6', 'NLTK', 'XML'],
         icons: [SiPython, CgUiKit, GrLanguage, VscFileCode],
         desc: 'A toolkit that samples Amazon review data and provides recommendations based on keyword frequency.',
         image: ['/screenshots/ard0.png'],
-        buttons: ['Explanation', 'Git Repo'],
+        buttons: ['Explanation', 'GitHub Repo'],
         link: 'https://github.com/bzap/ARD_Util'
     },
     4: {
-        name: 'RESTO REVIEW',
+        name: 'Resto Review',
         tech: ['JS', 'PHP', 'MySQL', 'Bootstrap'],
         icons: [SiJavascript, SiPhp, SiMysql, SiBootstrap],
         desc: 'A website that provides users with the opportunity to search and submit reviews on local restaurants.',
         image: ['/screenshots/rest0.png'],
-        buttons: ['Explanation', 'Git Repo'],
+        buttons: ['Explanation', 'GitHub Repo'],
         link: 'https://github.com/bzap/resto_reviews'
     },
     5: {
-        name: 'P0 JKERNEL',
+        name: 'P0 JKernel',
         tech: ['Python', 'Jupyter', 'P0', 'WebAssembly'],
         icons: [SiPython, SiJupyter, SiPastebin, SiWebassembly],
         desc: 'A custom Jupyter Notebook kernel that enables compiling and running P0 language programs.',
@@ -72,12 +72,12 @@ const projects = {
         link: 'https://p0-files-bzap.vercel.app/'
     }, 
     6: {
-        name: 'TERRAIN GEN',
+        name: 'Terrain Gen',
         tech: ['C++', 'OpenGL', 'GLUT', 'libGLU'],
         icons: [SiCplusplus, SiOpengl, SiBookstack ,SiAsana],
         desc: 'A three dimensional terrain generator, complete with panning and rendering options.',
         image: ['/screenshots/gen0.png'],
-        buttons: ['Explanation', 'Git Repo'],
+        buttons: ['Explanation', 'GitHub Repo'],
         link: 'https://github.com/bzap/terrain_gen'
     }
 }

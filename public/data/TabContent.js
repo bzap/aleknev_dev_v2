@@ -2,8 +2,8 @@ export const tabLabels = [
     { label: "About"},
     { label: "Projects"},
     { label: "Contact"}, 
-    { label: 'Home' }
+    { label: 'Hero' }
 ]
 
-const [about, project, contact] = tabLabels
-export const tabs = [about, project, contact]
+const [about, project, contact, hero] = tabLabels
+export const tabs = [about, project, contact, hero]

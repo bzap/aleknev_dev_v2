@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react';
 import { AnimatePresence, motion, isValidMotionProp } from 'framer-motion';
 import { arrowContainer, gitGT } from '../styles/Variants';
-import { CgChevronDown } from 'react-icons/cg';
+import { HiChevronDown } from 'react-icons/hi';
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -27,9 +27,9 @@ const ScrollIndicator = () => {
                                 as={motion.div}
                                 variants={gitGT}>
                                     <Icon
-                                        w={'2.2em'}
-                                        h={'2.2em'}
-                                        as={CgChevronDown}
+                                        w={'1.5em'}
+                                        h={'1.5em'}
+                                        as={HiChevronDown}
                                     />
                             </ChakraBox>
                             <ChakraBox
@@ -37,9 +37,9 @@ const ScrollIndicator = () => {
                                 as={motion.div}
                                 variants={gitGT}>
                                     <Icon
-                                        w={'2.2em'}
-                                        h={'2.2em'}
-                                        as={CgChevronDown}
+                                        w={'1.5em'}
+                                        h={'1.5em'}
+                                        as={HiChevronDown}
                                     />
                             </ChakraBox>
                             <ChakraBox
@@ -47,9 +47,9 @@ const ScrollIndicator = () => {
                                 as={motion.div}
                                 variants={gitGT}>
                                     <Icon
-                                        w={'2.2em'}
-                                        h={'2.2em'}
-                                        as={CgChevronDown}
+                                        w={'1.5em'}
+                                        h={'1.5em'}
+                                        as={HiChevronDown}
                                     />
                             </ChakraBox>
                     </Flex>

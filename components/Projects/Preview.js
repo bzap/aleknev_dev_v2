@@ -4,6 +4,7 @@ import {
     Stack,
     Flex,
     Heading,
+    Button,
     Text,
     useDisclosure,
     Image,
@@ -47,18 +48,19 @@ const Preview = ({index}) => {
                     base: 6, 
                     sm: 9, 
                     md: 9, 
-                    lg: '2.5em'
+                    lg: '9%'
                 }}
                 pt={{
                     base: 4, 
                     sm: 4, 
                     md: '2em', 
-                    lg: 4
+                    lg: 2
                 }}
                 spacing={-1}>
                     <ChakraBox
                         pb={1}
-                        variants={item}>
+                      //  variants={item}
+                        >
                             {projectTitle(projects[index].name)}
                     </ChakraBox>
                     <Flex
@@ -71,33 +73,39 @@ const Preview = ({index}) => {
                     </Flex> 
             </Flex> 
             <Stack
-                pb={{
-                    base: 8, 
-                    sm: 8, 
-                    md: '0em', 
-                    lg: 8
-                }}
                 px={{ 
                     base: 6, 
                     sm: 9, 
                     md: 9, 
-                    lg: '2.5em' 
+                    lg: '9%' 
                 }}>
                     <ChakraBox
-                        variants={item}>
+                     //   variants={item}
+                        >
                             <Center>
                                 {projectDesc(projects[index].desc)}
                             </Center>
                     </ChakraBox>
-                    <ChakraBox
-                        variants={pillItem}>
-                            <Flex>
-                                {modalButton(projects[index].buttons[0], index)}
-                                <Spacer />
-                                {projectButton(projects[index].buttons[1], projects[index].link)}
-                            </Flex>
-                    </ChakraBox>
             </Stack>
+            <ChakraBox
+            pb={{
+                base: 8, 
+                sm: 8, 
+                md: '0em', 
+                lg: 4
+            }}
+            px={{ 
+                base: 6, 
+                sm: 9, 
+                md: 9, 
+                lg: '6%' 
+            }}>
+                <Flex>
+                    {modalButton(projects[index].buttons[0], index)}
+                    <Spacer />
+                    {projectButton(projects[index].buttons[1], projects[index].link)}
+                </Flex>
+            </ChakraBox>
         </Stack>
     )
 }
@@ -123,7 +131,7 @@ const projectTitle = (props) => {
                 base: 30, 
                 sm: 40, 
                 md: 40, 
-                lg: 40 
+                lg: 20
             }}> 
                 {props} 
         </Heading> 
@@ -133,9 +141,15 @@ const projectTitle = (props) => {
 const projectSkill = (props, icon) => {
     return (
         <ChakraBox
+            pt={'1'}
             key={props}
-            variants={pskillsItem}>
+           // variants={pskillsItem}
+            >
                 <Center
+                    bg={'#e4e4e480'}
+                    py={1}
+                    px={2.5}
+                    borderRadius={'lg'}
                     direction={'row'}>
                         <Icon 
                             w={2.5}
@@ -143,12 +157,12 @@ const projectSkill = (props, icon) => {
                             as={icon} 
                             color='black.500'/>
                         <Text
-                            color={'gray.700'}
+                            color={'blackAlpha.800'}
                             fontSize={{ 
                                 base: 10, 
                                 sm: 12, 
                                 md: 12, 
-                                lg: 12.5 
+                                lg: 12 
                             }}>
                                 &thinsp;{props}
                         </Text>
@@ -172,7 +186,7 @@ const projectDesc = (props) => {
                 base: 12, 
                 sm: 14, 
                 md: 14, 
-                lg: 14 
+                lg: 12
             }}
             color={'gray.600'}>  
                 {props}
@@ -184,41 +198,29 @@ const modalButton = (name, link) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef([])
     return (
-        <ChakraBox
-            pt={{
-                base: 1, 
-                sm: 1, 
-                md: 3, 
-                lg: 1
-            }}
-            pb={{ 
-                base: 1, 
-                sm: 1, 
-                md: 2, 
-                lg: 1 
-            }}
-            as={motion.div}
-            cursor={'pointer'}
-            justifyContent={'flex-end'}
-            flex={1}
-            textColor={'Black'}
-            ref={btnRef}
-            whiteSpace={'nowrap'}
-            onClick={onOpen}
-            whileTap={{ scale: 0.9 }}
-            whileHover={{ scale:1.03 }}>
+        <Button
+        variant={'unstyled'}
+        _hover={{'bg': '#e1e1e1'}}
+        _active={{'bg': '#cfcfcf'}}
+        borderRadius={'lg'}
+        size={'sm'}
+        ref={btnRef}
+        onClick={onOpen}
+        >
                 <Heading
+                    py={1}
+                    px={3}
                     color={'blackAlpha.800'}
                     fontSize={{ 
                         base: 14, 
                         sm: 16, 
                         md: 16, 
-                        lg: 16
+                        lg: 12
                     }}>
                         {name}&#160;&gt;
                 </Heading>
                 {contentModal(btnRef, isOpen, onOpen, onClose, link )}
-        </ChakraBox>
+        </Button>
     )
 }
 
@@ -228,39 +230,26 @@ const projectButton = (name, link) => {
             isExternal
             style={{ 'textDecoration': 'none' }}
             href={link}>
-                <ChakraBox
-                    flex={1}
-                    alignItems={'center'}
-                    justifyContent={'flex-end'}
-                    as={motion.div}
-                    whileTap={{ scale: 0.9 }}
-                    whileHover={{ scale: 1.03 }}
-                    pt={{ 
-                        base: 1, 
-                        sm: 1, 
-                        md: 3, 
-                        lg: 1 
-                    }}
-                    pb={{ 
-                        base: 1, 
-                        sm: 1, 
-                        md: 2, 
-                        lg: 1 
-                    }}        
-                    cursor={'pointer'}   
-                    textColor={'Black'} 
-                    whiteSpace={'nowrap'}>
-                        <Heading
-                            color={'blackAlpha.800'}
-                            fontSize={{ 
-                                base: 14, 
-                                sm: 16, 
-                                md: 16, 
-                                lg: 16 
-                            }}>
-                                {name}&#160;&gt;
+            <Button
+            variant={'unstyled'}
+            _hover={{'bg': '#e1e1e1'}}
+            _active={{'bg': '#cfcfcf'}}
+            borderRadius={'lg'}
+            size={'sm'}
+            >
+                <Heading
+                    color={'blackAlpha.800'}
+                    py={1}
+                    px={3}
+                    fontSize={{ 
+                        base: 14, 
+                        sm: 16, 
+                        md: 16, 
+                        lg: 12
+                    }}>
+                        {name}&#160;&gt;
                         </Heading>
-                </ChakraBox>
+                </Button>
         </Link>
     )
 }
@@ -294,7 +283,7 @@ const contentModal = (ref, io, oo, oc, link) => {
                                 base: '1.9em', 
                                 sm: '1.9em', 
                                 md: '1.9em', 
-                                lg: '3em' 
+                                lg: '18' 
                             }}>    
                                 <Heading
                                     pt={{ 
@@ -307,7 +296,13 @@ const contentModal = (ref, io, oo, oc, link) => {
                                         base: 30, 
                                         sm: 38, 
                                         md: 40, 
-                                        lg: 40 
+                                        lg: 22 
+                                    }}
+                                    px={{ 
+                                        base: '1.9em', 
+                                        sm: '1.9em', 
+                                        md: '1.9em', 
+                                        lg: '1.7em' 
                                     }}>
                                         {title}
                                 </Heading>
@@ -317,7 +312,7 @@ const contentModal = (ref, io, oo, oc, link) => {
                                 base: '1.9em', 
                                 sm: '1.9em', 
                                 md: '1.9em', 
-                                lg: '3em' 
+                                lg: '3.6em' 
                             }}>
                                 <Divider />
                         </Flex>

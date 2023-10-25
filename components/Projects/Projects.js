@@ -6,6 +6,7 @@ import {
 		Link,
 		Icon,
 		Center,
+		Button,
 		useBreakpoint,
 		chakra, 
 		shouldForwardProp
@@ -29,90 +30,89 @@ const ChakraBox = chakra(motion.div, {
 const Projects = forwardRef((props, ref) => {
 	const bp = useBreakpoint()
 	return (
-		<Box
-			ref={ref}
-			position={'relative'}
-			maxW={'100%'}
-			px={{ 
-				base: '6.5%', 
-				sm: '5%', 
-				md: '10%', 
-				lg: '12%' 
-			}}
-			w={'100%'}
-			id='1'
-			pt={{ 
-				base: '4em', 
-				sm:'6em', 
-				md: '6em', 
-				lg: '6em'
-			}}
-			pb={{ 
-				base: '7em', 
-				sm: '10em', 
-				md: '16em', 
-				lg: '15em' 
-			}}>
-				<Flex
-					justifyContent={'center'}
-					direction={'column'}>
-						<Flex
-							position={'relative'}
-							justifyContent={'start'}>
-								<ChakraBox
-									as={motion.div}
-									variants={about}
-									initial={'hidden'}
-									whileInView={'visible'}
-									viewport={{ once: true, amount: 0.85 }}>
-										<Title
-											title={'Projects.'}/>
-								</ChakraBox>
-						</Flex>
-						<Flex
-							position={'relative'}
-							zIndex={10}
-							pt={{ 
-								base: '0em', 
-								sm: '0em', 
-								md: '5em', 
-								lg: '5em' 
-							}}
-							direction='column'
-							justifyContent={'center'}>
-								<ChakraBox 
-									variants={projectContainer}>	
-										<Flex
-											direction={'row'}
-											justifyContent={'space-between'}
-											flexDirection='flex-start'
-											sx={{ 'flexWrap': 'wrap' }}>
-												{[...Array(6).keys()].map((item, idx) => (
-													<Box
-														key={idx}
-														display={{ base: 'flex', sm:'flex', md: 'flex' }}
-														w={{ sm:'100%', md: '100%', lg: '26em' }}
-														justifyContent={'center'}>
-															{bp == 'base' || bp == 'sm' || bp == 'md' ? (
-																verticalItem('3em', "0" + (idx + 1).toString())
-															) : (
-																verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())
-															)}
-													</Box> 
-												))}
-										</Flex>
-								</ChakraBox>
-						</Flex>
-				</Flex>
-				<ChakraBox
-					as={motion.div}
-					initial={'hidden'}
-					whileInView={'visible'}
-					viewport={{ once: true, amount: 0.9 }}
-					variants={gitText}>
-					{gitButton()}
-				</ChakraBox>
-		</Box> 
+		<Flex
+		justifyContent={'center'}>
+			<Box
+				ref={ref}
+				position={'relative'}
+				maxW={'60em'}
+				w={'100%'}
+				id='1'
+				pt={{ 
+					base: '4em', 
+					sm:'6em', 
+					md: '6em', 
+					lg: '6em'
+				}}
+				pb={{ 
+					base: '7em', 
+					sm: '10em', 
+					md: '16em', 
+					lg: '8em' 
+				}}>
+					<Flex
+						justifyContent={'center'}
+						direction={'column'}>
+							<Flex
+								position={'relative'}
+								justifyContent={'start'}>
+									<ChakraBox
+										as={motion.div}
+										variants={about}
+										initial={'hidden'}
+										whileInView={'visible'}
+										viewport={{ once: true, amount: 0.85 }}>
+											<Title
+												title={'Some projects.'}/>
+									</ChakraBox>
+							</Flex>
+							<Flex
+								position={'relative'}
+								zIndex={10}
+								pt={{ 
+									base: '0em', 
+									sm: '0em', 
+									md: '5em', 
+									lg: '2em' 
+								}}
+								direction='column'
+								justifyContent={'center'}>
+									<ChakraBox 
+										variants={projectContainer}>	
+											<Flex
+												direction={'row'}
+												justifyContent={'space-between'}
+												flexDirection='flex-start'
+												sx={{ 'flexWrap': 'wrap' }}>
+													{[...Array(6).keys()].map((item, idx) => (
+														<Box
+															key={idx}
+															display={{ base: 'flex', sm:'flex', md: 'flex' }}
+															w={{ sm:'100%', md: '100%', lg: '45%' }}
+															justifyContent={'center'}>
+																{bp == 'base' || bp == 'sm' || bp == 'md' ? (
+																	verticalItem('3em', "0" + (idx + 1).toString())
+																) : (
+																	idx % 2 === 0 
+																		? verticalItem('0%', "0" + (idx + 1).toString())
+																		: verticalItem('35%', "0" + (idx + 1).toString())
+																	)}
+														</Box> 
+													))}
+											</Flex>
+									</ChakraBox>
+							</Flex>
+					</Flex>
+					<ChakraBox
+						as={motion.div}
+						initial={'hidden'}
+						whileInView={'visible'}
+						viewport={{ once: true, amount: 0.9 }}
+						variants={gitText}>
+						{gitButton()}
+					</ChakraBox>
+			</Box> 
+		</Flex>
 	)
 })
 
@@ -124,7 +124,7 @@ const verticalItem = (top, index) => {
 			variants={projectSubContainer}
 			initial={'hidden'}
 			whileInView={'visible'}
-			viewport={{ once: true, amount: 0.2 }}>	
+			viewport={{ once: true, amount: 0.4 }}>	
 				<Flex
 					w={'100%'}
 					position={'relative'}
@@ -151,21 +151,21 @@ const verticalItem = (top, index) => {
 									base: 31, 
 									sm: 35, 
 									md: 40, 
-									lg: 45 
+									lg: 20
 								}}>
 									{index}
 								</Heading>
 							<Heading
 								color={'blackAlpha.800'}
 								position={'relative'}
-								top={-7}
-								pl={1}>
+								fontSize={20}
+								top={-5}>
 									&#x5f;
 							</Heading>
 						</Flex>
 						<Flex
 							as={motion.div}
-							whileHover={{ scale: 1.025 }}
+							whileHover={{ scale: 1.01 }}
 							viewport={{ once: true, amount:0.8 }}
 							flex={1}
 							position={'relative'}
@@ -193,11 +193,12 @@ const gitButton = () => {
 	return ( 
 		<Flex
 			position={'relative'}
+			zIndex={50}
 			pt={{
 				base: '6em', 
 				sm: '6em', 
 				md: '7em', 
-				lg: '10em'
+				lg: '5em'
 			}}
 			justifyContent={{
 				base: 'center', 
@@ -207,43 +208,28 @@ const gitButton = () => {
 			}}>
 				<ChakraBox
 					as={motion.div}>
-						<Center>
-							<ChakraBox
-								as={motion.div}>
-									<Icon
-										w={{ 
-											base: '3.3em', 
-											sm: '3.8em', 
-											md: '5em', 
-											lg: '5em' 
-										}}
-										h={{ 
-											base: '3.3em', 
-											sm: '3.8em', 
-											md: '5em', 
-											lg: '5em' 
-										}}
+						<Center> 	
+						<Link
+						style={{ 'textDecoration': 'none' }}
+						href={'https://github.com/bzap'}
+						isExternal>							
+								<Button
+								variant={'unstyled'}
+								_hover={{'bg': '#cfcfcf'}}
+								_active={{'bg': '#bfbfbf'}}
+								borderRadius={'lg'}
+								size={'sm'}
+								>
+									<Heading
+										px={3}
 										color={'blackAlpha.800'}
-										as={IoMdReturnRight}/>
-							</ChakraBox>   								
-							<ChakraBox
-								cursor={'pointer'}
-								as={motion.div}
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
-								direction={'row'}>
-									<Link
-										style={{ 'textDecoration': 'none' }}
-										href={'https://github.com/bzap'}
-										isExternal>
-											<Heading
-												color={'blackAlpha.800'}
-												fontSize={{ base: 34, sm: 37, md: 40, lg: 45 }}
-												fontWeight={'bold'}>
-													&nbsp;GITHUB
-											</Heading> 
-									</Link>
-							</ChakraBox>
+										fontSize={{ base: 34, sm: 37, md: 40, lg: 12 }}
+										fontWeight={'bold'}>
+											... And more &gt;
+									</Heading> 
+								
+								</Button>
+							</Link>
 						</Center> 
 				</ChakraBox>
 		</Flex>

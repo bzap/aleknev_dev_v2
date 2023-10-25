@@ -52,9 +52,10 @@ const AnimatedTabs = ({pos}) => {
 	return (
 		<Stack
 			direction={'row'}
-			justify={'flex-end'}> 
+			justify={'flex-end'}
+			pr={2}> 
 				<Flex
-					gap={'4em'}>
+					gap={'3em'}>
 						{tabs.map((item, idx) => (
 							<Link 
 								key={idx} 
@@ -80,7 +81,7 @@ const AnimatedTabs = ({pos}) => {
 												zIndex={16}>
 													<Center>
 														<Heading
-														fontSize={{base: 14, sm: 15, md: 15, lg: 15.5}}
+														fontSize={{base: 14, sm: 14, md: 14, lg: 14}}
 														color='blackAlpha.800'>
 															{item.label}
 														</Heading>	
@@ -101,8 +102,8 @@ const AnimatedTabs = ({pos}) => {
 													animate={{opacity:1}}
 													exit={{opacity:0}}	
 													bg={'whiteAlpha.900'}
-													px={4}
-													py={'7px'}
+													px={3}
+													py={'4px'}
 													borderRadius={'12px'}
 													boxShadow={'md'}>
 													<ChakraBox 
