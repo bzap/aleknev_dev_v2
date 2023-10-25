@@ -93,8 +93,10 @@ const Projects = forwardRef((props, ref) => {
 																{bp == 'base' || bp == 'sm' || bp == 'md' ? (
 																	verticalItem('3em', "0" + (idx + 1).toString())
 																) : (
-																	verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())
-																)}
+																	idx % 2 === 0 
+																		? verticalItem('0%', "0" + (idx + 1).toString())
+																		: verticalItem('35%', "0" + (idx + 1).toString())
+																	)}
 														</Box> 
 													))}
 											</Flex>
@@ -122,7 +124,7 @@ const verticalItem = (top, index) => {
 			variants={projectSubContainer}
 			initial={'hidden'}
 			whileInView={'visible'}
-			viewport={{ once: true, amount: 0.2 }}>	
+			viewport={{ once: true, amount: 0.4 }}>	
 				<Flex
 					w={'100%'}
 					position={'relative'}

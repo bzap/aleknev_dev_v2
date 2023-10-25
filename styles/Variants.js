@@ -41,7 +41,7 @@ export const item = {
   hidden: { y: 20, opacity: 0 },
   visible: {
 	transition: {
-		duration:0.4
+		duration:0.2
 	},
 	y: 0,
 	opacity: 1
@@ -52,7 +52,7 @@ export const skillsItem = {
 	hidden: { opacity: 0 },
 	visible: {
 	  transition: {
-		  duration:0.7
+		  duration:0.25
 	  },
 	  opacity: 1,
 	  scale:[0.5, 1.02, 1]
@@ -65,7 +65,6 @@ export const projectContainer = {
 	  y:0,
 	  opacity: 1,
 	  transition: {
-		delay:0.3,
 		duration: 0.3,
 		delayChildren: 0.3,  
 		staggerChildren: 1
@@ -79,8 +78,8 @@ export const projectSubContainer = {
 	  y:0,
 	  opacity: 1,
 	  transition: {
-		delay: 0.5,
-		duration: 0.5,
+		delay: 0.2,
+		duration: 0.3,
 		delayChildren: 0.5,
 		staggerChildren: 0.1
 	  }  
@@ -105,7 +104,7 @@ export const pskillsItem = {
 	visible: {
       y:0,
 	  transition: {
-		  duration:0.2
+		  duration:0.1
 	  },
 	  opacity: 1,
 	}
@@ -115,7 +114,7 @@ export const pillItem = {
 	hidden: { opacity: 0, y: 5 },
 	visible: {
 	  transition: {
-		  duration:0.4
+		  duration:0.1
 	  },
 	  opacity: 1,
 	  y: 0
@@ -245,8 +244,8 @@ export const background = {
 		opacity: 1,
 		transition: {
 			ease: 'easeInOut',
-			delay: 0.2,
-			delayChildren: 0.2,
+			delay: 0.1,
+			delayChildren: 0.1,
 			staggerChildren: 0.1
 		}
 	}
@@ -331,7 +330,7 @@ export const heroContainer = {
 		opacity: 1,
 		transition: {
 			ease: 'easeInOut',
-			staggerChildren: 1.1
+			staggerChildren: 1
 		}
 	}
 }   
@@ -413,7 +412,7 @@ export const keyboardContainer = {
 		opacity: 1,
 		transition: {
 			ease: 'easeInOut',
-			staggerChildren: 0.3
+			staggerChildren: 0.1
 		}
 	}
 }   

@@ -59,7 +59,7 @@ const Preview = ({index}) => {
                 spacing={-1}>
                     <ChakraBox
                         pb={1}
-                        //variants={item}>
+                      //  variants={item}
                         >
                             {projectTitle(projects[index].name)}
                     </ChakraBox>
@@ -80,7 +80,7 @@ const Preview = ({index}) => {
                     lg: '9%' 
                 }}>
                     <ChakraBox
-                        //variants={item}
+                     //   variants={item}
                         >
                             <Center>
                                 {projectDesc(projects[index].desc)}
@@ -143,7 +143,7 @@ const projectSkill = (props, icon) => {
         <ChakraBox
             pt={'1'}
             key={props}
-            //variants={pskillsItem}
+           // variants={pskillsItem}
             >
                 <Center
                     bg={'#e4e4e480'}
