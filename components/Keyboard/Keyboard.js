@@ -52,7 +52,6 @@ const Keyboard = ({ props }) => {
 									w={'100%'}>
 										<Canvas 
 										shadows
-										zIndex={50}
 										camera={{ position: [9, 4, 5], fov: 50 }}
 										dpr={[1, 2]}>
 										<ambientLight 
