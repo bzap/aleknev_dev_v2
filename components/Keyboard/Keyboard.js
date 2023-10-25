@@ -38,11 +38,13 @@ const Keyboard = ({ props }) => {
 					h={'100%'}
 					as={motion.div}
 					variants={keyboardContainer}>
+					
 						<ChakraBox
 							w={'100%'}
 							h={'100%'}
 							as={motion.div}
 							variants={heroKeyboard}>
+							
 								<Flex
 									justifyContent={'center'}
 									alignItems={'center'}
@@ -68,10 +70,10 @@ const Keyboard = ({ props }) => {
 																	
 																	observe
 																	margin={
-																		bp == 'xl' ? 0.5
-																		: bp == '2xl' ? 1.2
-																		: bp == 'md' || bp == 'lg' ? 0.6
-																		: bp == 'sm' ? 0.6
+																		bp == 'xl' ? 1.3
+																		: bp == '2xl' ? 1.4
+																		: bp == 'md' || bp == 'lg' ? 1.2
+																		: bp == 'sm' ? 1.2
 																		: 1.2 }>
 																			<Model innerLoading={props} />
 																			<mesh 
