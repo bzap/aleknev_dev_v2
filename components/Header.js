@@ -17,10 +17,8 @@ import {
 	useBreakpoint 
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp, useCycle } from "framer-motion";
-import { CloseIcon } from '@chakra-ui/icons';
 import { FaLessThan, FaGreaterThan } from 'react-icons/fa'
 import { SiInstagram, SiGithub, SiLinkedin } from 'react-icons/si'
-import { HiMenu } from 'react-icons/hi'
 import MobileTabs from './Tabs/MobileTabs';
 import { Link as ScrollLink } from "react-scroll/modules"
 import { navContainer } from '../styles/Variants';
@@ -217,7 +215,7 @@ const content = () => {
 				<Collapse
 					in={isOpen}
 					animateOpacity>
-						<MobileTabs />
+						<MobileTabs toggle={() => toggleOpen()}/>
 				</Collapse>
 		</Box>
 	)

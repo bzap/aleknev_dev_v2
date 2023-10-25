@@ -56,8 +56,7 @@ const Keyboard = ({ props }) => {
 										camera={{ position: [9, 4, 5], fov: 50 }}
 										dpr={[1, 2]}>
 										<ambientLight 
-										intensity={1}
-										castShadow/>
+										intensity={1}/>
 										<Light/>
 												<Suspense fallback={null}>
 													{props !== undefined && (
@@ -76,7 +75,7 @@ const Keyboard = ({ props }) => {
 																			<mesh 
 																			receiveShadow
 																			position={[0, -0.08, 0]}>
-																			<cylinderBufferGeometry 
+																			<cylinderGeometry 
 																			receiveShadow
 																			attach="geometry" args={[0.11, 0.11, 0.005, 64]} 
 																			/>

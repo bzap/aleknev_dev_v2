@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { Link } from "react-scroll/modules";
 
-const MobileTabs = () => {
+const MobileTabs = ({ toggle }) => {
     return (
         <Flex
             justify={'flex-end'}>
@@ -29,6 +29,7 @@ const MobileTabs = () => {
                         offset={0}
                         duration={900}>
                             <Tab
+                            onClick={toggle}
                             mt={1.5}
                             w={'full'}
                             borderRadius={'lg'}
