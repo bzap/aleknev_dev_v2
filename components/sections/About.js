@@ -137,7 +137,7 @@ const Background = ({bp}) => {
 
 									borderRadius={'22px'}
 									opacity={0.9}
-									src={'/portrait.png'} />							
+									src={'/portrait.webp'} />							
 						</Flex>
 					</ChakraBox> */}
 			</Flex>

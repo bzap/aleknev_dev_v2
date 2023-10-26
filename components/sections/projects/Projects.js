@@ -72,7 +72,7 @@ const Projects = forwardRef((props, ref) => {
 								pt={{ 
 									base: '0em', 
 									sm: '0em', 
-									md: '5em', 
+									md: '1em', 
 									lg: '2em' 
 								}}
 								direction='column'

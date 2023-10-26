@@ -15,7 +15,7 @@ const Title = ({title}) => {
                     fontSize={{ 
                         base: '1.7em', 
                         sm: '1.7em', 
-                        md: '1.7emem', 
+                        md: '1.7em', 
                         lg: '1.7em' }}>
                             <Wave text={title}/>
                 </Heading>

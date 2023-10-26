@@ -270,7 +270,7 @@ const contentModal = (ref, io, oo, oc, link) => {
                 <ModalOverlay/>
                 <ModalContent 
                     borderRadius={'12px'}
-                    maxW={'60em'}>
+                    maxW={{base: '90%', sm: '90%', md: '90%', lg: '60em'}}>
                         <ModalHeader
                             px={{ 
                                 base: 18, 

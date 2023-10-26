@@ -1,12 +1,9 @@
 import {
-	Container,
 	Flex,
 	Heading,
 	Text,
 	chakra,
-	useBreakpoint,
 	shouldForwardProp,	
-	Spacer,
   } from '@chakra-ui/react';
 import Keyboard from './Keyboard';
 import { motion, isValidMotionProp } from 'framer-motion';
