@@ -19,9 +19,9 @@ import {
 import { motion, isValidMotionProp, useCycle } from "framer-motion";
 import { FaLessThan, FaGreaterThan } from 'react-icons/fa'
 import { SiInstagram, SiGithub, SiLinkedin } from 'react-icons/si'
-import MobileTabs from './Tabs/MobileTabs';
+import MobileTabs from './Tabs';
 import { Link as ScrollLink } from "react-scroll/modules"
-import { navContainer } from '../styles/Variants';
+import { navContainer } from '../../styles/Variants';
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -30,6 +30,7 @@ const ChakraBox = chakra(motion.div, {
 const Header = ({ ref }) => {
 	return (
 			<Flex
+			
 				justifyContent={'center'}
 				pt={'4'}>
 					<ChakraBox
@@ -42,7 +43,7 @@ const Header = ({ ref }) => {
 						backdropFilter='auto'
 						backdropBlur='8px'
 						w={'100%'}
-						maxW={'60em'}
+						maxW={{base: '90%', lg: '60em'}}
 						position='fixed'
 						zIndex={200}
 						boxShadow={'md'}
@@ -115,7 +116,9 @@ const Header = ({ ref }) => {
 			tabIndex="-1"
 			className='simple-hover'
 			onClick={toggle}>
-				<svg width="18" height="18" viewBox="0 0 23 23">
+				<svg 
+				width="18" 
+				height="18" viewBox="0 0 23 23">
 					<Path
 					variants={{
 						closed: { d: "M 2 2.5 L 20 2.5" },
@@ -248,7 +251,7 @@ const logoHeader = () => {
 							offset={0}
 							duration={900}>
 								<Heading
-								fontSize={14.5}>
+								fontSize={{ base: 12, sm: 12, md: 14.5, lg: 14.5 }}>
 										&thinsp;aleknev&thinsp;
 								</Heading>
 							</ScrollLink>

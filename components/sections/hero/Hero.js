@@ -8,11 +8,11 @@ import {
 	shouldForwardProp,	
 	Spacer,
   } from '@chakra-ui/react';
-import Keyboard from './Keyboard/Keyboard';
+import Keyboard from './Keyboard';
 import { motion, isValidMotionProp } from 'framer-motion';
-import { heroContainer, heroDesc, scrollArrows, keyboardContainer } from '../styles/Variants';
+import { heroContainer, heroDesc, scrollArrows, keyboardContainer } from '../../../styles/Variants';
 import ScrollIndicator from './ScrollIndicator';
-import Wave from './Variants/Wave';
+import Wave from '../../Wave';
 import { forwardRef } from 'react';
 
 const ChakraBox = chakra(motion.div, {

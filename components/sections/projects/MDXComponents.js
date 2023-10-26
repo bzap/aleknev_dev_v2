@@ -3,7 +3,7 @@ import {
     Heading,
     Text,
 } from '@chakra-ui/react';
-import LazyImageAnimator from './LazyImageAnimator';
+import LazyImageAnimator from '../projects/LazyImageAnimator';
 
 const MDXComponents = {
     h1: (props) => <Heading fontSize={18} {...props} />,
@@ -17,7 +17,7 @@ const MDXComponents = {
                 lg: '2em' 
             }}>
                 <Heading
-                    fontSize={{ 
+                    fontSize={{
                         base: 23, 
                         sm: 26, 
                         md: 28, 

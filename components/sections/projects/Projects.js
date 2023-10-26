@@ -19,9 +19,9 @@ import {
 		gitText, 
 		projectSubContainer, 
 		about 
-	} from '../../styles/Variants';
+	} from '../../../styles/Variants';
 import { forwardRef } from 'react';
-import Title from '../Title';
+import Title from '../../Title';
 
 const ChakraBox = chakra(motion.div, {
 		shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),

@@ -12,11 +12,11 @@ import {
 	shouldForwardProp,
 	useToast
 } from '@chakra-ui/react';
-import Title from './Title';
+import Title from '../Title';
 import { useEffect, forwardRef } from 'react';
 import { useForm } from "@formspree/react";
 import { isValidMotionProp, motion } from "framer-motion";
-import { about, itemText, aboutItem } from '../styles/Variants';
+import { about, itemText, aboutItem } from '../../styles/Variants';
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),

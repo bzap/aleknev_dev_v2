@@ -5,7 +5,7 @@ import {
     shouldForwardProp,
 } from '@chakra-ui/react';
 import { AnimatePresence, motion, isValidMotionProp } from 'framer-motion';
-import { arrowContainer, gitGT } from '../styles/Variants';
+import { arrowContainer, gitGT } from '../../../styles/Variants';
 import { HiChevronDown } from 'react-icons/hi';
 
 const ChakraBox = chakra(motion.div, {

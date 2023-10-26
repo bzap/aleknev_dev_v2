@@ -18,10 +18,10 @@ import {
   } from '@chakra-ui/react';
 import { MdOutlineSubdirectoryArrowRight } from 'react-icons/md';
 import { motion, isValidMotionProp } from "framer-motion";
-import { item } from '../styles/Variants';
-import Title from './Title';
-import aboutText from '../public/data/AboutText';
-import { about, currentSkills, background, itemText, aboutItem } from '../styles/Variants';
+import { item } from '../../styles/Variants';
+import Title from '../Title';
+import aboutText from '../../public/data/AboutText';
+import { about, currentSkills, background, itemText, aboutItem } from '../../styles/Variants';
 import { CgSmile } from 'react-icons/cg';
 import { forwardRef } from 'react';
 import { BiSubdirectoryRight } from 'react-icons/bi'

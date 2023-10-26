@@ -2,7 +2,7 @@ import {
     Flex,
     Heading
 } from '@chakra-ui/react';
-import Wave from './Variants/Wave';
+import Wave from '../components/Wave'
 
 const Title = ({title}) => { 
     return ( 

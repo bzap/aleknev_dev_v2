@@ -3,12 +3,12 @@ import { tabs } from '../../public/data/TabContent';
 import {
     Flex,
     Heading,
-    Tabs, 
+    Tabs as ChakraTabs, 
     Tab, 
 } from '@chakra-ui/react';
 import { Link } from "react-scroll/modules";
 
-const MobileTabs = ({ toggle }) => {
+const Tabs = ({ toggle }) => {
     return (
         <Flex
             justify={'flex-end'}>
@@ -16,7 +16,7 @@ const MobileTabs = ({ toggle }) => {
                     w={'7.5em'}
                     pt={2}
                     direction={'column'}>
-                        <Tabs
+                        <ChakraTabs
                         mt={-1}
                         variant={'unstyled'}>
                         {tabs.slice(0,-1).map((item, idx) => (
@@ -44,11 +44,11 @@ const MobileTabs = ({ toggle }) => {
                             </Tab>
                             </Link>
                         ))}
-                        </Tabs>
+                        </ChakraTabs>
 
                 </Flex>
         </Flex>
     )
 }
 
-export default MobileTabs
+export default Tabs

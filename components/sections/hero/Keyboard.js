@@ -11,7 +11,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { Bounds, Stage, OrbitControls } from "@react-three/drei";
 import { motion, isValidMotionProp } from 'framer-motion';
-import { heroKeyboard, keyboardContainer } from '../../styles/Variants';
+import { heroKeyboard, keyboardContainer } from '../../../styles/Variants';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
