@@ -21,6 +21,8 @@ const LazyImageAnimator = ({ props }) => {
     return (
         <Flex
             borderRadius={'11px'}
+            px={10}
+            py={3}
             position={'relative'}>
                 <ChakraBox
                     position={'relative'}

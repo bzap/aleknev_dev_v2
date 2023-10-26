@@ -40,9 +40,9 @@ const Contact = forwardRef((props, ref) => {
 				w={'100%'}
 				id='2'
 				pt={{ 
-					base: '4em', 
-					sm: '6em', 
-					md: '6em', 
+					base: '6%', 
+					sm: '6%', 
+					md: '6%', 
 					lg: '6%' 
 				}}
 				pb={'4em'}>
@@ -107,8 +107,8 @@ const formBox = () => {
 				backdropBlur='5px'
 				p={{ 
 					base: '2em', 
-					sm: '2.5em', 
-					md: '4em', 
+					sm: '2em', 
+					md: '2em', 
 					lg: '2em' 
 				}}
 				w={'100%'}
@@ -155,8 +155,8 @@ const formBox = () => {
 																	color={'blackAlpha.800'}
 																	fontSize={{ 
 																		base: 18, 
-																		sm: 20, 
-																		md: 25, 
+																		sm: 18, 
+																		md: 18, 
 																		lg: 18 
 																	}}>
 																		Email
@@ -166,8 +166,8 @@ const formBox = () => {
 																as={motion.div}>
 																	<Input
 																		fontSize={{ 
-																			base: 13, 
-																			sm: 13.5, 
+																			base: 11, 
+																			sm: 11, 
 																			md: 12, 
 																			lg: 12 
 																		}}
@@ -202,8 +202,8 @@ const formBox = () => {
 																		color={'blackAlpha.800'}
 																		fontSize={{ 
 																			base: 18, 
-																			sm: 20, 
-																			md: 25, 
+																			sm: 18, 
+																			md: 18, 
 																			lg: 18
 																		}}>
 																			Name
@@ -213,8 +213,8 @@ const formBox = () => {
 																as={motion.div}>
 																	<Input
 																		fontSize={{ 
-																			base: 13, 
-																			sm: 13.5, 
+																			base: 11, 
+																			sm: 11, 
 																			md: 12, 
 																			lg: 12 
 																		}}
@@ -251,8 +251,8 @@ const formBox = () => {
 																	color={'blackAlpha.800'}
 																	fontSize={{ 
 																		base: 18, 
-																		sm: 20, 
-																		md: 25, 
+																		sm: 18, 
+																		md: 18, 
 																		lg: 18 
 																	}}>
 																		Message
@@ -265,8 +265,8 @@ const formBox = () => {
 																	p={4}
 																	h={'100%'}
 																	fontSize={{ 
-																		base: 13, 
-																		sm: 13.5, 
+																		base: 11, 
+																		sm: 11, 
 																		md: 12, 
 																		lg: 12 
 																	}}
@@ -308,9 +308,9 @@ const formBox = () => {
 													px={3}
 													color={'blackAlpha.800'}
 													fontSize={{ 
-														base: 16, 
-														sm: 16, 
-														md: 16, 
+														base: 12, 
+														sm: 12, 
+														md: 12, 
 														lg: 12
 												}}>
 													Submit&#160;&gt;

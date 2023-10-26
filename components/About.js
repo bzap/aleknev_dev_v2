@@ -89,13 +89,13 @@ const Background = ({bp}) => {
 										py={{ 
 											base: 6, 
 											sm: 8, 
-											md: 6, 
+											md: 8, 
 											lg: 8 
 										}}
 										px={{ 
 											base: 6, 
 											sm: 8, 
-											md: 10, 
+											md: 8, 
 											lg: 8
 										}}>
 											<ChakraBox
@@ -107,9 +107,9 @@ const Background = ({bp}) => {
 															color='blackAlpha.800'
 															fontWeight={900}
 															fontSize={{ 
-																base: 25, 
-																sm: 30, 
-																md: 38, 
+																base: 18, 
+																sm: 18, 
+																md: 18, 
 																lg: 18
 															}}>
 																Background
@@ -202,13 +202,13 @@ const Experience = ({bp}) => {
 										py={{ 
 											base: 6, 
 											sm: 8, 
-											md: 10, 
+											md: 8, 
 											lg: 8 
 										}}
 										px={{ 
 											base: 6, 
 											sm: 8, 
-											md: 10, 
+											md: 8, 
 											lg: 8
 										}}>
 											<ChakraBox
@@ -220,15 +220,15 @@ const Experience = ({bp}) => {
 															color='blackAlpha.800'
 															fontWeight={900}
 															fontSize={{ 
-																base: 25, 
-																sm: 30, 
-																md: 38, 
+																base: 18, 
+																sm: 18, 
+																md: 18, 
 																lg: 18
 															}}>
 																Experience
 													</Heading>
 											</ChakraBox>
-											{experienceText()}
+											{experienceText(bp)}
 									</ChakraBox>
 							</Flex>
 					</ChakraBox>			
@@ -327,9 +327,9 @@ const About = forwardRef((props, ref) => {
 					lg: '6em'
 				}}
 				pb={{ 
-					base: '7em', 
-					sm: '10em', 
-					md: '16em', 
+					base: '4em', 
+					sm: '4em', 
+					md: '8em', 
 					lg: '8em' 
 				}}>
 				<Flex
@@ -385,8 +385,8 @@ const backgroundText = () => {
 					whiteSpace={'pre-line'}
 					color={'gray.700'}
 					fontSize={{ 
-						base: 12, 
-						sm: 12, 
+						base: 11, 
+						sm: 11, 
 						md: 12, 
 						lg: 12
 					}}>
@@ -404,7 +404,7 @@ const backgroundText = () => {
 	)
 }
 
-const experienceText = () => { 
+const experienceText = (bp) => { 
 	return (
 		<ChakraBox
 			w={'100%'}
@@ -415,19 +415,20 @@ const experienceText = () => {
 				gap={2}
 				flexDir={'row'}>
 					<Flex
-					w={'22%'}
+					w={{ base: '40%', sm: '30%', md: '22%' }}
 					borderRightWidth={'2px'}
 					borderRightColor={'blackAlpha.200'}
 					flexDir={'column'}>
 						<Heading
-						fontSize={14}>
-							March 2023 - Present
+						fontSize={{ base: 12, sm: 12, md: 14 }}>
+							{bp === 'base' ? '2023 - Pres.' 
+							: '2023 - Present.'}
 						</Heading>
 						<Text
 						pr={2}
 						as={'i'}
 						color={'blackAlpha.700'}
-						fontSize={12}>
+						fontSize={{ base: 11, sm: 11, md: 12 }}>
 							Toronto, ON	
 						</Text>
 					</Flex>
@@ -436,19 +437,19 @@ const experienceText = () => {
 					w={'70%'}
 					flexDir={'column'}>
 						<Heading
-						fontSize={14}>
+						fontSize={{ base: 12, sm: 12, md: 14 }}>
 							Software Developer
 						</Heading>
 						<Text
 						as={'i'}
 						color={'blackAlpha.700'}
-						fontSize={12}>
+						fontSize={{ base: 11, sm: 11, md: 12 }}>
 							AviaPro Consulting Inc.
 						</Text>
 						<Text
 						pt={2}
 						color={'blackAlpha.700'}
-						fontSize={12}>
+						fontSize={{ base: 11, sm: 11, md: 12 }}>
 							{aboutText.avpExperience[0]}
 						</Text>
 					</Flex>
@@ -484,13 +485,13 @@ const skillsInfo = () => {
 				px={{
 					base: 6, 
 					sm: 8, 
-					md: 12, 
+					md: 8, 
 					lg: 8
 				}}
 				pt={{ 
 					base: 6, 
 					sm: 8, 
-					md: 12, 
+					md: 8, 
 					lg: 8 
 				}}>
 					<ChakraBox
@@ -501,9 +502,9 @@ const skillsInfo = () => {
 									borderBottomColor={'blackAlpha.100'}
 									color='blackAlpha.800'
 									fontSize={{ 
-										base: 25, 
-										sm: 30, 
-										md: 38, 
+										base: 18, 
+										sm: 18, 
+										md: 18, 
 										lg: 18
 									}}>
 									Technical Skills
@@ -519,7 +520,7 @@ const skillsInfo = () => {
 								pb={{ 
 									base: 8, 
 									sm: 10, 
-									md: 14, 
+									md: 10, 
 									lg: 10 
 								}}
 								justify-content={'space-between'}
@@ -530,7 +531,7 @@ const skillsInfo = () => {
 									w={'100%'}
 									flexDir={'column'}>
 										<Heading
-										fontSize={14}
+										fontSize={{ base: 12, sm: 12, md: 14 }}
 										pb={1.5}
 										color='blackAlpha.800'>
 											Languages
@@ -541,7 +542,7 @@ const skillsInfo = () => {
 									w={'100%'}
 									flexDir={'column'}>
 										<Heading
-										fontSize={14}
+										fontSize={{ base: 12, sm: 12, md: 14 }}
 										pb={1.5}
 										color='blackAlpha.800'>
 											Frameworks and Databases
@@ -573,8 +574,8 @@ const skillText = () => {
 								lineHeight={'1.3em'}
 								color={'gray.700'}
 								fontSize={{ 
-									base: 12, 
-									sm: 12, 
+									base: 11, 
+									sm: 11, 
 									md: 12, 
 									lg: 12 
 								}}>
@@ -630,8 +631,8 @@ const skillItem = (name, ic) => {
 							color={'blackAlpha.800'}
 							fontSize={{ 
 								base: 0, 
-								sm: 12, 
-								md: 12, 
+								sm: 0, 
+								md: 10, 
 								lg: 12 
 							}}>
 								&thinsp;{name}

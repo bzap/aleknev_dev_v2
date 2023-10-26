@@ -89,15 +89,15 @@ const Preview = ({index}) => {
             </Stack>
             <ChakraBox
             pb={{
-                base: 8, 
-                sm: 8, 
-                md: '0em', 
+                base: 4, 
+                sm: 4, 
+                md: 4, 
                 lg: 4
             }}
             px={{ 
-                base: 6, 
-                sm: 9, 
-                md: 9, 
+                base: '6%', 
+                sm: '6%' , 
+                md: '6%' , 
                 lg: '6%' 
             }}>
                 <Flex>
@@ -128,9 +128,9 @@ const projectTitle = (props) => {
         <Heading
             color={'blackAlpha.800'}
             fontSize={{ 
-                base: 30, 
-                sm: 40, 
-                md: 40, 
+                base: 20, 
+                sm: 20, 
+                md: 20, 
                 lg: 20
             }}> 
                 {props} 
@@ -148,7 +148,7 @@ const projectSkill = (props, icon) => {
                 <Center
                     bg={'#e4e4e480'}
                     py={1}
-                    px={2.5}
+                    px={{ base: 5, sm: 7, md: 2.5 }}
                     borderRadius={'lg'}
                     direction={'row'}>
                         <Icon 
@@ -159,9 +159,9 @@ const projectSkill = (props, icon) => {
                         <Text
                             color={'blackAlpha.800'}
                             fontSize={{ 
-                                base: 10, 
-                                sm: 12, 
-                                md: 12, 
+                                base: 0, 
+                                sm: 0, 
+                                md: 11, 
                                 lg: 12 
                             }}>
                                 &thinsp;{props}
@@ -177,15 +177,15 @@ const projectDesc = (props) => {
             py={{ 
                 base: 2, 
                 sm: 2, 
-                md: 5, 
+                md: 2, 
                 lg: 2 
             }}
             as='p'
             lineHeight={'1.3em'}
             fontSize={{ 
-                base: 12, 
-                sm: 14, 
-                md: 14, 
+                base: 11, 
+                sm: 11, 
+                md: 12, 
                 lg: 12
             }}
             color={'gray.600'}>  
@@ -212,9 +212,9 @@ const modalButton = (name, link) => {
                     px={3}
                     color={'blackAlpha.800'}
                     fontSize={{ 
-                        base: 14, 
-                        sm: 16, 
-                        md: 16, 
+                        base: 11, 
+                        sm: 11, 
+                        md: 12, 
                         lg: 12
                     }}>
                         {name}&#160;&gt;
@@ -242,9 +242,9 @@ const projectButton = (name, link) => {
                     py={1}
                     px={3}
                     fontSize={{ 
-                        base: 14, 
-                        sm: 16, 
-                        md: 16, 
+                        base: 11, 
+                        sm: 11, 
+                        md: 12, 
                         lg: 12
                     }}>
                         {name}&#160;&gt;
@@ -271,19 +271,13 @@ const contentModal = (ref, io, oo, oc, link) => {
                 <ModalOverlay/>
                 <ModalContent 
                     borderRadius={'12px'}
-                    maxW={{
-                        base: '90%', 
-                        sm: '90%', 
-                        md: '70%', 
-                        lg: '70%', 
-                        xl: '50%'
-                    }}>
+                    maxW={'60em'}>
                         <ModalHeader
                             px={{ 
-                                base: '1.9em', 
-                                sm: '1.9em', 
-                                md: '1.9em', 
-                                lg: '18' 
+                                base: 18, 
+                                sm: 18, 
+                                md: 18, 
+                                lg: 18 
                             }}>    
                                 <Heading
                                     pt={{ 
@@ -293,15 +287,15 @@ const contentModal = (ref, io, oo, oc, link) => {
                                         lg: 2
                                     }}
                                     fontSize={{ 
-                                        base: 30, 
-                                        sm: 38, 
-                                        md: 40, 
+                                        base: 22, 
+                                        sm: 22, 
+                                        md: 22, 
                                         lg: 22 
                                     }}
                                     px={{ 
-                                        base: '1.9em', 
-                                        sm: '1.9em', 
-                                        md: '1.9em', 
+                                        base: '0.7em', 
+                                        sm: '0.7em', 
+                                        md: '0.7em', 
                                         lg: '1.7em' 
                                     }}>
                                         {title}
@@ -309,9 +303,9 @@ const contentModal = (ref, io, oo, oc, link) => {
                         </ModalHeader>
                         <Flex
                             px={{ 
-                                base: '1.9em', 
-                                sm: '1.9em', 
-                                md: '1.9em', 
+                                base: '3.6em', 
+                                sm: '3.6em', 
+                                md: '3.6em', 
                                 lg: '3.6em' 
                             }}>
                                 <Divider />

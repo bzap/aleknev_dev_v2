@@ -45,9 +45,9 @@ const Projects = forwardRef((props, ref) => {
 					lg: '6em'
 				}}
 				pb={{ 
-					base: '7em', 
-					sm: '10em', 
-					md: '16em', 
+					base: '4em', 
+					sm: '4em', 
+					md: '8em', 
 					lg: '8em' 
 				}}>
 					<Flex
@@ -148,9 +148,9 @@ const verticalItem = (top, index) => {
 								color={'blackAlpha.800'}
 								fontWeight={900}
 								fontSize={{ 
-									base: 31, 
-									sm: 35, 
-									md: 40, 
+									base: 20, 
+									sm: 20, 
+									md: 20, 
 									lg: 20
 								}}>
 									{index}
@@ -169,7 +169,7 @@ const verticalItem = (top, index) => {
 							viewport={{ once: true, amount:0.8 }}
 							flex={1}
 							position={'relative'}
-							h={'30.5em'}
+							h={'auto'}
 							justifyContent={'center'}
 							w={{
 								base: '100%', 
@@ -223,7 +223,7 @@ const gitButton = () => {
 									<Heading
 										px={3}
 										color={'blackAlpha.800'}
-										fontSize={{ base: 34, sm: 37, md: 40, lg: 12 }}
+										fontSize={{ base: 12, sm: 12, md: 12, lg: 12 }}
 										fontWeight={'bold'}>
 											... And more &gt;
 									</Heading> 

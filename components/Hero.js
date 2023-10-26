@@ -34,9 +34,9 @@ const Hero = forwardRef((props, ref) => {
 				direction={'column'}
 				flex={1}
 				pb={{ 
-					base: '7em', 
-					sm: '10em', 
-					md: '16em', 
+					base: '4em', 
+					sm: '4em', 
+					md: '8em', 
 					lg: '8em' 
 				}}>
 					<Flex
@@ -137,11 +137,11 @@ const introText = () => {
 								position={'relative'}
 								color={'blackAlpha.800'}
 								fontSize={{ 
-									base: '9vw', 
-									sm: '9vw', 
-									md: '8vw', 
-									lg: '7vw', 
-									xl: '3.9vw', 
+									base: '6.5vw', 
+									sm: '5.5vw', 
+									md: '5vw', 
+									lg: '4.5vw', 
+									xl: '3.5vw', 
 									'2xl': '3.5vw' 
 								}}>
 									<Wave text={'Hey! I\'m Linas.'} />
@@ -179,11 +179,11 @@ const introText = () => {
 								textAlign={'center'}
 								color={'blackAlpha.700'}
 								fontSize={{ 
-									base: '1em', 
-									sm: '1.2em', 
-									md: '1.3em', 
-									lg: '1.3em', 
-									xl: '1.5em', 
+									base: '0.8em', 
+									sm: '0.8em', 
+									md: '1em', 
+									lg: '1em', 
+									xl: '1em', 
 									'2xl': '0.9vw' 
 								}}>
 									I'm a full-stack software developer based in Toronto.

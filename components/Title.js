@@ -13,9 +13,9 @@ const Title = ({title}) => {
                     color={'blackAlpha.800'}
                     position={'relative'}
                     fontSize={{ 
-                        base: '2.3em', 
-                        sm: '3em', 
-                        md: '5em', 
+                        base: '1.7em', 
+                        sm: '1.7em', 
+                        md: '1.7emem', 
                         lg: '1.7em' }}>
                             <Wave text={title}/>
                 </Heading>
