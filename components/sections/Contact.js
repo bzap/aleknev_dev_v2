@@ -125,10 +125,10 @@ const formBox = () => {
 					onSubmit={handleSubmit}>
 						<Flex
 							gap={{ 
-								base: '2em', 
-								sm: '2.5em', 
-								md: '2em', 
-								lg: '2em' 
+								base: '1.5em', 
+								sm: '1.5em', 
+								md: '1.5em', 
+								lg: '1.5em' 
 							}}
 							direction={'column'}>
 								<FormControl isRequired>
