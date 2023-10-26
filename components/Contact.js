@@ -51,7 +51,7 @@ const Contact = forwardRef((props, ref) => {
 						gap={{ 
 							base: '2em', 
 							sm: '2em', 
-							md: '3em', 
+							md: '2em', 
 							lg: '2em' 
 						}}>
 							<Flex
@@ -106,8 +106,8 @@ const formBox = () => {
 				backdropFilter='auto'
 				backdropBlur='5px'
 				p={{ 
-					base: '2em', 
-					sm: '2em', 
+					base: '1.5em', 
+					sm: '1.5em', 
 					md: '2em', 
 					lg: '2em' 
 				}}
@@ -127,7 +127,7 @@ const formBox = () => {
 							gap={{ 
 								base: '2em', 
 								sm: '2.5em', 
-								md: '4em', 
+								md: '2em', 
 								lg: '2em' 
 							}}
 							direction={'column'}>
@@ -141,7 +141,7 @@ const formBox = () => {
 											md: 'column', 
 											lg: 'row' 
 										}}
-										gap={'2em'}>
+										gap={'1em'}>
 											<Flex
 												h={'100%'}
 												w={'100%'}
@@ -151,7 +151,6 @@ const formBox = () => {
 														variants={itemText}>
 															<FormLabel requiredIndicator>
 																<Heading
-																	pb={2}
 																	color={'blackAlpha.800'}
 																	fontSize={{ 
 																		base: 18, 
@@ -195,10 +194,9 @@ const formBox = () => {
 														as={motion.div}
 														variants={itemText}>
 															<FormLabel
-																pt={9}
+																pt={{ base: '1em', sm: '1em', md:  '1em', lg: 9}}
 																requiredIndicator>
 																	<Heading
-																		pb={2}
 																		color={'blackAlpha.800'}
 																		fontSize={{ 
 																			base: 18, 
@@ -247,7 +245,6 @@ const formBox = () => {
 														w={'100%'}>
 															<FormLabel requiredIndicator>
 																<Heading
-																	pb={2}
 																	color={'blackAlpha.800'}
 																	fontSize={{ 
 																		base: 18, 

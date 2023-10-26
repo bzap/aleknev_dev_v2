@@ -21,7 +21,6 @@ import {
     chakra,
     shouldForwardProp
   } from '@chakra-ui/react';
-import { pskillsItem, item, pillItem } from '../../styles/Variants';
 import { motion, isValidMotionProp } from "framer-motion";
 import { useRef } from 'react';
 import projects from '../../public/data/ProjectText';
