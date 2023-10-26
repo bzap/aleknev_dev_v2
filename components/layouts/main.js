@@ -21,6 +21,7 @@ const Layout = ({ children }) => {
             ref={containerRef}
             maxH={'max-content'}
             overflow={'hidden'}
+            px={{ base: '5%', sm: '5%', md: '5%', lg: '0'}}
             bg='#F2F2F2'>
                 <Container
                     overflow={'scroll'}
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
                     width='100%' 
                     margin='auto' 
                     minH='120%' 
+                    
                     maxH={'100%'}
                     userSelect={'none'}
                     left={0}

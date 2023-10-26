@@ -30,7 +30,7 @@ const projects = {
         tech: ['JS', 'React Native', 'NodeJS', 'AWS'],
         icons: [SiJavascript, SiReact, SiNpm, SiAmazonaws],
         desc: 'A mobile goniometry application made for cancer survivors with limited post-treatment help.',
-        image: ['/screenshots/go0.png'],
+        image: ['/screenshots/go0.webp'],
         buttons: ['Explanation', 'Presentation'],
         link: 'https://drive.google.com/file/d/1-iy6nloK2FZAIC4Aj1fYx0I8Z8pYleNR/view?usp=sharing'
     },
@@ -40,7 +40,7 @@ const projects = {
         tech: ['JS', 'HTML', 'CSS', 'JQuery'],
         icons: [SiJavascript, SiHtml5, SiCss3, SiJquery],
         desc: 'A typing test website with multiple modes, and a focus on distraction-free operation. ',
-        image: ['/screenshots/dog0.png'],
+        image: ['/screenshots/dog0.webp'],
         buttons: ['Explanation', 'Live Demo'],
         link: 'https://wpm-dog.vercel.app/'
     }, 
@@ -49,7 +49,7 @@ const projects = {
         tech: ['Python', 'PYQT6', 'NLTK', 'XML'],
         icons: [SiPython, CgUiKit, GrLanguage, VscFileCode],
         desc: 'A toolkit that samples Amazon review data and provides recommendations based on keyword frequency.',
-        image: ['/screenshots/ard0.png'],
+        image: ['/screenshots/ard0.webp'],
         buttons: ['Explanation', 'GitHub Repo'],
         link: 'https://github.com/bzap/ARD_Util'
     },
@@ -58,7 +58,7 @@ const projects = {
         tech: ['JS', 'PHP', 'MySQL', 'Bootstrap'],
         icons: [SiJavascript, SiPhp, SiMysql, SiBootstrap],
         desc: 'A website that provides users with the opportunity to search and submit reviews on local restaurants.',
-        image: ['/screenshots/rest0.png'],
+        image: ['/screenshots/rest0.webp'],
         buttons: ['Explanation', 'GitHub Repo'],
         link: 'https://github.com/bzap/resto_reviews'
     },
@@ -67,7 +67,7 @@ const projects = {
         tech: ['Python', 'Jupyter', 'P0', 'WebAssembly'],
         icons: [SiPython, SiJupyter, SiPastebin, SiWebassembly],
         desc: 'A custom Jupyter Notebook kernel that enables compiling and running P0 language programs.',
-        image: ['/screenshots/p00.png'],
+        image: ['/screenshots/p00.webp'],
         buttons: ['Explanation', 'Documentation'],
         link: 'https://p0-files-bzap.vercel.app/'
     }, 
@@ -76,7 +76,7 @@ const projects = {
         tech: ['C++', 'OpenGL', 'GLUT', 'libGLU'],
         icons: [SiCplusplus, SiOpengl, SiBookstack ,SiAsana],
         desc: 'A three dimensional terrain generator, complete with panning and rendering options.',
-        image: ['/screenshots/gen0.png'],
+        image: ['/screenshots/gen0.webp'],
         buttons: ['Explanation', 'GitHub Repo'],
         link: 'https://github.com/bzap/terrain_gen'
     }

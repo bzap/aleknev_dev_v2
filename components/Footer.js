@@ -52,9 +52,9 @@ const Footer = () => {
                                             position={'relative'}
                                             color={'blackAlpha.400'}
                                             fontSize={{ 
-                                                base: 13.5, 
-                                                sm: 14, 
-                                                md: 15, 
+                                                base: 11, 
+                                                sm: 11, 
+                                                md: 12, 
                                                 lg: 12
                                             }}>
                                                 Designed and developed by Linas.
@@ -82,9 +82,9 @@ const Footer = () => {
                                                             position={'relative'}
                                                             color={'blackAlpha.400'}
                                                             fontSize={{ 
-                                                                base: 13.5, 
-                                                                sm: 14, 
-                                                                md: 15, 
+                                                                base: 11, 
+                                                                sm: 11, 
+                                                                md: 12, 
                                                                 lg: 12
                                                             }}>
                                                             Site Repo &gt;

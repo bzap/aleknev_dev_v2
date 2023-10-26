@@ -1,10 +1,10 @@
 import Layout from '../components/layouts/main';
-import Hero from '../components/Hero';
-import Header from '../components/Header';
+import Hero from '../components/sections/hero/Hero'
+import Header from '../components/header/Header';
 import Footer from '../components/Footer';
-import Projects from '../components/Projects/Projects';
-import About from '../components/About';
-import Contact from '../components/Contact';
+import Projects from '../components/sections/projects/Projects';
+import About from '../components/sections/About';
+import Contact from '../components/sections/Contact';
 import { useState, useEffect, useRef } from 'react';
 import { 
 	AnimatePresence, 
@@ -12,7 +12,7 @@ import {
 	isValidMotionProp, 
 	useInView 
 } from 'framer-motion';
-import LoadingWrapper from '../components/LoadingWrapper';
+import LoadingWrapper from '../components/sections/hero/LoadingWrapper';
 import {
   chakra,
   shouldForwardProp
