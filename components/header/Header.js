@@ -18,10 +18,13 @@ import {
 } from "@chakra-ui/react";
 import { motion, isValidMotionProp, useCycle } from "framer-motion";
 import { FaLessThan, FaGreaterThan } from "react-icons/fa";
-import { SiInstagram, SiGithub, SiLinkedin } from "react-icons/si";
+import { SiInstagram, SiGithub, SiLinkedin, cactus } from "react-icons/si";
+import { LinkedinLogo, GithubLogo, InstagramLogo } from "phosphor-react";
+import { GrInstagram } from "react-icons/gr";
 import MobileTabs from "./Tabs";
 import { Link as ScrollLink } from "react-scroll/modules";
 import { navContainer } from "../../styles/Variants";
+import { Cactus } from "@phosphor-icons/react";
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) =>
@@ -110,12 +113,14 @@ const HamburgerIcon = ({ toggle }) => (
         <button tabIndex="-1" className="simple-hover" onClick={toggle}>
             <svg width="18" height="18" viewBox="0 0 23 23">
                 <Path
+                    strokeWidth={4}
                     variants={{
                         closed: { d: "M 2 2.5 L 20 2.5" },
                         open: { d: "M 3 16.5 L 17 2.5" },
                     }}
                 />
                 <Path
+                    strokeWidth={4}
                     d="M 2 9.423 L 20 9.423"
                     variants={{
                         closed: { opacity: 1 },
@@ -127,6 +132,7 @@ const HamburgerIcon = ({ toggle }) => (
                     }}
                 />
                 <Path
+                    strokeWidth={4}
                     variants={{
                         closed: { d: "M 2 16.346 L 20 16.346" },
                         open: { d: "M 3 2.5 L 17 16.346" },
@@ -160,13 +166,7 @@ const content = () => {
                             key={""}
                             className="translate-hover"
                         >
-                            <Icon
-                                cursor={"pointer"}
-                                _active={{ color: "#787779" }}
-                                w={4}
-                                h={4}
-                                as={SiInstagram}
-                            />
+                            <InstagramLogo size={20} weight="fill" />
                         </Flex>
                     </Center>
                 </Link>
@@ -176,15 +176,13 @@ const content = () => {
                     isExternal
                 >
                     <Center>
-                        <Icon
-                            _active={{ color: "#787779" }}
+                        <Flex
+                            id={"siinstagram"}
+                            key={""}
                             className="translate-hover"
-                            id={"silinkedin"}
-                            cursor={"pointer"}
-                            w={4}
-                            h={4}
-                            as={SiGithub}
-                        />
+                        >
+                            <GithubLogo size={20} weight="fill" />
+                        </Flex>
                     </Center>
                 </Link>
                 <Link
@@ -193,15 +191,13 @@ const content = () => {
                     isExternal
                 >
                     <Center pr={3}>
-                        <Icon
-                            _active={{ color: "#787779" }}
+                        <Flex
+                            id={"siinstagram"}
+                            key={""}
                             className="translate-hover"
-                            id={"silinkedin"}
-                            cursor={"pointer"}
-                            w={4}
-                            h={4}
-                            as={SiLinkedin}
-                        />
+                        >
+                            <LinkedinLogo size={20} weight="fill" />
+                        </Flex>
                     </Center>
                 </Link>
                 <Flex>
@@ -244,12 +240,7 @@ const logoHeader = () => {
                     offset={0}
                     duration={800}
                 >
-                    <Heading
-                        fontWeight={900}
-                        fontSize={{ base: 12, sm: 12, md: 14.5, lg: 14.5 }}
-                    >
-                        &lt;LA/&gt;
-                    </Heading>
+                    <Cactus size={20} weight={"fill"} />
                 </ScrollLink>
             </Flex>
             {/* <Icon w={3} h={3} as={FaGreaterThan} /> */}

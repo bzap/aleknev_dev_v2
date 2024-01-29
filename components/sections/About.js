@@ -379,7 +379,7 @@ const About = forwardRef((props, ref) => {
                             whileInView={"visible"}
                             viewport={{ once: true, amount: 0.5 }}
                         >
-                            <Title title={"A FEW SKILLS"} />
+                            <Title title={"A FEW SKILLS."} />
                         </ChakraBox>
                     </Flex>
                     <Flex
