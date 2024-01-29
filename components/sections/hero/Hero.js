@@ -76,13 +76,8 @@ const Hero = forwardRef((props, ref) => {
                         <ChakraBox
                             variants={keyboardContainer}
                             w={"100%"}
-                            mt={"15em"}
-                            h={"50%"}
-                            bg={"whiteAlpha.600"}
-                            backdropFilter="auto"
-                            backdropBlur="1px"
-                            boxShadow={"lg"}
-                            borderRadius={"20px"}
+                            mt={"10em"}
+                            h={"70%"}
                         >
                             <CustomKeyboard loading={props.loading} />
                         </ChakraBox>
