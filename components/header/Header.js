@@ -32,7 +32,8 @@ const Header = ({ ref }) => {
     return (
         <Flex justifyContent={"center"} pt={"4"}>
             <ChakraBox
-                py={1.5}
+                py={2}
+                px={2}
                 as={motion.div}
                 initial={"hidden"}
                 variants={navContainer}
@@ -44,9 +45,11 @@ const Header = ({ ref }) => {
                 maxW={{ base: "90%", lg: "60em" }}
                 position="fixed"
                 zIndex={200}
-                boxShadow={"md"}
+                boxShadow={"lg"}
                 borderRadius={"12px"}
-                bg="whiteAlpha.600"
+                borderWidth={"1px"}
+                borderColor={"blackAlpha.200"}
+                bg="whiteAlpha.500"
                 justifyContent={"center"}
             >
                 {/* <Box
@@ -230,7 +233,7 @@ const logoHeader = () => {
                 color: "#5c5c5c",
             }}
         >
-            <Icon w={3} h={3} as={FaLessThan} />
+            {/* <Icon w={3} h={3} as={FaLessThan} /> */}
             <Flex className="logo-hover" _active={{ transform: "scale(0.93)" }}>
                 <ScrollLink
                     key={3}
@@ -239,16 +242,17 @@ const logoHeader = () => {
                     spy={true}
                     smooth={true}
                     offset={0}
-                    duration={900}
+                    duration={800}
                 >
                     <Heading
+                        fontWeight={900}
                         fontSize={{ base: 12, sm: 12, md: 14.5, lg: 14.5 }}
                     >
-                        &thinsp;aleknev&thinsp;
+                        &lt;LA/&gt;
                     </Heading>
                 </ScrollLink>
             </Flex>
-            <Icon w={3} h={3} as={FaGreaterThan} />
+            {/* <Icon w={3} h={3} as={FaGreaterThan} /> */}
         </Center>
     );
 };

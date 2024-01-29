@@ -60,7 +60,7 @@ const Projects = forwardRef((props, ref) => {
                             whileInView={"visible"}
                             viewport={{ once: true, amount: 0.85 }}
                         >
-                            <Title title={"Some projects."} />
+                            <Title title={"SOME PROJECTS."} />
                         </ChakraBox>
                     </Flex>
                     <Flex
@@ -196,11 +196,13 @@ const verticalItem = (top, index) => {
                         md: "28em",
                         lg: "100%",
                     }}
-                    bg={"whiteAlpha.600"}
+                    bg={"whiteAlpha.500"}
+                    borderWidth={"1px"}
+                    borderColor={"blackAlpha.200"}
                     backdropFilter="auto"
                     backdropBlur="1px"
-                    boxShadow={"md"}
-                    borderRadius={"22px"}
+                    boxShadow={"xl"}
+                    borderRadius={"30px"}
                 >
                     <Preview index={index.slice(1, 2)} />
                 </Flex>
@@ -236,8 +238,8 @@ const gitButton = () => {
                     >
                         <Button
                             variant={"unstyled"}
-                            _hover={{ bg: "#cfcfcf" }}
-                            _active={{ bg: "#bfbfbf" }}
+                            _hover={{ bg: "blackAlpha.200" }}
+                            _active={{ bg: "blackAlpha.300" }}
                             borderRadius={"lg"}
                             size={"sm"}
                         >

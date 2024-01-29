@@ -63,7 +63,7 @@ const Contact = forwardRef((props, ref) => {
                             whileInView={"visible"}
                             viewport={{ once: true, amount: 0.8 }}
                         >
-                            <Title title={"Contact me!"} />
+                            <Title title={"CONTACT ME!"} />
                         </ChakraBox>
                     </Flex>
                     <ChakraBox
@@ -111,10 +111,12 @@ const formBox = () => {
                 w={"100%"}
                 position={"relative"}
                 zIndex={5}
-                bg={"whiteAlpha.600"}
-                boxShadow={"md"}
+                bg={"whiteAlpha.500"}
+                borderWidth={"1px"}
+                borderColor={"blackAlpha.200"}
+                boxShadow={"xl"}
                 direction={"column"}
-                borderRadius={"22px"}
+                borderRadius={"30px"}
                 h={"100%"}
                 gap={"5em"}
             >
@@ -175,7 +177,7 @@ const formBox = () => {
                                                 }}
                                                 borderRadius={"12px"}
                                                 color={"blackAlpha.800"}
-                                                bg={"#e4e4e480"}
+                                                bg={"blackAlpha.200"}
                                                 borderColor={"blackAlpha.600"}
                                                 border={"none"}
                                                 placeholder={"Your email"}
@@ -229,7 +231,7 @@ const formBox = () => {
                                                 }}
                                                 borderRadius={"12px"}
                                                 color={"blackAlpha.800"}
-                                                bg={"#e4e4e480"}
+                                                bg={"blackAlpha.200"}
                                                 border={"none"}
                                                 placeholder={"Your name"}
                                                 _placeholder={{
@@ -281,7 +283,7 @@ const formBox = () => {
                                                     lg: 12,
                                                 }}
                                                 borderRadius={"14px"}
-                                                bg={"#e4e4e480"}
+                                                bg={"blackAlpha.200"}
                                                 placeholder={"Your message"}
                                                 _placeholder={{
                                                     opacity: 1,
@@ -309,8 +311,8 @@ const formBox = () => {
                                 <Button
                                     size={"sm"}
                                     variant={"unstyled"}
-                                    _hover={{ bg: "#e1e1e1" }}
-                                    _active={{ bg: "#cfcfcf" }}
+                                    _hover={{ bg: "blackAlpha.200" }}
+                                    _active={{ bg: "blackAlpha.300" }}
                                     borderRadius={"lg"}
                                     disabled={state.submitting}
                                     type="submit"

@@ -16,6 +16,7 @@ import {
 import ScrollIndicator from "./ScrollIndicator";
 import Wave from "../../Wave";
 import { forwardRef } from "react";
+import aboutText from "../../../public/data/AboutText";
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) =>
@@ -72,17 +73,29 @@ const Hero = forwardRef((props, ref) => {
                         flexDir={"column"}
                         viewport={{ once: true }}
                     >
-                        <IntroText />
-                        <ChakraBox
-                            variants={keyboardContainer}
-                            w={"100%"}
-                            mt={"10em"}
-                            h={"70%"}
-                        >
-                            <CustomKeyboard loading={props.loading} />
-                        </ChakraBox>
+                        <Flex flexDir={"column"}>
+                            <Heading
+                                color={"blackAlpha.800"}
+                                fontWeight={"black"}
+                                fontSize={"4em"}
+                            >
+                                LINAS
+                            </Heading>
+                            <Heading fontWeight={"black"} fontSize={"4em"}>
+                                ALEKNEVICIUS
+                            </Heading>
+                            <Heading
+                                fontSize={"1.2em"}
+                                color={"blackAlpha.600"}
+                            >
+                                A full-stack developer with a particular passion
+                                for frontend development.
+                            </Heading>
+                            <BackgroundText />
+                        </Flex>
                     </ChakraBox>
                 </Flex>
+
                 <ChakraBox
                     position={"relative"}
                     as={motion.div}
@@ -98,6 +111,54 @@ const Hero = forwardRef((props, ref) => {
         </Flex>
     );
 });
+
+const BackgroundText = () => {
+    return (
+        <ChakraBox
+            bg={"whiteAlpha.500"}
+            borderWidth={"1px"}
+            borderColor={"blackAlpha.200"}
+            backdropFilter="auto"
+            backdropBlur="2px"
+            boxShadow={"xl"}
+            borderRadius={"30px"}
+            mt={"3em"}
+            p={"2em"}
+        >
+            <Text
+                fontWeight={700}
+                display={"inline-block"}
+                wordBreak={{
+                    base: "break-all",
+                    sm: "break-all",
+                    md: "normal",
+                    lg: "normal",
+                }}
+                textAlign={"justify"}
+                sx={{ hypens: "auto" }}
+                whiteSpace={"pre-line"}
+                color={"blackAlpha.700"}
+                fontSize={{
+                    base: 11,
+                    sm: 11,
+                    md: 12,
+                    lg: 11,
+                }}
+            >
+                {aboutText.background}
+                {/* <Icon
+                    boxShadow={"xl"}
+                    pl={"3px"}
+                    as={CgSmile}
+                    h={"1.3em"}
+                    w={"1.3em"}
+                    verticalAlign={"bottom"}
+                    color={"blackAlpha.800"}
+                /> */}
+            </Text>
+        </ChakraBox>
+    );
+};
 
 const CustomKeyboard = ({ loading }) => {
     return (

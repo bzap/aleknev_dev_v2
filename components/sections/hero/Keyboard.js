@@ -19,8 +19,6 @@ const ChakraBox = chakra(motion.div, {
 });
 
 const Keyboard = ({ props }) => {
-    const bp = useBreakpoint();
-
     return (
         <Flex
             position={"relative"}
@@ -59,21 +57,7 @@ const Keyboard = ({ props }) => {
                             <Light />
                             <Suspense fallback={null}>
                                 {props !== undefined && props !== undefined && (
-                                    <Bounds
-                                        fit
-                                        observe
-                                        margin={
-                                            bp == "xl"
-                                                ? 1.1
-                                                : bp == "2xl"
-                                                ? 1.1
-                                                : bp == "md" || bp == "lg"
-                                                ? 1.2
-                                                : bp == "sm"
-                                                ? 1.2
-                                                : 1.2
-                                        }
-                                    >
+                                    <Bounds fit observe margin={1.2}>
                                         <Model innerLoading={props} />
                                         <mesh
                                             receiveShadow

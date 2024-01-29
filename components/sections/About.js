@@ -93,7 +93,9 @@ const Background = ({ bp }) => {
                             lg: "flex-end",
                         }}
                         gap={"1em"}
-                        bg={"whiteAlpha.600"}
+                        bg={"whiteAlpha.500"}
+                        borderWidth={"1px"}
+                        borderColor={"blackAlpha.200"}
                         backdropFilter="auto"
                         backdropBlur="1px"
                         boxShadow={"md"}
@@ -215,8 +217,10 @@ const Experience = ({ bp }) => {
                         }}
                         minW={"50%"}
                         gap={"1em"}
-                        bg={"whiteAlpha.600"}
+                        bg={"whiteAlpha.500"}
                         backdropFilter="auto"
+                        borderWidth={"1px"}
+                        borderColor={"blackAlpha.200"}
                         backdropBlur="1px"
                         boxShadow={"md"}
                         borderRadius={"20px"}
@@ -313,7 +317,9 @@ const Skills = ({ bp }) => {
                         }}
                         gap={"1em"}
                         zIndex={10}
-                        bg={"whiteAlpha.600"}
+                        bg={"whiteAlpha.500"}
+                        borderWidth={"1px"}
+                        borderColor={"blackAlpha.200"}
                         backdropFilter="auto"
                         backdropBlur="2px"
                         boxShadow={"md"}
@@ -373,7 +379,7 @@ const About = forwardRef((props, ref) => {
                             whileInView={"visible"}
                             viewport={{ once: true, amount: 0.5 }}
                         >
-                            <Title title={"About myself."} />
+                            <Title title={"A FEW SKILLS"} />
                         </ChakraBox>
                     </Flex>
                     <Flex
@@ -459,6 +465,7 @@ const experienceText = (bp) => {
                         Software Developer
                     </Heading>
                     <Text
+                        fontWeight={600}
                         as={"i"}
                         color={"blackAlpha.700"}
                         fontSize={{ base: 11, sm: 11, md: 12 }}
@@ -630,9 +637,9 @@ const skillItem = (name, ic) => {
         <GridItem key={name}>
             <Flex
                 key={name}
-                bg={"#e4e4e480"}
+                bg={"blackAlpha.200"}
                 py={1}
-                px={2}
+                px={4}
                 borderRadius={"lg"}
                 w={"100%"}
                 alignItems={"center"}

@@ -38,7 +38,7 @@ a {
     content: "";
     position: absolute;
     opacity: 0.1;
-    background: radial-gradient(rgb(83, 65, 82), #3984ff00 70%);
+    background: radial-gradient(rgb(215, 35, 206), #3984ff00 70%);
     opacity: 0;
     transition: opacity 0.2s;
     max-height: max-content;
