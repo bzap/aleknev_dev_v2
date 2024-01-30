@@ -441,16 +441,17 @@ const SkillsContainer = ({ data }) => {
         >
             <Star top={"15em"} left={"19em"} />
             <Star top={"20em"} left={"10em"} />
-            <Star top={"27em"} left={"7em"} />
-            <Star bottom={"20em"} right={"9em"} />
+            <Star top={"27em"} left={"5em"} />
+            <Star bottom={"22em"} right={"7em"} />
             <Star bottom={"13em"} right={"13em"} />
-            <Star bottom={"9em"} right={"7em"} />
+            <Star bottom={"9em"} right={"3em"} />
             <Star bottom={"9em"} left={"9em"} />
-            <Star bottom={"25em"} left={"7em"} />
+            <Star bottom={"25em"} left={"5em"} />
             <Star bottom={"17em"} left={"15em"} />
-            <Star top={"18em"} right={"9em"} />
-            <Star top={"25em"} right={"10em"} />
-            <Star top={"16em"} right={"18em"} />
+            <Star top={"18em"} right={"5em"} />
+            <Star top={"27em"} right={"8em"} />
+            <Star top={"13em"} right={"18em"} />
+            {/* <Star top={"35em"} right={"3em"} /> */}
             <Flex gap={"1.5em"} flexDir={"column"}>
                 {[...Array(maxRows)].map((element, index) => {
                     topCounter += index;
