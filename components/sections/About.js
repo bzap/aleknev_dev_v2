@@ -19,7 +19,6 @@ import {
     shouldForwardProp,
     useBreakpoint,
 } from "@chakra-ui/react";
-import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
 
 import { motion, isValidMotionProp } from "framer-motion";
 import { item } from "../../styles/Variants";
@@ -32,9 +31,7 @@ import {
     itemText,
     aboutItem,
 } from "../../styles/Variants";
-import { CgSmile } from "react-icons/cg";
 import { forwardRef } from "react";
-import { BiSubdirectoryRight } from "react-icons/bi";
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) =>
@@ -341,11 +338,12 @@ const Skills = ({ bp }) => {
 
 const About = forwardRef((props, ref) => {
     const bp = useBreakpoint();
+    console.log(aboutText.skills2);
     return (
-        <Flex justifyContent={"center"}>
+        <Flex position={"relative"} zIndex={50} justifyContent={"center"}>
             <Flex
                 ref={ref}
-                position={"relative"}
+                // position={"relative"}
                 maxW={"60em"}
                 // px={{
                 // 	base: '6.5%',
@@ -370,14 +368,12 @@ const About = forwardRef((props, ref) => {
             >
                 <Flex justifyContent={"center"} direction={"column"}>
                     <Flex
-                        position={"relative"}
+                        // position={"relative"}
                         direction={"column"}
                         alignItems={"start"}
                     >
                         <ChakraBox
-                            position={"relative"}
                             pb={0}
-                            as={motion.div}
                             //variants={about}
                             initial={"hidden"}
                             whileInView={"visible"}
@@ -394,7 +390,8 @@ const About = forwardRef((props, ref) => {
                     >
                         {/* <Background bp={bp} />
                         <Experience bp={bp} /> */}
-                        <SkillsContainer />
+                        {/* {console.log(aboutText.skills)} */}
+                        <SkillsContainer data={aboutText.skills2} />
                         {/* <Skills bp={bp} /> */}
                     </Flex>
                 </Flex>
@@ -402,77 +399,123 @@ const About = forwardRef((props, ref) => {
         </Flex>
     );
 });
+
 const SkillsContainer = ({ data }) => {
-    // const children =
-    // });
-    let test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    // let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    // maxRows should be an integer for the pyramid to work
+    let maxRows = Math.sqrt(data.length);
+    console.log(maxRows);
+    // NEED TO FIX THIS PART
+    let topHalf = data.slice(0, Math.ceil(data.length / 3));
+    let bottomHalf = data.slice(topHalf.length).reverse();
 
-    // alwaysa going to be an exponent of values
-    console.log(Math.sqrt(test.length));
-    // if the above is an integer then we can set it
-    let maxRows = Math.sqrt(test.length);
-    let topHalf = test.splice(0, Math.ceil(test.length / 3));
-    let bottomHalf = test;
+    let topCounter = 0;
+    let bottomCounter = 0;
 
-    const generateRows = () => {
-        for (let i = 1; i < maxRows; i++) {
-            // console.log(bottomHalf.splice(0, maxRows - (i - 1)));
-        }
-    };
-
-    generateRows();
     return (
         <Flex
             w={"full"}
             justifyContent={"center"}
-            bg={"red"}
             h={"full"}
             flexDir={"column"}
+            as={motion.div}
         >
-            {[...Array(maxRows)].map((element, index) => {
-                return (
-                    <Flex w={"full"} gap={1} justifyContent={"center"}>
-                        {topHalf
-                            .splice(0, index + 1)
-                            .map((innerElement, innerIndex) => {
-                                return <Flex>{innerElement}</Flex>;
+            <Box>
+                {[...Array(maxRows)].map((element, index) => {
+                    topCounter += index;
+                    let newSlice = topHalf.slice(
+                        topCounter,
+                        topCounter + index + 1
+                    );
+                    return (
+                        <Flex
+                            key={index.toString() + "toppyr"}
+                            w={"full"}
+                            gap={1}
+                            justifyContent={"center"}
+                            as={motion.div}
+                            // whileHover={{ scale: 2 }}
+                        >
+                            {newSlice.map((innerElement, innerIndex) => {
+                                return (
+                                    <SkillCard
+                                        key={
+                                            innerElement[0] +
+                                            innerElement.toString() +
+                                            "top"
+                                        }
+                                        item={innerElement}
+                                    />
+                                );
                             })}
-                    </Flex>
-                );
-            })}
-            {[...Array(maxRows)].map((element, index) => {
-                return (
-                    <Flex w={"full"} gap={1} justifyContent={"center"}>
-                        {bottomHalf
-                            .splice(0, maxRows - index)
-                            .map((innerElement, innerIndex) => {
-                                return <Flex>{innerElement}</Flex>;
+                        </Flex>
+                    );
+                })}
+            </Box>
+            <Flex flexDir={"column-reverse"}>
+                {[...Array(maxRows)].map((element, index) => {
+                    bottomCounter += index;
+                    let newSlice = bottomHalf.slice(
+                        bottomCounter,
+                        bottomCounter + index + 1
+                    );
+                    return (
+                        <Flex
+                            key={index.toString() + "botpyr"}
+                            w={"full"}
+                            gap={1}
+                            justifyContent={"center"}
+                            flexDir={"row-reverse"}
+                        >
+                            {newSlice.map((innerElement, innerIndex) => {
+                                return (
+                                    <SkillCard
+                                        key={
+                                            innerElement[0] +
+                                            innerElement.toString() +
+                                            "bot"
+                                        }
+                                        item={innerElement}
+                                    />
+                                );
                             })}
-                    </Flex>
-                );
-            })}
+                        </Flex>
+                    );
+                })}
+            </Flex>
         </Flex>
     );
 };
 
-const SkillCard = ({ bp, item }) => {
+const SkillCard = ({ item }) => {
     return (
-        <WrapItem
-            p={8}
-            bg={"whiteAlpha.500"}
+        <Flex
             borderWidth={"1px"}
             borderColor={"blackAlpha.200"}
+            backdropFilter="auto"
+            backdropBlur="2px"
             boxShadow={"xl"}
             borderRadius={"30px"}
+            w={"auto"}
+            // key={item + "pyr"}
+            minW={"60px"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            minH={"60px"}
+            position={"relative"}
             zIndex={50}
+            whileHover={{ scale: 1.2 }}
+            as={motion.div}
         >
-            <Flex w={"full"} flexDir={"row"} alignItems={"center"} gap={2}>
-                <Icon as={item[1]} boxSize={6} />
-                <Heading fontSize={16} fontWeight={800}>
-                    {item[0]}
-                </Heading>
-            </Flex>
-        </WrapItem>
+            <ChakraBox
+                zIndex={50}
+                position={"relative"}
+                // _hover={{ scale: 2 }}
+                // variants={aboutItem}
+            >
+                {item}
+            </ChakraBox>
+        </Flex>
     );
 };
 
