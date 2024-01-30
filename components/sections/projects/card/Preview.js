@@ -21,13 +21,13 @@ import {
     chakra,
     shouldForwardProp,
 } from "@chakra-ui/react";
-import projects from "../../../public/data/ProjectText";
-import ProjectTitle from "./card/ProjectTitle";
-import ChakraBox from "../../common/ChakraBox";
-import ProjectSkill from "./card/ProjectSkill";
-import ProjectButton from "./card/ProjectButton";
-import ProjectDescription from "./card/ProjectDescription";
-import { item } from "../../../styles/Variants";
+import projects from "../../../../public/data/ProjectText";
+import ProjectTitle from "./ProjectTitle";
+import ChakraBox from "../../../common/ChakraBox";
+import ProjectSkill from "./ProjectSkill";
+import ProjectButton from "./ProjectButton";
+import ProjectDescription from "./ProjectDescription";
+import { item } from "../../../../styles/Variants";
 
 const Preview = ({ index }) => {
     return (
@@ -56,13 +56,16 @@ const Preview = ({ index }) => {
                     position={"relative"}
                     justifyContent={"space-between"}
                 >
-                    {projects[index].tech.map((x, idx) => (
-                        <ProjectSkill
-                            key={x + idx}
-                            element={x}
-                            icon={projects[index].icons[idx]}
-                        />
-                    ))}
+                    {projects[index].tech.map((x, idx) => {
+                        return (
+                            // <div key={"lol" + x}>{x}</div>
+                            <ProjectSkill
+                                key={x + idx}
+                                element={x}
+                                icon={projects[index].icons[idx]}
+                            />
+                        );
+                    })}
                 </Flex>
             </Flex>
             <Stack

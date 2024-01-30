@@ -1,6 +1,6 @@
 import ChakraBox from "../../../common/ChakraBox";
 import { Flex, Heading } from "@chakra-ui/react";
-import Preview from "../Preview";
+import Preview from "./Preview";
 import { projectSubContainer } from "../../../../styles/Variants";
 import { motion } from "framer-motion";
 

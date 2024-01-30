@@ -4,14 +4,10 @@ import { motion } from "framer-motion";
 import Star from "./Star";
 
 const SkillsGrid = ({ data }) => {
-    // let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     // maxRows should be an integer for the pyramid to work
     let maxRows = Math.sqrt(data.length);
-    console.log(maxRows);
-    // NEED TO FIX THIS PART
     let topHalf = data.slice(0, Math.ceil(data.length / 3));
     let bottomHalf = data.slice(topHalf.length).reverse();
-
     let topCounter = 0;
     let bottomCounter = 0;
 
@@ -37,7 +33,7 @@ const SkillsGrid = ({ data }) => {
             <Star top={"13em"} right={"18em"} />
             {/* <Star top={"35em"} right={"3em"} /> */}
             <Flex gap={"1.5em"} flexDir={"column"}>
-                {[...Array(maxRows)].map((element, index) => {
+                {[...Array(maxRows)].map((_, index) => {
                     topCounter += index;
                     let newSlice = topHalf.slice(
                         topCounter,
@@ -52,7 +48,7 @@ const SkillsGrid = ({ data }) => {
                             as={motion.div}
                             // whileHover={{ scale: 2 }}
                         >
-                            {newSlice.map((innerElement, innerIndex) => {
+                            {newSlice.map((innerElement) => {
                                 return (
                                     <SkillsCard
                                         key={

@@ -29,7 +29,6 @@ const Home = () => {
             <Hero ref={heroRef} />
             <Projects ref={projRef} />
             <Skills ref={aboutRef} />
-
             <Contact ref={contactRef} />
             <Footer />
         </Layout>

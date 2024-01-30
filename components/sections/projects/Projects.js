@@ -61,47 +61,52 @@ const Projects = forwardRef((props, ref) => {
                                 flexDirection="flex-start"
                                 sx={{ flexWrap: "wrap" }}
                             >
-                                {[...Array(6).keys()].map((item, idx) => (
-                                    <Box
-                                        key={idx}
-                                        display={{
-                                            base: "flex",
-                                            sm: "flex",
-                                            md: "flex",
-                                        }}
-                                        w={{
-                                            sm: "100%",
-                                            md: "100%",
-                                            lg: "45%",
-                                        }}
-                                        justifyContent={"center"}
-                                    >
-                                        {bp == "base" ||
-                                        bp == "sm" ||
-                                        bp == "md" ? (
-                                            <VerticalItem
-                                                top={"3em"}
-                                                index={
-                                                    "0" + (idx + 1).toString()
-                                                }
-                                            />
-                                        ) : idx % 2 === 0 ? (
-                                            <VerticalItem
-                                                top={"0%"}
-                                                index={
-                                                    "0" + (idx + 1).toString()
-                                                }
-                                            />
-                                        ) : (
-                                            <VerticalItem
-                                                top={"35%"}
-                                                index={
-                                                    "0" + (idx + 1).toString()
-                                                }
-                                            />
-                                        )}
-                                    </Box>
-                                ))}
+                                {[...Array(6).keys()].map((item, idx) => {
+                                    return (
+                                        <Box
+                                            key={idx}
+                                            display={{
+                                                base: "flex",
+                                                sm: "flex",
+                                                md: "flex",
+                                            }}
+                                            w={{
+                                                sm: "100%",
+                                                md: "100%",
+                                                lg: "45%",
+                                            }}
+                                            justifyContent={"center"}
+                                        >
+                                            {bp == "base" ||
+                                            bp == "sm" ||
+                                            bp == "md" ? (
+                                                <VerticalItem
+                                                    top={"3em"}
+                                                    index={
+                                                        "0" +
+                                                        (idx + 1).toString()
+                                                    }
+                                                />
+                                            ) : idx % 2 === 0 ? (
+                                                <VerticalItem
+                                                    top={"0%"}
+                                                    index={
+                                                        "0" +
+                                                        (idx + 1).toString()
+                                                    }
+                                                />
+                                            ) : (
+                                                <VerticalItem
+                                                    top={"35%"}
+                                                    index={
+                                                        "0" +
+                                                        (idx + 1).toString()
+                                                    }
+                                                />
+                                            )}
+                                        </Box>
+                                    );
+                                })}
                             </Flex>
                         </ChakraBox>
                     </Flex>

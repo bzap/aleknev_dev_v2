@@ -26,7 +26,7 @@ const ProjectSkill = ({ element, icon }) => {
                         lg: 11,
                     }}
                 >
-                    &thinsp;{icon}
+                    &thinsp;{element}
                 </Text>
             </Center>
         </ChakraBox>
