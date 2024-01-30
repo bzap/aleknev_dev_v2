@@ -32,6 +32,7 @@ import {
     aboutItem,
 } from "../../styles/Variants";
 import { forwardRef } from "react";
+import { StarFour } from "phosphor-react";
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) =>
@@ -305,7 +306,7 @@ const Skills = ({ bp }) => {
                 }}
             >
                 <ChakraBox
-                    whileHover={{ scale: 1.01 }}
+                    whileHover={{ scale: 1.1 }}
                     //</Flex>variants={aboutItem}
                 >
                     <Flex
@@ -336,6 +337,22 @@ const Skills = ({ bp }) => {
     );
 };
 
+const Star = ({ top, bottom, left, right }) => {
+    return (
+        <Flex
+            position={"absolute"}
+            top={top}
+            left={left}
+            bottom={bottom}
+            right={right}
+            flexDir={"column"}
+            gap={3}
+        >
+            <StarFour size={14} weight="fill" color="blackAlpha.700" />
+        </Flex>
+    );
+};
+
 const About = forwardRef((props, ref) => {
     const bp = useBreakpoint();
     console.log(aboutText.skills2);
@@ -345,6 +362,7 @@ const About = forwardRef((props, ref) => {
                 ref={ref}
                 // position={"relative"}
                 maxW={"60em"}
+                w={"full"}
                 // px={{
                 // 	base: '6.5%',
                 // 	sm: '5%',
@@ -366,7 +384,7 @@ const About = forwardRef((props, ref) => {
                     lg: "8em",
                 }}
             >
-                <Flex justifyContent={"center"} direction={"column"}>
+                <Flex justifyContent={"center"} w={"full"} direction={"column"}>
                     <Flex
                         // position={"relative"}
                         direction={"column"}
@@ -375,6 +393,7 @@ const About = forwardRef((props, ref) => {
                         <ChakraBox
                             pb={0}
                             //variants={about}
+                            w={"full"}
                             initial={"hidden"}
                             whileInView={"visible"}
                             viewport={{ once: true, amount: 0.5 }}
@@ -383,7 +402,7 @@ const About = forwardRef((props, ref) => {
                         </ChakraBox>
                     </Flex>
                     <Flex
-                        pt={"2em"}
+                        pt={"4em"}
                         w={"100%"}
                         gap={"2em"}
                         direction={"column"}
@@ -420,7 +439,25 @@ const SkillsContainer = ({ data }) => {
             flexDir={"column"}
             as={motion.div}
         >
-            <Box>
+            <Star top={"15em"} left={"19em"} />
+            <Star top={"20em"} left={"10em"} />
+            <Star top={"27em"} left={"7em"} />
+            {/* <Star top={"17em"} right={"15em"} />
+            <Star top={"22em"} right={"12em"} />
+            <Star bottom={"17em"} left={"15em"} />
+            <Star bottom={"22em"} left={"12em"} />
+            <Star bottom={"17em"} right={"15em"} />
+            <Star bottom={"22em"} right={"12em"} /> */}
+            <Star bottom={"20em"} right={"9em"} />
+            <Star bottom={"13em"} right={"13em"} />
+            <Star bottom={"9em"} right={"7em"} />
+            <Star bottom={"9em"} left={"9em"} />
+            <Star bottom={"25em"} left={"7em"} />
+            <Star bottom={"17em"} left={"15em"} />
+            <Star top={"18em"} right={"11em"} />
+            <Star top={"25em"} right={"10em"} />
+            <Star top={"16em"} right={"18em"} />
+            <Flex gap={"1.5em"} flexDir={"column"}>
                 {[...Array(maxRows)].map((element, index) => {
                     topCounter += index;
                     let newSlice = topHalf.slice(
@@ -431,7 +468,7 @@ const SkillsContainer = ({ data }) => {
                         <Flex
                             key={index.toString() + "toppyr"}
                             w={"full"}
-                            gap={1}
+                            gap={"2em"}
                             justifyContent={"center"}
                             as={motion.div}
                             // whileHover={{ scale: 2 }}
@@ -451,8 +488,8 @@ const SkillsContainer = ({ data }) => {
                         </Flex>
                     );
                 })}
-            </Box>
-            <Flex flexDir={"column-reverse"}>
+            </Flex>
+            <Flex gap={"1.5em"} flexDir={"column-reverse"}>
                 {[...Array(maxRows)].map((element, index) => {
                     bottomCounter += index;
                     let newSlice = bottomHalf.slice(
@@ -463,7 +500,7 @@ const SkillsContainer = ({ data }) => {
                         <Flex
                             key={index.toString() + "botpyr"}
                             w={"full"}
-                            gap={1}
+                            gap={"2em"}
                             justifyContent={"center"}
                             flexDir={"row-reverse"}
                         >
@@ -496,7 +533,8 @@ const SkillCard = ({ item }) => {
             backdropBlur="2px"
             boxShadow={"xl"}
             borderRadius={"30px"}
-            w={"auto"}
+            w={"10em"}
+            h={"6em"}
             // key={item + "pyr"}
             minW={"60px"}
             alignItems={"center"}
@@ -504,7 +542,7 @@ const SkillCard = ({ item }) => {
             minH={"60px"}
             position={"relative"}
             zIndex={50}
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1.1 }}
             as={motion.div}
         >
             <ChakraBox
@@ -513,7 +551,18 @@ const SkillCard = ({ item }) => {
                 // _hover={{ scale: 2 }}
                 // variants={aboutItem}
             >
-                {item}
+                <Flex
+                    flexDirection={"column"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    w={"full"}
+                    gap={1}
+                >
+                    {item[1]}
+                    <Heading fontSize={12} fontWeight={900}>
+                        {item[0].toUpperCase()}
+                    </Heading>
+                </Flex>
             </ChakraBox>
         </Flex>
     );

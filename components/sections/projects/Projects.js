@@ -184,7 +184,7 @@ const verticalItem = (top, index) => {
                 </Flex>
                 <Flex
                     as={motion.div}
-                    whileHover={{ scale: 1.01 }}
+                    whileHover={{ scale: 1.05 }}
                     viewport={{ once: true, amount: 0.8 }}
                     flex={1}
                     position={"relative"}
