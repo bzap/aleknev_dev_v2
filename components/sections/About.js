@@ -354,8 +354,6 @@ const Star = ({ top, bottom, left, right }) => {
 };
 
 const About = forwardRef((props, ref) => {
-    const bp = useBreakpoint();
-    console.log(aboutText.skills2);
     return (
         <Flex position={"relative"} zIndex={50} justifyContent={"center"}>
             <Flex
@@ -380,8 +378,8 @@ const About = forwardRef((props, ref) => {
                 pb={{
                     base: "4em",
                     sm: "4em",
-                    md: "8em",
-                    lg: "8em",
+                    md: "10em",
+                    lg: "15em",
                 }}
             >
                 <Flex justifyContent={"center"} w={"full"} direction={"column"}>
@@ -407,11 +405,7 @@ const About = forwardRef((props, ref) => {
                         gap={"2em"}
                         direction={"column"}
                     >
-                        {/* <Background bp={bp} />
-                        <Experience bp={bp} /> */}
-                        {/* {console.log(aboutText.skills)} */}
-                        <SkillsContainer data={aboutText.skills2} />
-                        {/* <Skills bp={bp} /> */}
+                        <SkillsContainer data={aboutText.skills} />
                     </Flex>
                 </Flex>
             </Flex>

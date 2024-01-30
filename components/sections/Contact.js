@@ -42,7 +42,7 @@ const Contact = forwardRef((props, ref) => {
                     base: "6%",
                     sm: "6%",
                     md: "6%",
-                    lg: "6%",
+                    lg: "12%",
                 }}
                 pb={"4em"}
             >

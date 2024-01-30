@@ -37,8 +37,8 @@ const Hero = forwardRef((props, ref) => {
                 pb={{
                     base: "4em",
                     sm: "4em",
-                    md: "8em",
-                    lg: "8em",
+                    md: "5em",
+                    lg: "5em",
                 }}
             >
                 <Flex
