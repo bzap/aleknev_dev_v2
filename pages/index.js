@@ -45,8 +45,9 @@ const Home = () => {
                 ref={heroRef}
                 loading={{ states: { isLoading, setLoading } }}
             />
-            <About ref={aboutRef} />
             <Projects ref={projRef} />
+            <About ref={aboutRef} />
+
             <Contact ref={contactRef} />
             <Footer />
         </Layout>

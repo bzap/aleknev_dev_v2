@@ -252,7 +252,7 @@ const projectButton = (name, link) => {
                         lg: 12,
                     }}
                 >
-                    PRESENTATION&#160;&gt;
+                    {name}&#160;&gt;
                 </Heading>
             </Button>
         </Link>

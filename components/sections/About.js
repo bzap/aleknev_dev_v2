@@ -442,19 +442,13 @@ const SkillsContainer = ({ data }) => {
             <Star top={"15em"} left={"19em"} />
             <Star top={"20em"} left={"10em"} />
             <Star top={"27em"} left={"7em"} />
-            {/* <Star top={"17em"} right={"15em"} />
-            <Star top={"22em"} right={"12em"} />
-            <Star bottom={"17em"} left={"15em"} />
-            <Star bottom={"22em"} left={"12em"} />
-            <Star bottom={"17em"} right={"15em"} />
-            <Star bottom={"22em"} right={"12em"} /> */}
             <Star bottom={"20em"} right={"9em"} />
             <Star bottom={"13em"} right={"13em"} />
             <Star bottom={"9em"} right={"7em"} />
             <Star bottom={"9em"} left={"9em"} />
             <Star bottom={"25em"} left={"7em"} />
             <Star bottom={"17em"} left={"15em"} />
-            <Star top={"18em"} right={"11em"} />
+            <Star top={"18em"} right={"9em"} />
             <Star top={"25em"} right={"10em"} />
             <Star top={"16em"} right={"18em"} />
             <Flex gap={"1.5em"} flexDir={"column"}>

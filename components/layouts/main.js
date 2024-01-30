@@ -41,37 +41,6 @@ const Layout = ({ children }) => {
                 pl={0}
                 pr={0}
             >
-                {/* <Flex
-                    position={"fixed"}
-                    left={10}
-                    py={8}
-                    h={"100%"}
-                    flexDir={"column"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                >
-                    <StarFour size={12} weight="fill" />
-                    <Flex h={"90%"} py={8} w={"25%"} borderRadius={"22px"} />
-                    <StarFour size={12} weight="fill" />
-                </Flex> */}
-                {/* <Flex
-                    position={"fixed"}
-                    bottom={9}
-                    left={12}
-                    flexDir={"column"}
-                    gap={3}
-                >
-                    <StarFour size={12} weight="fill" color="blackAlpha.700" />
-                </Flex>
-                <Flex
-                    position={"fixed"}
-                    top={9}
-                    right={12}
-                    flexDir={"column"}
-                    gap={3}
-                >
-                    <StarFour size={12} weight="fill" color="blackAlpha.700" />
-                </Flex> */}
                 <main>{children}</main>
             </Container>
         </Box>
