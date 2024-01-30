@@ -75,8 +75,12 @@ const Hero = forwardRef((props, ref) => {
                         viewport={{ once: true }}
                     >
                         <Flex flexDir={"column"}>
-                            <Flex>
-                                <Flex flexDir={"column"}>
+                            <Flex alignItems={"center"} w={"100%"} h={"100%"}>
+                                <Flex
+                                    // bg={"red.100"}
+                                    w={"80%"}
+                                    flexDir={"column"}
+                                >
                                     <Heading
                                         color={"blackAlpha.800"}
                                         fontWeight={"black"}
@@ -102,17 +106,12 @@ const Hero = forwardRef((props, ref) => {
                                         Full-stack Developer.
                                     </Heading>
                                 </Flex>
-
-                                <Flex
-                                    w={"100%"}
-                                    position={"absolute"}
-                                    justifyContent={"end"}
-                                >
+                                <Flex w={"20%"} pb={10} justifyContent={"end"}>
                                     <Image
-                                        src={"/portrait2.png"}
-                                        width={239}
-                                        height={293}
-                                        style={{ objectFit: "none" }}
+                                        src={"/memoji.webp"}
+                                        width={674}
+                                        height={874}
+                                        // style={{ objectFit: "none" }}
                                         // unoptimized
                                     />
                                 </Flex>
@@ -169,7 +168,7 @@ const BackgroundText = () => {
                     base: 11,
                     sm: 11,
                     md: 12,
-                    lg: 11,
+                    lg: 11.5,
                 }}
             >
                 {aboutText.background}

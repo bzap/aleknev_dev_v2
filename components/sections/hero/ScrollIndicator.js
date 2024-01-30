@@ -25,21 +25,21 @@ const ScrollIndicator = () => {
             >
                 <Flex alignItems={"center"} direction={"row"} gap={1}>
                     <ChakraBox as={motion.div} variants={gitGT}>
-                        <ArrowCircleDown size={20} weight="fill" />
+                        <ArrowCircleDown size={24} weight="fill" />
                     </ChakraBox>
                     <ChakraBox
                         position={"relative"}
                         as={motion.div}
                         variants={gitGT}
                     >
-                        <ArrowCircleDown size={20} weight="fill" />
+                        <ArrowCircleDown size={24} weight="fill" />
                     </ChakraBox>
                     <ChakraBox
                         position={"relative"}
                         as={motion.div}
                         variants={gitGT}
                     >
-                        <ArrowCircleDown size={20} weight="fill" />
+                        <ArrowCircleDown size={24} weight="fill" />
                     </ChakraBox>
                 </Flex>
             </ChakraBox>
