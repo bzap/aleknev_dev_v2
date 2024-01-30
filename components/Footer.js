@@ -51,6 +51,7 @@ const Footer = () => {
                         alignItems={"center"}
                     >
                         <Text
+                            fontWeight={800}
                             position={"relative"}
                             color={"blackAlpha.400"}
                             fontSize={{
@@ -86,6 +87,7 @@ const Footer = () => {
                                     px={3}
                                     position={"relative"}
                                     color={"blackAlpha.400"}
+                                    fontWeight={800}
                                     fontSize={{
                                         base: 11,
                                         sm: 11,

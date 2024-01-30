@@ -30,9 +30,9 @@ import { JavascriptPlain } from "devicons-react";
 
 const size = 42;
 const aboutText = {
-    background: `Hi! My full name is Linas Aleknevicius. More recently, I\'m a Computer Science graduate from McMaster University and a full-stack Software Developer with AviaPro Consulting Inc. I try to maintain an interest in all forms something, but I have a particular passion for front-end designs and implementations. There\'s just something satisfying about bridging the gap between what the developer sees and what the user experiences. A well thought out, lively interface makes the interaction feel humanized, and less of a machined process.
-                \nWhen I\'m not developing something I might be bouldering or furthering my quest for the endgame mechanical keyboard. The latter of which I\'ve come to think of as a paradox by now. Ask me about the builds I have (or have had in the past)!
-                \nCurrently I\'m looking for new opportunities as a developer! Hire me?`,
+    background: `Some of my fondest memories as a kid were messing around on the good ol\' family PC we had and installing some Linux distributions on it unbeknownst to my parents, soon to be learning about what a terminal is. I had no idea it would lead to so much more in my life at the time. \n\n Fast forward to today, and I\'m a Computer Science graduate from McMaster University and a full-stack Software Developer for AviaPro Consulting Inc. As a developer I try to constantly challenge myself and keep up all of with the fast paced advancements in the field, but I also happen to have a soft spot for front-end designs and implementations. There\'s just something satisfying about bridging the gap between what the developer sees and what the user experiences. A well thought out, lively interface makes the interaction feel humanized, and less of a machined process. I strive to achieve that. 
+    \nWhen I\'m not developing something I might be bouldering or furthering my quest for the endgame mechanical keyboard. The latter of which I\'ve come to think of as a paradox by now. Ask me about the builds I have (or have had in the past)!
+                    \nCurrently I\'m looking for new opportunities as a developer! Hire me?`,
     skillBackground: `I always love to tinker around and explore new things. The following are a few of the ones I’ve worked with most recently: `,
     skills: [
         ["JavaScript", <JavascriptPlain color="blackAlpha.700" size={size} />],

@@ -246,8 +246,8 @@ const gitButton = () => {
                             <Heading
                                 px={3}
                                 color={"blackAlpha.800"}
+                                fontWeight={800}
                                 fontSize={{ base: 12, sm: 12, md: 12, lg: 12 }}
-                                fontWeight={"bold"}
                             >
                                 ... And more &gt;
                             </Heading>

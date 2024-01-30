@@ -379,7 +379,7 @@ const About = forwardRef((props, ref) => {
                     base: "4em",
                     sm: "4em",
                     md: "10em",
-                    lg: "15em",
+                    lg: "13em",
                 }}
             >
                 <Flex justifyContent={"center"} w={"full"} direction={"column"}>
@@ -389,7 +389,7 @@ const About = forwardRef((props, ref) => {
                         alignItems={"start"}
                     >
                         <ChakraBox
-                            pb={0}
+                            pb={2}
                             //variants={about}
                             w={"full"}
                             initial={"hidden"}
