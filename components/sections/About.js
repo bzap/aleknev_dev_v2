@@ -12,11 +12,15 @@ import {
     Grid,
     Center,
     GridItem,
+    SimpleGrid,
+    Wrap,
+    WrapItem,
     Spacer,
     shouldForwardProp,
     useBreakpoint,
 } from "@chakra-ui/react";
 import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
+
 import { motion, isValidMotionProp } from "framer-motion";
 import { item } from "../../styles/Variants";
 import Title from "../Title";
@@ -56,7 +60,7 @@ const Background = ({ bp }) => {
                     : { once: true }
             }
         >
-            <Flex
+            {/* <Flex
                 direction={{
                     base: "column",
                     sm: "column",
@@ -158,7 +162,7 @@ const Background = ({ bp }) => {
 									src={'/portrait.webp'} />							
 						</Flex>
 					</ChakraBox> */}
-            </Flex>
+            {/* </Flex> */}
         </ChakraBox>
     );
 };
@@ -388,15 +392,89 @@ const About = forwardRef((props, ref) => {
                         gap={"2em"}
                         direction={"column"}
                     >
-                        <Background bp={bp} />
-                        <Experience bp={bp} />
-                        <Skills bp={bp} />
+                        {/* <Background bp={bp} />
+                        <Experience bp={bp} /> */}
+                        <SkillsContainer />
+                        {/* <Skills bp={bp} /> */}
                     </Flex>
                 </Flex>
             </Flex>
         </Flex>
     );
 });
+const SkillsContainer = ({ data }) => {
+    // const children =
+    // });
+    let test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+
+    // alwaysa going to be an exponent of values
+    console.log(Math.sqrt(test.length));
+    // if the above is an integer then we can set it
+    let maxRows = Math.sqrt(test.length);
+    let topHalf = test.splice(0, Math.ceil(test.length / 3));
+    let bottomHalf = test;
+
+    const generateRows = () => {
+        for (let i = 1; i < maxRows; i++) {
+            // console.log(bottomHalf.splice(0, maxRows - (i - 1)));
+        }
+    };
+
+    generateRows();
+    return (
+        <Flex
+            w={"full"}
+            justifyContent={"center"}
+            bg={"red"}
+            h={"full"}
+            flexDir={"column"}
+        >
+            {[...Array(maxRows)].map((element, index) => {
+                return (
+                    <Flex w={"full"} gap={1} justifyContent={"center"}>
+                        {topHalf
+                            .splice(0, index + 1)
+                            .map((innerElement, innerIndex) => {
+                                return <Flex>{innerElement}</Flex>;
+                            })}
+                    </Flex>
+                );
+            })}
+            {[...Array(maxRows)].map((element, index) => {
+                return (
+                    <Flex w={"full"} gap={1} justifyContent={"center"}>
+                        {bottomHalf
+                            .splice(0, maxRows - index)
+                            .map((innerElement, innerIndex) => {
+                                return <Flex>{innerElement}</Flex>;
+                            })}
+                    </Flex>
+                );
+            })}
+        </Flex>
+    );
+};
+
+const SkillCard = ({ bp, item }) => {
+    return (
+        <WrapItem
+            p={8}
+            bg={"whiteAlpha.500"}
+            borderWidth={"1px"}
+            borderColor={"blackAlpha.200"}
+            boxShadow={"xl"}
+            borderRadius={"30px"}
+            zIndex={50}
+        >
+            <Flex w={"full"} flexDir={"row"} alignItems={"center"} gap={2}>
+                <Icon as={item[1]} boxSize={6} />
+                <Heading fontSize={16} fontWeight={800}>
+                    {item[0]}
+                </Heading>
+            </Flex>
+        </WrapItem>
+    );
+};
 
 const backgroundText = () => {
     return (
@@ -560,7 +638,7 @@ const skillsInfo = () => {
                         >
                             Languages
                         </Heading>
-                        {skillList(1)}
+                        {/* {skillList(1)} */}
                     </Flex>
                     <Flex w={"100%"} flexDir={"column"}>
                         <Heading
@@ -570,7 +648,7 @@ const skillsInfo = () => {
                         >
                             Frameworks and Databases
                         </Heading>
-                        {skillList(2)}
+                        {/* {skillList(2)} */}
                     </Flex>
                 </Flex>
             </ChakraBox>
@@ -608,29 +686,29 @@ const skillText = () => {
 };
 
 // add the arrow next to languages
-const skillList = (pos) => {
-    return (
-        <Flex ml={-1} gap={3}>
-            <Icon as={BiSubdirectoryRight} />
-            <Center w={"100%"} justifyContent={"space-between"}>
-                {pos === 1 &&
-                    [...Array(8)].map((item, idx) =>
-                        skillItem(
-                            aboutText.languages[idx][0],
-                            aboutText.languages[idx][1]
-                        )
-                    )}
-                {pos === 2 &&
-                    [...Array(8)].map((item, idx) =>
-                        skillItem(
-                            aboutText.frameworksDatabases[idx][0],
-                            aboutText.frameworksDatabases[idx][1]
-                        )
-                    )}
-            </Center>
-        </Flex>
-    );
-};
+// const skillList = (pos) => {
+//     return (
+//         <Flex ml={-1} gap={3}>
+//             <Icon as={BiSubdirectoryRight} />
+//             <Center w={"100%"} justifyContent={"space-between"}>
+//                 {pos === 1 &&
+//                     [...Array(8)].map((item, idx) =>
+//                         skillItem(
+//                             aboutText.languages[idx][0],
+//                             aboutText.languages[idx][1]
+//                         )
+//                     )}
+//                 {pos === 2 &&
+//                     [...Array(8)].map((item, idx) =>
+//                         skillItem(
+//                             aboutText.frameworksDatabases[idx][0],
+//                             aboutText.frameworksDatabases[idx][1]
+//                         )
+//                     )}
+//             </Center>
+//         </Flex>
+//     );
+// };
 
 const skillItem = (name, ic) => {
     return (

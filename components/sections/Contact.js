@@ -156,12 +156,13 @@ const formBox = () => {
                                     >
                                         <FormLabel requiredIndicator>
                                             <Heading
+                                                fontWeight={800}
                                                 color={"blackAlpha.800"}
                                                 fontSize={{
-                                                    base: 18,
-                                                    sm: 18,
-                                                    md: 18,
-                                                    lg: 18,
+                                                    base: 16,
+                                                    sm: 16,
+                                                    md: 16,
+                                                    lg: 16,
                                                 }}
                                             >
                                                 Email
@@ -210,12 +211,13 @@ const formBox = () => {
                                             requiredIndicator
                                         >
                                             <Heading
+                                                fontWeight={800}
                                                 color={"blackAlpha.800"}
                                                 fontSize={{
-                                                    base: 18,
-                                                    sm: 18,
-                                                    md: 18,
-                                                    lg: 18,
+                                                    base: 16,
+                                                    sm: 16,
+                                                    md: 16,
+                                                    lg: 16,
                                                 }}
                                             >
                                                 Name
@@ -262,11 +264,12 @@ const formBox = () => {
                                         <FormLabel requiredIndicator>
                                             <Heading
                                                 color={"blackAlpha.800"}
+                                                fontWeight={800}
                                                 fontSize={{
-                                                    base: 18,
-                                                    sm: 18,
-                                                    md: 18,
-                                                    lg: 18,
+                                                    base: 16,
+                                                    sm: 16,
+                                                    md: 16,
+                                                    lg: 16,
                                                 }}
                                             >
                                                 Message
@@ -319,6 +322,7 @@ const formBox = () => {
                                 >
                                     <Heading
                                         px={3}
+                                        fontWeight={700}
                                         color={"blackAlpha.800"}
                                         fontSize={{
                                             base: 12,
@@ -327,7 +331,7 @@ const formBox = () => {
                                             lg: 12,
                                         }}
                                     >
-                                        Submit&#160;&gt;
+                                        SUBMIT&#160;&gt;
                                     </Heading>
                                 </Button>
                             </Flex>

@@ -17,6 +17,7 @@ import ScrollIndicator from "./ScrollIndicator";
 import Wave from "../../Wave";
 import { forwardRef } from "react";
 import aboutText from "../../../public/data/AboutText";
+import Image from "next/image";
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) =>
@@ -74,23 +75,49 @@ const Hero = forwardRef((props, ref) => {
                         viewport={{ once: true }}
                     >
                         <Flex flexDir={"column"}>
-                            <Heading
-                                color={"blackAlpha.800"}
-                                fontWeight={"black"}
-                                fontSize={"4em"}
-                            >
-                                LINAS
-                            </Heading>
-                            <Heading fontWeight={"black"} fontSize={"4em"}>
-                                ALEKNEVICIUS
-                            </Heading>
-                            <Heading
-                                fontSize={"1.2em"}
-                                color={"blackAlpha.600"}
-                            >
-                                A full-stack developer with a particular passion
-                                for frontend development.
-                            </Heading>
+                            <Flex>
+                                <Flex flexDir={"column"}>
+                                    <Heading
+                                        color={"blackAlpha.800"}
+                                        fontWeight={"black"}
+                                        fontSize={"4em"}
+                                    >
+                                        LINAS
+                                    </Heading>
+                                    <Heading
+                                        fontWeight={"black"}
+                                        mt={-5}
+                                        fontSize={"4em"}
+                                    >
+                                        ALEKNEVICIUS
+                                    </Heading>
+                                    <Heading
+                                        pt={"0.1em"}
+                                        fontSize={"1.2em"}
+                                        color={"blackAlpha.600"}
+                                        fontWeight={800}
+                                        // className="headline headline--background-clip"
+                                    >
+                                        Detail oriented. Driven. Flexible.
+                                        Full-stack Developer.
+                                    </Heading>
+                                </Flex>
+
+                                <Flex
+                                    w={"100%"}
+                                    position={"absolute"}
+                                    justifyContent={"end"}
+                                >
+                                    <Image
+                                        src={"/portrait2.png"}
+                                        width={239}
+                                        height={293}
+                                        style={{ objectFit: "none" }}
+                                        // unoptimized
+                                    />
+                                </Flex>
+                            </Flex>
+
                             <BackgroundText />
                         </Flex>
                     </ChakraBox>

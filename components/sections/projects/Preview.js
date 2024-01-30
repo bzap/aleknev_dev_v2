@@ -79,7 +79,11 @@ const Preview = ({ index }) => {
                 <ChakraBox
                 //   variants={item}
                 >
-                    <Center>{projectDesc(projects[index].desc)}</Center>
+                    <Center>
+                        {/* <Text fontSize={11} color="red"> */}
+                        {projectDesc(projects[index].desc)}
+                        {/* </Text> */}
+                    </Center>
                 </ChakraBox>
             </Stack>
             <ChakraBox

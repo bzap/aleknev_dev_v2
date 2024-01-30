@@ -94,3 +94,55 @@ div:hover > .logo-hover {
 .scroll-container::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
 }
+
+.headline--background-clip {
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-fill-color: hsla(33, 100%, 96%, 0.649);
+
+    background-color: hsla(0, 0, 0, 0.8);
+    background-clip: text;
+}
+
+.headline--linear-gradient {
+    background-image: linear-gradient(
+        120deg,
+        hsl(260 70% 40%),
+        hsl(0, 100%, 70%)
+    );
+}
+
+.headline {
+    margin: 0;
+    padding: 1rem;
+    font-size: 5rem;
+    line-height: 1.1;
+    font-family: Raleway, sans-serif;
+    color: hsl(260 70% 40%);
+}
+
+.headline--radial-gradient {
+    background-image: radial-gradient(hsl(260 70% 40%), hsl(0, 100%, 70%));
+}
+
+.headline--text-shadow {
+    text-shadow: 0 0 1px hsl(260 70% 40%), 1px 1px 1px hsl(260 70% 40%),
+        -1px -1px 1px hsl(260 70% 40%), 1px -1px 1px hsl(260 70% 40%),
+        -1px 1px 1px hsl(260 70% 40%), 2px 2px 1px hsl(260 70% 40%),
+        -2px -2px 1px hsl(260 70% 40%), 2px -2px 1px hsl(260 70% 40%),
+        -2px 2px 1px hsl(260 70% 40%);
+    color: hsl(33, 100%, 96%);
+}
+
+.myBubbleUI {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 50px;
+}
+
+.child {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}

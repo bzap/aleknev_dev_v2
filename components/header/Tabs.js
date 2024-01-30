@@ -25,7 +25,7 @@ const Tabs = ({ toggle }) => {
                                 _hover={{ bg: "blackAlpha.200" }}
                                 _active={{ bg: "blackAlpha.200" }}
                             >
-                                <Heading fontWeight={900} fontSize={12}>
+                                <Heading fontWeight={900} fontSize={11}>
                                     {item.label.toUpperCase()}
                                 </Heading>
                             </Tab>
