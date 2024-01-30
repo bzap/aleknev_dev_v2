@@ -1,32 +1,11 @@
-import {
-    Flex,
-    Box,
-    Heading,
-    Image,
-    Link,
-    Icon,
-    Center,
-    Button,
-    useBreakpoint,
-    chakra,
-    shouldForwardProp,
-} from "@chakra-ui/react";
-import Preview from "./Preview";
-import { motion, isValidMotionProp } from "framer-motion";
-import { IoMdReturnRight } from "react-icons/io";
-import {
-    projectContainer,
-    gitText,
-    projectSubContainer,
-    about,
-} from "../../../styles/Variants";
+import { Flex, Box, useBreakpoint } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { projectContainer, gitText, about } from "../../../styles/Variants";
 import { forwardRef } from "react";
 import Title from "../../Title";
-
-const ChakraBox = chakra(motion.div, {
-    shouldForwardProp: (prop) =>
-        isValidMotionProp(prop) || shouldForwardProp(prop),
-});
+import VerticalItem from "./card/VerticalItem";
+import GitButton from "./GitButton";
+import ChakraBox from "../../common/ChakraBox";
 
 const Projects = forwardRef((props, ref) => {
     const bp = useBreakpoint();
@@ -99,20 +78,28 @@ const Projects = forwardRef((props, ref) => {
                                     >
                                         {bp == "base" ||
                                         bp == "sm" ||
-                                        bp == "md"
-                                            ? verticalItem(
-                                                  "3em",
-                                                  "0" + (idx + 1).toString()
-                                              )
-                                            : idx % 2 === 0
-                                            ? verticalItem(
-                                                  "0%",
-                                                  "0" + (idx + 1).toString()
-                                              )
-                                            : verticalItem(
-                                                  "35%",
-                                                  "0" + (idx + 1).toString()
-                                              )}
+                                        bp == "md" ? (
+                                            <VerticalItem
+                                                top={"3em"}
+                                                index={
+                                                    "0" + (idx + 1).toString()
+                                                }
+                                            />
+                                        ) : idx % 2 === 0 ? (
+                                            <VerticalItem
+                                                top={"0%"}
+                                                index={
+                                                    "0" + (idx + 1).toString()
+                                                }
+                                            />
+                                        ) : (
+                                            <VerticalItem
+                                                top={"35%"}
+                                                index={
+                                                    "0" + (idx + 1).toString()
+                                                }
+                                            />
+                                        )}
                                     </Box>
                                 ))}
                             </Flex>
@@ -126,137 +113,11 @@ const Projects = forwardRef((props, ref) => {
                     viewport={{ once: true, amount: 0.9 }}
                     variants={gitText}
                 >
-                    {gitButton()}
+                    <GitButton />
                 </ChakraBox>
             </Box>
         </Flex>
     );
 });
-
-const verticalItem = (top, index) => {
-    return (
-        <ChakraBox
-            position={"relative"}
-            pt={top}
-            variants={projectSubContainer}
-            initial={"hidden"}
-            whileInView={"visible"}
-            viewport={{ once: true, amount: 0.4 }}
-        >
-            <Flex
-                w={"100%"}
-                position={"relative"}
-                direction={{
-                    base: "column",
-                    sm: "column",
-                    md: "row",
-                    lg: "column",
-                }}
-                justifyContent="space-between"
-                gap={{
-                    base: "0em",
-                    sm: "0em",
-                    md: "6em",
-                    lg: "0em",
-                }}
-            >
-                <Flex position={"relative"} direction={"column"}>
-                    <Heading
-                        color={"blackAlpha.800"}
-                        fontWeight={900}
-                        fontSize={{
-                            base: 20,
-                            sm: 20,
-                            md: 20,
-                            lg: 20,
-                        }}
-                    >
-                        {index}
-                    </Heading>
-                    <Heading
-                        color={"blackAlpha.800"}
-                        position={"relative"}
-                        fontSize={20}
-                        top={-5}
-                    >
-                        &#x5f;
-                    </Heading>
-                </Flex>
-                <Flex
-                    as={motion.div}
-                    whileHover={{ scale: 1.03 }}
-                    viewport={{ once: true, amount: 0.8 }}
-                    flex={1}
-                    position={"relative"}
-                    h={"auto"}
-                    justifyContent={"center"}
-                    w={{
-                        base: "100%",
-                        sm: "24em",
-                        md: "28em",
-                        lg: "100%",
-                    }}
-                    bg={"whiteAlpha.500"}
-                    borderWidth={"1px"}
-                    borderColor={"blackAlpha.200"}
-                    backdropFilter="auto"
-                    backdropBlur="1px"
-                    boxShadow={"xl"}
-                    borderRadius={"30px"}
-                >
-                    <Preview index={index.slice(1, 2)} />
-                </Flex>
-            </Flex>
-        </ChakraBox>
-    );
-};
-
-const gitButton = () => {
-    return (
-        <Flex
-            position={"relative"}
-            zIndex={50}
-            pt={{
-                base: "6em",
-                sm: "6em",
-                md: "7em",
-                lg: "5em",
-            }}
-            justifyContent={{
-                base: "center",
-                sm: "center",
-                md: "center",
-                lg: "flex-end",
-            }}
-        >
-            <ChakraBox as={motion.div}>
-                <Center>
-                    <Link
-                        style={{ textDecoration: "none" }}
-                        href={"https://github.com/bzap"}
-                        isExternal
-                    >
-                        <Button
-                            variant={"unstyled"}
-                            _hover={{ bg: "blackAlpha.200" }}
-                            _active={{ bg: "blackAlpha.300" }}
-                            borderRadius={"lg"}
-                            size={"sm"}
-                        >
-                            <Heading
-                                px={3}
-                                color={"blackAlpha.800"}
-                                fontWeight={800}
-                                fontSize={{ base: 12, sm: 12, md: 12, lg: 12 }}
-                            >
-                                ... And more &gt;
-                            </Heading>
-                        </Button>
-                    </Link>
-                </Center>
-            </ChakraBox>
-        </Flex>
-    );
-};
 
 export default Projects;

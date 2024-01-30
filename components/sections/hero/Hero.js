@@ -1,28 +1,11 @@
-import {
-    Flex,
-    Heading,
-    Text,
-    chakra,
-    shouldForwardProp,
-} from "@chakra-ui/react";
-import Keyboard from "./Keyboard";
-import { motion, isValidMotionProp } from "framer-motion";
-import {
-    heroContainer,
-    heroDesc,
-    scrollArrows,
-    keyboardContainer,
-} from "../../../styles/Variants";
+import { Flex, Heading } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { heroContainer, scrollArrows } from "../../../styles/Variants";
 import ScrollIndicator from "./ScrollIndicator";
-import Wave from "../../Wave";
 import { forwardRef } from "react";
-import aboutText from "../../../public/data/AboutText";
 import Image from "next/image";
-
-const ChakraBox = chakra(motion.div, {
-    shouldForwardProp: (prop) =>
-        isValidMotionProp(prop) || shouldForwardProp(prop),
-});
+import ChakraBox from "../../common/ChakraBox";
+import BackgroundText from "./BackgroundText";
 
 const Hero = forwardRef((props, ref) => {
     return (
@@ -100,7 +83,6 @@ const Hero = forwardRef((props, ref) => {
                                         fontSize={"1.2em"}
                                         color={"blackAlpha.600"}
                                         fontWeight={800}
-                                        // className="headline headline--background-clip"
                                     >
                                         Detail oriented. Driven. Flexible.
                                         Full-stack Developer.
@@ -110,9 +92,8 @@ const Hero = forwardRef((props, ref) => {
                                     <Image
                                         src={"/memoji.webp"}
                                         width={674}
+                                        priority
                                         height={874}
-                                        // style={{ objectFit: "none" }}
-                                        // unoptimized
                                     />
                                 </Flex>
                             </Flex>
@@ -137,153 +118,5 @@ const Hero = forwardRef((props, ref) => {
         </Flex>
     );
 });
-
-const BackgroundText = () => {
-    return (
-        <ChakraBox
-            bg={"whiteAlpha.500"}
-            borderWidth={"1px"}
-            borderColor={"blackAlpha.200"}
-            backdropFilter="auto"
-            backdropBlur="2px"
-            boxShadow={"xl"}
-            borderRadius={"30px"}
-            mt={"3em"}
-            p={"2em"}
-        >
-            <Text
-                fontWeight={700}
-                display={"inline-block"}
-                wordBreak={{
-                    base: "break-all",
-                    sm: "break-all",
-                    md: "normal",
-                    lg: "normal",
-                }}
-                textAlign={"justify"}
-                sx={{ hypens: "auto" }}
-                whiteSpace={"pre-line"}
-                color={"blackAlpha.700"}
-                fontSize={{
-                    base: 11,
-                    sm: 11,
-                    md: 12,
-                    lg: 11.5,
-                }}
-            >
-                {aboutText.background}
-                {/* <Icon
-                    boxShadow={"xl"}
-                    pl={"3px"}
-                    as={CgSmile}
-                    h={"1.3em"}
-                    w={"1.3em"}
-                    verticalAlign={"bottom"}
-                    color={"blackAlpha.800"}
-                /> */}
-            </Text>
-        </ChakraBox>
-    );
-};
-
-const CustomKeyboard = ({ loading }) => {
-    return (
-        <Flex h={"100%"} zIndex={0}>
-            <Keyboard
-                props={{
-                    newFov: 30,
-                    outerLoading: loading,
-                }}
-            />
-        </Flex>
-    );
-};
-
-const IntroText = () => {
-    return (
-        <Flex
-            direction={"column"}
-            justifyContent={"center"}
-            w={"100%"}
-            position={"absolute"}
-            top={"10%"}
-            h={"30%"}
-        >
-            <Flex
-                position={"relative"}
-                justifyContent={{
-                    base: "center",
-                    sm: "center",
-                    md: "center",
-                    lg: "center",
-                    xl: "center",
-                }}
-            >
-                <ChakraBox as={motion.div} variants={heroDesc}>
-                    <Heading
-                        as={"span"}
-                        position={"relative"}
-                        color={"blackAlpha.800"}
-                        fontSize={{
-                            base: "6.5vw",
-                            sm: "5.5vw",
-                            md: "5vw",
-                            lg: "4.5vw",
-                            xl: "3.5vw",
-                            "2xl": "3.5vw",
-                        }}
-                    >
-                        <Wave text={"Hey! I'm Linas."} />
-                    </Heading>
-                </ChakraBox>
-            </Flex>
-            <Flex
-                position={"relative"}
-                justifyContent={{
-                    base: "center",
-                    sm: "center",
-                    md: "center",
-                    lg: "center",
-                    xl: "center",
-                }}
-                textAlign={{
-                    base: "center",
-                    sm: "center",
-                    md: "center",
-                    lg: "start",
-                }}
-            >
-                <ChakraBox
-                    pt={"3"}
-                    px={{
-                        base: 0,
-                        sm: 0,
-                        md: 6,
-                        lg: 0,
-                    }}
-                    as={motion.div}
-                    variants={heroDesc}
-                >
-                    <Text
-                        as={"span"}
-                        position={"relative"}
-                        textAlign={"center"}
-                        color={"blackAlpha.700"}
-                        fontSize={{
-                            base: "0.8em",
-                            sm: "0.8em",
-                            md: "1em",
-                            lg: "1em",
-                            xl: "1em",
-                            "2xl": "0.9vw",
-                        }}
-                    >
-                        I'm a full-stack software developer based in Toronto.
-                    </Text>
-                </ChakraBox>
-            </Flex>
-        </Flex>
-    );
-};
 
 export default Hero;
